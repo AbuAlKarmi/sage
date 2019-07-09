@@ -1,4 +1,9 @@
 const mix = require('laravel-mix');
+const exec = require('child_process').exec;
+
+require('laravel-mix-purgecss');
+
+
 
 // Public path helper
 const publicPath = path => `${mix.config.publicPath}/${path}`;
@@ -20,21 +25,29 @@ const src = path => `resources/assets/${path}`;
 // Public Path
 mix
   .setPublicPath('./dist')
-  .setResourceRoot(`/app/themes/sage/${mix.config.publicPath}/`)
+  .setResourceRoot(`wp-content/themes/metras.co/${mix.config.publicPath}/`)
   .webpackConfig({
     output: { publicPath: mix.config.resourceRoot }
   });
 
 // Browsersync
-mix.browserSync('example.test');
+mix.browserSync('metras.test');
+
 
 // Styles
-mix.sass(src`styles/app.scss`, 'styles');
+mix.sass(src`styles/app.scss`, 'styles')
+  .sass(src`styles/app-rtl.scss`, 'styles')
+  .purgeCss()
+  .then(() => {
+    exec('node_modules/rtlcss/bin/rtlcss.js ./dist/styles/app-rtl.css ./dist/styles/app-rtl.css');
+  });
+
+
 
 // JavaScript
 mix.js(src`scripts/app.js`, 'scripts')
-   .js(src`scripts/customizer.js`, 'scripts')
-   .extract();
+   .js(src`scripts/customizer.js`, 'scripts');
+   // .extract();
 
 // Assets
 mix.copyDirectory(src`images`, publicPath`images`)

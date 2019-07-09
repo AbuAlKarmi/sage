@@ -11,3 +11,19 @@
     @extend .nav-link;
   }
 }
+
+.banner {
+  .logo{
+    text-align: center;
+    .brand{
+      height: 95px;
+      width: 200px;
+      background-image: url('../images/logo.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      display: inline-block;
+      text-indent: -9999px;
+    }
+  }
+}

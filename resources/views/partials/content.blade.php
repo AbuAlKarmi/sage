@@ -1,4 +1,4 @@
-<article @php(post_class())>
+<article @php(post_class('card p-2 mb-2'))>
   <header>
     <h2 class="entry-title">
       <a href="{{ get_permalink() }}">
