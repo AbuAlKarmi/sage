@@ -1,5 +1,7 @@
 <?php
 
+use App\Composers\FeaturedPosts;
+
 return [
 
     /*
@@ -78,6 +80,7 @@ return [
     'composers' => [
         App\Composers\Title::class,
         App\Composers\FeaturedPosts::class,
+        App\Composers\FeaturedHomePost::class,
     ],
 
     /*

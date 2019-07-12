@@ -11,12 +11,25 @@
     {!! get_search_form(false) !!}
   @endif
 
+  @php( $featuredPostId = null )
+  @if( isset($featuredHomePost) )
+    <div class="posts-loop">
+      @php(setup_postdata( $featuredHomePost ))
+      @php( $featuredPostId = get_the_ID() )
+      @includeFirst(['partials.content-'.get_post_type(), 'partials.content'])
+      @php(wp_reset_postdata())
+    </div>
+  @endif
+
+
   <div class="posts-loop">
     <div class="row">
       @while (have_posts()) @php(the_post())
-        <div class="col-md-6">
-          @includeFirst(['partials.content-'.get_post_type(), 'partials.content'])
-        </div>
+        @if(get_the_ID() != $featuredPostId )
+          <div class="col-md-6">
+            @includeFirst(['partials.content-'.get_post_type(), 'partials.content'])
+          </div>
+        @endif
       @endwhile
     </div>
   </div>

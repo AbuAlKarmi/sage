@@ -8,15 +8,20 @@
     @include('partials.header')
 
     <div class="wrap container">
-      <div class="content">
-        <main class="main">
-          @yield('content')
-        </main>
-
+      <div class="row">
+        <div class="@hasSection('sidebar') col-md-8 @else col-md-12 @endif">
+          <div class="content">
+            <main class="main">
+              @yield('content')
+            </main>
+          </div>
+        </div>
         @hasSection('sidebar')
-          <aside class="sidebar">
-            @yield('sidebar')
-          </aside>
+          <div class="col-md-4">
+            <aside class="sidebar">
+              @yield('sidebar')
+            </aside>
+          </div>
         @endif
       </div>
     </div>

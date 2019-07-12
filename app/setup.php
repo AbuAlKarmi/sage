@@ -64,6 +64,7 @@ add_action('after_setup_theme', function () {
     add_theme_support('post-thumbnails');
     add_image_size( 'small-feature', 500, 300 ); // Used for featured posts if a large-feature doesn't exist
     add_image_size( 'post-image-square', 400, 300 , true ); // Used for featured posts if a large-feature doesn't exist
+    add_image_size( 'post-image-slider', 1100, 600 , true ); // Used for featured posts if a large-feature doesn't exist
 
     /**
      * Enable HTML5 markup support

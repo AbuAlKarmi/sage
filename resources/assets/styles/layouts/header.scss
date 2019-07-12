@@ -55,19 +55,19 @@
         ul{
           display: none;
           background: $white;
+          position: absolute;
+          top: 40px;
+          left: 0px;
+          list-style: none;
+          z-index: 4;
+          padding: 0px;
+          li{
+            padding: 6px 8px;
+          }
         }
         &:hover{
           ul{
-            position: absolute;
-            top: 40px;
-            left: 0px;
             display: block;
-            list-style: none;
-            z-index: 1;
-            padding: 0px;
-            li{
-              padding: 6px 8px;
-            }
           }
         }
       }

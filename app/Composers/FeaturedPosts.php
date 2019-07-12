@@ -51,7 +51,7 @@ class FeaturedPosts extends Composer
             return [
                 'title'     => get_the_title($post->ID),
                 'subtitle'  => get_the_subtitle($post->ID, "","", false),
-                'image'     => get_the_post_thumbnail_url($post->ID, 'full'),
+                'image'     => get_the_post_thumbnail_url($post->ID, 'post-image-slider'),
                 'url'       => get_the_permalink($post->ID),
             ];
         }, $featuredPostsLoop);
