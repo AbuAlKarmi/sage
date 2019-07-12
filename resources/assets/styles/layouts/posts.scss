@@ -1,7 +1,81 @@
+$POST_CARD_HEIGHT: 590px;
+
 /**
  * Posts
  */
 
 .post {
   //
+}
+
+.posts-loop{
+  .post-card{
+    @extend .mb-3;
+    @extend .pb-3;
+    min-height: $POST_CARD_HEIGHT;
+    .category-link{
+      text-align: center;
+      transition: all 0.4s linear;
+      color: transparent;
+      background: transparent;
+      @extend .p-1;
+
+      a{
+        color: transparent;
+        text-decoration: none;
+        font-size: 0.8rem;
+      }
+    }
+    &:hover{
+      //padding-bottom: 0;
+      .category-link{
+        background: theme-color('primary');
+
+        a{
+          display: inline-block;
+          color: $white;
+        }
+      }
+    }
+
+    .card-text{
+      font-size: 0.9rem;
+      height: 105px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .card-image{
+      img{
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.post-meta{
+  .author-image{
+    width: 45px;
+    height: 45px;
+    background: theme-color('secondary');
+    display: block;
+    border-radius: 5px;
+    img{
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+    }
+  }
+  .author-name{
+    color: theme-color('secondary');
+    text-decoration: none;
+  }
+}
+
+.single-post{
+  main{
+    img {
+      max-width: 100%;
+    }
+  }
 }

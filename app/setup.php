@@ -5,6 +5,7 @@ namespace App;
 use function Roots\asset;
 use function Roots\config;
 use function Roots\view;
+use StoutLogic\AcfBuilder\FieldsBuilder;
 
 /**
  * Theme assets
@@ -61,6 +62,8 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
      */
     add_theme_support('post-thumbnails');
+    add_image_size( 'small-feature', 500, 300 ); // Used for featured posts if a large-feature doesn't exist
+    add_image_size( 'post-image-square', 400, 300 , true ); // Used for featured posts if a large-feature doesn't exist
 
     /**
      * Enable HTML5 markup support
@@ -79,6 +82,7 @@ add_action('after_setup_theme', function () {
      * @see resources/assets/styles/layouts/tinymce.scss
      */
     add_editor_style(asset('styles/app.css')->uri());
+    add_theme_support( 'editor-styles' );
 }, 20);
 
 /**
@@ -86,10 +90,10 @@ add_action('after_setup_theme', function () {
  */
 add_action('widgets_init', function () {
     $config = [
-        'before_widget' => '<section class="widget %1$s %2$s">',
-        'after_widget' => '</section>',
-        'before_title' => '<h3>',
-        'after_title' => '</h3>'
+        'before_widget' => '<section class="widget card %1$s %2$s"><div class="card-body">',
+        'after_widget' => '</div></section>',
+        'before_title' => '<h5 class="card-title">',
+        'after_title' => '</h5>'
     ];
 
     register_sidebar([
@@ -101,4 +105,18 @@ add_action('widgets_init', function () {
         'name' => __('Footer', 'sage'),
         'id' => 'sidebar-footer'
     ] + $config);
+});
+
+
+/**
+ * Initialize ACF Builder
+ */
+add_action('init', function () {
+    collect(glob('./app/fields/*.php'))->map(function ($field) {
+        return require_once($field);
+    })->map(function ($field) {
+        if ($field instanceof FieldsBuilder) {
+            acf_add_local_field_group($field->build());
+        }
+    });
 });

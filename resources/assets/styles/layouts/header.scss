@@ -1,9 +1,10 @@
 /**
  * Header
  */
-
+/*! purgecss start ignore */
 .banner .nav {
   li {
+
     @extend .nav-item;
   }
 
@@ -15,6 +16,9 @@
 .banner {
   .logo{
     text-align: center;
+
+    @extend .pt-4;
+    @extend .pb-4;
     .brand{
       height: 95px;
       width: 200px;
@@ -26,4 +30,48 @@
       text-indent: -9999px;
     }
   }
+
+  .nav{
+    > .menu-item{
+      display: inline-flex;
+      flex-grow: 1;
+      text-align: center;
+      > a{
+        width: 100%;
+        font-weight: bold;
+        font-size: 1.2rem;
+
+        transition: background-color .3s linear;
+
+        &:hover,
+        .current-menu-item &{
+          background: theme-color('secondary');
+          color: $white;
+        }
+      }
+
+      &.menu-item-has-children{
+        position: relative;
+        ul{
+          display: none;
+          background: $white;
+        }
+        &:hover{
+          ul{
+            position: absolute;
+            top: 40px;
+            left: 0px;
+            display: block;
+            list-style: none;
+            z-index: 1;
+            padding: 0px;
+            li{
+              padding: 6px 8px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
+/*! purgecss end ignore */

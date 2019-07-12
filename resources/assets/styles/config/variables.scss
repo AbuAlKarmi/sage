@@ -1,13 +1,15 @@
 /**
  * Variables
  */
+$primary: #0d3c4b;
+$secondary: #c9a16e;
+$body-bg: #efefef;
 
 $theme-colors: (
-  primary: #0d3c4b,
+  primary: $primary,
   textPrimary: #2d2d2d,
-  secondery: #c9a16e,
-  textSecondery: #535353,
-  bgPrimary: #efefef,
+  secondary: $secondary,
+  textSecondary: #535353,
 );
 
 /** Bootstrap Navbar Fix (https://git.io/fADqW) */

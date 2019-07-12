@@ -61,7 +61,7 @@ return [
          | Given the below example, in your views use something like:
          |     @include('MyPlugin::some.view.or.partial.here')
          */
-        // 'MyPlugin' => WP_PLUGIN_DIR . '/my-plugin/resources/views',
+         'icons' => get_parent_theme_file_path('/resources/assets/icons'),
     ],
 
     /*
@@ -77,6 +77,7 @@ return [
 
     'composers' => [
         App\Composers\Title::class,
+        App\Composers\FeaturedPosts::class,
     ],
 
     /*

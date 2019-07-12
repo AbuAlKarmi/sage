@@ -7,9 +7,11 @@
     @php(do_action('get_header'))
     @include('partials.header')
 
+    @include('partials.featured-posts', ['featuredPosts' => $featuredPosts])
+
     <div class="wrap container">
       <div class="row">
-        <div class="@hasSection('sidebar') col-md-9 @else col-md-12 @endif">
+        <div class="@hasSection('sidebar') col-md-8 @else col-md-12 @endif">
           <div class="content">
             <main class="main">
               @yield('content')
@@ -17,7 +19,7 @@
           </div>
         </div>
         @hasSection('sidebar')
-        <div class="col-md-3">
+        <div class="col-md-4">
             <aside class="sidebar">
               @yield('sidebar')
             </aside>

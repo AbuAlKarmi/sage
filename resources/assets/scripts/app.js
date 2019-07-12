@@ -16,6 +16,7 @@ import about from './routes/about';
  * See: {@link https://webpack.js.org/guides/code-splitting/#dynamic-imports | Dynamic Imports}
  */
 const home = async () => import(/* webpackChunkName: "scripts/routes/home" */ './routes/home');
+const single = async () => import(/* webpackChunkName: "scripts/routes/single" */ './routes/single');
 
 /**
  * Set up DOM router
@@ -27,4 +28,5 @@ const home = async () => import(/* webpackChunkName: "scripts/routes/home" */ '.
 router
   .on('about-us', about)
   .on('home', async (event) => (await home()).default(event))
+  .on('single', async (event) => (await single()).default(event))
   .ready();

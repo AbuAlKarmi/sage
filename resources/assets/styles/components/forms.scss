@@ -20,3 +20,7 @@
     @extend .btn-secondary;
   }
 }
+
+[name="archive-dropdown"]{
+  @extend .form-control;
+}
