@@ -46,6 +46,7 @@
     "popper.js": "^1.15",
     "rtlcss": "^2.4.0",
     "share-selected-text": "^1.1.4",
-    "sharect": "^1.1.0"
+    "sharect": "^1.1.0",
+    "slick-carousel": "^1.8.1"
   }
 }

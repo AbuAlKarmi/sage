@@ -11,8 +11,9 @@ use StoutLogic\AcfBuilder\FieldsBuilder;
  * Theme assets
  */
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_script('metras/vendor', asset('scripts/vendor.js')->uri(), ['jquery'], null, true);
+    wp_enqueue_script('metras/vendor', asset('scripts/customizer.js')->uri(), ['jquery'], null, true);
     wp_enqueue_script('metras/app', asset('scripts/app.js')->uri(), ['metras/vendor', 'jquery'], null, true);
+    wp_enqueue_script('metras/slick-slider', asset('vendors/slick-carousel/slick/slick.min.js')->uri(), ['metras/vendor', 'jquery'], null, true);
 
     wp_add_inline_script('metras/vendor', asset('scripts/manifest.js')->contents(), 'before');
 
@@ -20,7 +21,7 @@ add_action('wp_enqueue_scripts', function () {
         wp_enqueue_script('comment-reply');
     }
 
-    $styles = ['styles/app-rtl.css'];
+    $styles = ['vendors/slick-carousel/slick/slick.css','vendors/slick-carousel/slick/slick-theme.css','styles/app-rtl.css'];
 
     foreach ($styles as $stylesheet) {
         if (asset($stylesheet)->exists()) {

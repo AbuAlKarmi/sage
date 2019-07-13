@@ -25,11 +25,9 @@
   <div class="posts-loop">
     <div class="row">
       @while (have_posts()) @php(the_post())
-        @if(get_the_ID() != $featuredPostId )
           <div class="col-md-6">
             @includeFirst(['partials.content-'.get_post_type(), 'partials.content'])
           </div>
-        @endif
       @endwhile
     </div>
   </div>
