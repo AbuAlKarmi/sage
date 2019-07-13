@@ -18,4 +18,8 @@
       </div>
     </div>
   </div>
+  <div class="share">
+    @php( $postUrl = get_the_permalink(get_the_ID()) )
+    {!!  do_shortcode("[Sassy_Social_Share url=\"$postUrl\"]")  !!}
+  </div>
 </div>

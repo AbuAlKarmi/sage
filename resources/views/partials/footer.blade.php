@@ -6,7 +6,8 @@
   </div>
   <div class="bottom-footer">
     <div class="container text-center">
-      <p class="text-secondary mb-0">{{ __('All rights reserved', 'sage' ) }}</p>
+      @include('partials.social-links')
+      <p class="text-secondary mb-0 mt-2">{{ __('All rights reserved', 'sage' ) }}</p>
       <p class="text-muted">{{ date('Y') }}</p>
     </div>
   </div>

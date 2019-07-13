@@ -99,14 +99,28 @@ $POST_CARD_HEIGHT: 590px;
   }
 }
 
-.post-horizontal{
+.post-horizontal,
+.single-post .post{
   .card-text{
     font-size: 0.9rem;
   }
   .post-meta{
+    display: flex;
+    justify-content: space-between;
     .information-wrapper{
       justify-content: flex-start;
     }
+    .share{
+      justify-content: flex-end;
+    }
+  }
+}
+
+.entry-content{
+  > .heateorSssClear,
+  > .heateor_sss_sharing_container,
+  > .heateorSssClear{
+    display: none;
   }
 }
 
@@ -138,6 +152,25 @@ $POST_CARD_HEIGHT: 590px;
       align-content: center;
       border: 1px solid $white;
       font-weight: bold;
+    }
+  }
+}
+
+.heateor_sss_sharing_container{
+  .heateor_sss_sharing_ul{
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+    @extend .mt-3;
+    li.heateorSssSharingRound{
+      i{
+        background-color: $grey !important;
+      }
+      &:hover{
+        i{
+          background-color: darken($grey,20%) !important;
+        }
+      }
     }
   }
 }

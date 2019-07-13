@@ -35,6 +35,9 @@ add_action('wp_enqueue_scripts', function () {
  * Theme setup
  */
 add_action('after_setup_theme', function () {
+    $path = get_template_directory() . '/resources/lang';
+    load_theme_textdomain('sage', $path );
+
     /**
      * Enable features from Soil when plugin is activated
      * @link https://roots.io/plugins/soil/

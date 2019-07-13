@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Metras v2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-13 17:21+0300\n"
+"PO-Revision-Date: 2019-07-13 18:01+0300\n"
+"Last-Translator: \n"
+"Language-Team: Mohammad Karmi\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.3\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+
+#: app/Composers/Title.php:49
+msgid "Latest Posts"
+msgstr "احدث المقالات"
+
+#: app/Composers/Title.php:57
+#, php-format
+msgid "Search Results for %s"
+msgstr "نتائج البحث عن %s"
+
+#: app/Composers/Title.php:61
+msgid "Not Found"
+msgstr ""
+
+#: app/filters.php:30
+msgid "Continued"
+msgstr ""
+
+#: app/setup.php:59
+msgid "Primary Navigation"
+msgstr ""
+
+#: app/setup.php:103
+msgid "Primary"
+msgstr ""
+
+#: app/setup.php:108
+msgid "Footer"
+msgstr ""
+
+#: resources/views/index.blade.php:8 resources/views/category.blade.php:11
+msgid "Sorry, no results were found."
+msgstr ""
+
+#: resources/views/404.blade.php:8
+msgid "Sorry, but the page you were trying to view does not exist."
+msgstr ""
+
+#: resources/views/forms/search.blade.php:9
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: resources/views/partials/comments.blade.php:17
+msgid "&larr; Older comments"
+msgstr ""
+
+#: resources/views/partials/comments.blade.php:23
+msgid "Newer comments &rarr;"
+msgstr ""
+
+#: resources/views/partials/comments.blade.php:33
+msgid "Comments are closed."
+msgstr ""
+
+#: resources/views/partials/content-page.blade.php:2
+msgid "Pages:"
+msgstr ""
+
+#: resources/views/partials/footer.blade.php:9
+msgid "All rights reserved"
+msgstr ""
+
+#: resources/views/partials/content-featured.blade.php:34
+msgid "Read More"
+msgstr "قراءة المزيد"
+
+#: resources/views/author.blade.php:19
+#, python-format
+msgid "All articles posted by %s"
+msgstr ""

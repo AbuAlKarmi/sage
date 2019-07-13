@@ -1,6 +1,6 @@
 export default () => {
   if( Sharect ){
-    var sharect = new Sharect();
+    const sharect = new Sharect();
     sharect.init();
 
   }

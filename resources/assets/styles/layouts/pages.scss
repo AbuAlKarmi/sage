@@ -5,3 +5,20 @@
 .page {
   //
 }
+
+
+.social-links{
+  > li{
+    a{
+      svg{
+        fill: $grey;
+        transition: all 0.3s linear;
+      }
+      &:hover{
+        svg{
+          fill: theme-color('secondary');
+        }
+      }
+    }
+  }
+}

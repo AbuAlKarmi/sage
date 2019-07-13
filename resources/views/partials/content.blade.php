@@ -27,6 +27,6 @@
       <a href="{{ get_permalink() }}" class="text-decoration-none">
         <p class="card-text">{!! App\the_excerpt_max_charlength(20) !!}</p>
       </a>
-    @include('partials/entry-meta',['categories', $subCategories])
+      @include('partials/entry-meta',['categories', $subCategories])
   </div>
 </article>
