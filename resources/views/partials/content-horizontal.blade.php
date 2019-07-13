@@ -20,7 +20,7 @@
         @endif
         <h5 class="card-title text-textPrimary font-weight-bold">
           <a href="{{ get_permalink() }}">
-            {!! $title !!}
+            {!! the_title() !!}
           </a>
         </h5>
 

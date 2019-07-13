@@ -85,6 +85,7 @@ return [
         App\Composers\PostData::class,
         App\Composers\LastPopularPosts::class,
         App\Composers\SinglePostNavigation::class,
+        App\Composers\FileContent::class,
     ],
 
     /*

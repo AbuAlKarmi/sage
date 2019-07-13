@@ -1,7 +1,9 @@
 <article @php(post_class('card post-card mb-2 '))>
-  <div class="category-link category-{{ $mainCategory['id'] }} category-{{ $mainCategory['slug'] }}">
-    <a href="{{$mainCategory['url']}}">{{$mainCategory['title']}}</a>
-  </div>
+  @if($mainCategory && count($mainCategory))
+    <div class="category-link category-{{ $mainCategory['id'] }} category-{{ $mainCategory['slug'] }}">
+      <a href="{{$mainCategory['url']}}">{{$mainCategory['title']}}</a>
+    </div>
+  @endif
   <div class="card-body">
     @if(get_the_subtitle(get_the_ID(), '','', false))
       <h6 class="card-subtitle mb-2 text-center">
@@ -12,7 +14,7 @@
     @endif
     <h5 class="card-title text-center text-textPrimary font-weight-bold">
       <a href="{{ get_permalink() }}" class="text-decoration-none">
-        {!! $title !!}
+        {!! the_title() !!}
       </a>
     </h5>
     @if( isset($featuredImage) && !empty($featuredImage) )

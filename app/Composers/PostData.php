@@ -12,9 +12,11 @@ class PostData extends Composer
      * @var array
      */
     protected static $views = [
-        'partials.content',
+
+        'partials.content-single-files',
         'partials.content-horizontal',
         'partials.content-featured',
+        'partials.content',
         'single',
     ];
 
@@ -66,6 +68,10 @@ class PostData extends Composer
     {
         $cats = get_the_category(); // category object
 
+        if( count($cats) === 0 ){
+            return [];
+        }
+
         $catid = $cats[0]->term_id;
 
         while($catid){
@@ -85,6 +91,9 @@ class PostData extends Composer
     public function postSubCategory()
     {
         $cats = get_the_category();
+        if( count($cats) == 0 ){
+            return [];
+        }
         $subCategories = [];
         foreach( $cats as $cat ){
             if( $cat->parent != 0 ){
