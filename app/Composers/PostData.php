@@ -15,6 +15,7 @@ class PostData extends Composer
         'partials.content',
         'partials.content-horizontal',
         'partials.content-featured',
+        'single',
     ];
 
     /**
