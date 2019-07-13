@@ -14,6 +14,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('metras/vendor', asset('scripts/customizer.js')->uri(), ['jquery'], null, true);
     wp_enqueue_script('metras/app', asset('scripts/app.js')->uri(), ['metras/vendor', 'jquery'], null, true);
     wp_enqueue_script('metras/slick-slider', asset('vendors/slick-carousel/slick/slick.min.js')->uri(), ['metras/vendor', 'jquery'], null, true);
+    wp_enqueue_script('metras/sharect', asset('vendors/sharect/dist/sharect.min.js')->uri(), ['metras/vendor', 'jquery'], null, true);
 
     wp_add_inline_script('metras/vendor', asset('scripts/manifest.js')->contents(), 'before');
 
