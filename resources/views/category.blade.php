@@ -15,7 +15,7 @@
   @endif
 
   @while(have_posts()) @php(the_post())
-    @include('partials.content-horizontal')
+      @include('partials.content-horizontal')
   @endwhile
 
   {!! get_the_posts_navigation() !!}

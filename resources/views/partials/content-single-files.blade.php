@@ -25,12 +25,12 @@ $postFeaturedImage = get_the_post_thumbnail_url(get_the_ID(), 'full');
       @if( $posts && count($posts) )
       @php( wp_reset_postdata() )
         <hr>
-      <div class="posts">
+      <div class="posts-loop">
         <div class="row">
         <?php global $post; ?>
         @foreach($posts as $post)
           @php(setup_postdata($post))
-          <div class="col-md-4">
+          <div class="col-md-4 border-1 border-primary border-solid">
             @include('partials.content')
           </div>
         @endforeach

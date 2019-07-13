@@ -9,6 +9,8 @@
 
     @include('partials.featured-posts', ['featuredPosts' => $featuredPosts])
 
+    @include('partials.files', ['files' => $files])
+
     <div class="wrap container">
       <div class="row">
         <div class="@hasSection('sidebar') col-md-8 @else col-md-12 @endif">

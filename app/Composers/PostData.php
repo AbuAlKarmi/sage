@@ -12,8 +12,7 @@ class PostData extends Composer
      * @var array
      */
     protected static $views = [
-
-        'partials.content-single-files',
+        'partials.content',
         'partials.content-horizontal',
         'partials.content-featured',
         'partials.content',
