@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a641afc006dde13eacadd1d959164f1",
+    "content-hash": "508f82ed77c8f3e635ec085225749a13",
     "packages": [
         {
             "name": "composer/installers",
@@ -246,6 +246,68 @@
                 "instantiate"
             ],
             "time": "2015-06-14T21:17:01+00:00"
+        },
+        {
+            "name": "generoi/sage-acfblocks",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/generoi/sage-acfblocks.git",
+                "reference": "9ae5606ccc8bb748b97eab13160f2f5e6b9b75c3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/generoi/sage-acfblocks/zipball/9ae5606ccc8bb748b97eab13160f2f5e6b9b75c3",
+                "reference": "9ae5606ccc8bb748b97eab13160f2f5e6b9b75c3",
+                "shasum": ""
+            },
+            "archive": {
+                "exclude": [
+                    ".gitignore"
+                ]
+            },
+            "require": {
+                "roots/acorn": "*"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "~3.0"
+            },
+            "type": "library",
+            "extra": {
+                "acorn": {
+                    "providers": [
+                        "Genero\\Sage\\AcfBlocks\\AcfBlockServiceProvider"
+                    ],
+                    "aliases": {
+                        "AcfBlock": "Genero\\Sage\\AcfBlocks\\Facades\\AcfBlock"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Genero\\Sage\\AcfBlocks\\": "src/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "phpcs --ignore=vendor --extensions=php --standard=PSR2 ."
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oskar Schöldström",
+                    "email": "public@oxy.fi"
+                }
+            ],
+            "homepage": "https://github.com/generoi/sage-foundation",
+            "support": {
+                "source": "https://github.com/generoi/sage-acfblocks/tree/master",
+                "issues": "https://github.com/generoi/sage-acfblocks/issues"
+            },
+            "time": "2019-06-18T17:35:25+00:00"
         },
         {
             "name": "illuminate/config",
@@ -1451,6 +1513,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "generoi/sage-acfblocks": 20,
         "roots/acorn": 20
     },
     "prefer-stable": true,

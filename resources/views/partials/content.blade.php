@@ -1,11 +1,7 @@
-<?php
-  $postFeaturedImage = get_the_post_thumbnail_url( get_the_ID(), 'post-image-square' );
-?>
-
-
-
 <article @php(post_class('card post-card mb-2 '))>
-  <div class="category-link @foreach(get_the_category() as $category ) {{ $category->name  }} @endforeach">@php(the_category('inline'))</div>
+  <div class="category-link category-{{ $mainCategory['id'] }} category-{{ $mainCategory['slug'] }}">
+    <a href="{{$mainCategory['url']}}">{{$mainCategory['title']}}</a>
+  </div>
   <div class="card-body">
     @if(get_the_subtitle(get_the_ID(), '','', false))
       <h6 class="card-subtitle mb-2 text-center">
@@ -19,14 +15,16 @@
         {!! $title !!}
       </a>
     </h5>
-    @if( isset($postFeaturedImage) && !empty($postFeaturedImage) )
+    @if( isset($featuredImage) && !empty($featuredImage) )
       <div class="card-image mb-2">
-        <img src="{{ $postFeaturedImage }}" alt="{{strip_tags($title)}}">
+        <a href="{{get_permalink()}}">
+          <img src="{{ $featuredImage }}" alt="{{strip_tags($title)}}">
+        </a>
       </div>
     @endif
       <a href="{{ get_permalink() }}" class="text-decoration-none">
         <p class="card-text">{!! App\the_excerpt_max_charlength(20) !!}</p>
       </a>
-    @include('partials/entry-meta')
+    @include('partials/entry-meta',['categories', $subCategories])
   </div>
 </article>

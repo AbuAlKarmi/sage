@@ -81,6 +81,9 @@ return [
         App\Composers\Title::class,
         App\Composers\FeaturedPosts::class,
         App\Composers\FeaturedHomePost::class,
+        App\Composers\Author::class,
+        App\Composers\PostData::class,
+        App\Composers\LastPopularPosts::class,
     ],
 
     /*

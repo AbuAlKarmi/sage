@@ -14,7 +14,7 @@ class Title extends Composer
     protected static $views = [
         'partials.page-header',
         'partials.content',
-        'partials.content-*'
+        'partials.content-*',
     ];
 
     /**
