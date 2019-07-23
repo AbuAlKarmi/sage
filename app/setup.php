@@ -87,7 +87,7 @@ add_action('after_setup_theme', function () {
      * Use main stylesheet for visual editor
      * @see resources/assets/styles/layouts/tinymce.scss
      */
-    add_editor_style(asset('styles/app.css')->uri());
+    add_editor_style(asset('styles/app-rtl.css')->uri());
     add_theme_support( 'editor-styles' );
 }, 20);
 
