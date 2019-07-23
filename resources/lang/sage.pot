@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-13 17:21+0300\n"
+"POT-Creation-Date: 2019-07-13 19:42+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,19 +34,20 @@ msgstr ""
 msgid "Continued"
 msgstr ""
 
-#: app/setup.php:59
+#: app/setup.php:62
 msgid "Primary Navigation"
 msgstr ""
 
-#: app/setup.php:103
+#: app/setup.php:106
 msgid "Primary"
 msgstr ""
 
-#: app/setup.php:108
+#: app/setup.php:111
 msgid "Footer"
 msgstr ""
 
 #: resources/views/index.blade.php:8 resources/views/category.blade.php:11
+#: resources/views/search.blade.php:8
 msgid "Sorry, no results were found."
 msgstr ""
 
@@ -75,8 +76,16 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: resources/views/partials/footer.blade.php:9
+#: resources/views/partials/footer.blade.php:10
 msgid "All rights reserved"
+msgstr ""
+
+#: resources/views/partials/sidebar.blade.php:17
+msgid "Follow us on"
+msgstr ""
+
+#: resources/views/partials/sidebar.blade.php:26
+msgid "Quote of the day"
 msgstr ""
 
 #: resources/views/partials/content-featured.blade.php:34
