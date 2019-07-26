@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Support\Facades\App;
 use function Roots\asset;
 use function Roots\config;
 use function Roots\view;
@@ -125,4 +126,9 @@ add_action('init', function () {
             acf_add_local_field_group($field->build());
         }
     });
+});
+
+
+add_action('widgets_init', function () {
+    register_widget('App\Widgets\QuoteOfTheDay');
 });
