@@ -42,5 +42,5 @@ $postFeaturedImage = get_the_post_thumbnail_url(get_the_ID(), 'full');
     </div>
   </main>
 
-  @php(comments_template('/partials/comments.blade.php'))
+{{--  @php(comments_template('/partials/comments.blade.php'))--}}
 </article>
