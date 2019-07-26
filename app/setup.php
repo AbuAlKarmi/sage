@@ -132,3 +132,39 @@ add_action('init', function () {
 add_action('widgets_init', function () {
     register_widget('App\Widgets\QuoteOfTheDay');
 });
+
+
+require_once get_theme_file_path(). '/app/Vendors/class-tgm-plugin-activation.php';
+
+add_action( 'tgmpa_register', function(){
+    $plugins = [
+        [
+            'name'      => 'Advanced Gutenberg',
+            'slug'      => 'advanced-gutenberg',
+            'required'  => true, // this plugin is recommended
+        ],
+        [
+            'name'      => 'Advanced Custom Fields',
+            'slug'      => 'advanced-custom-fields',
+            'required'  => true, // this plugin is recommended
+        ],
+        [
+            'name'      => 'Custom Post Type UI',
+            'slug'      => 'custom-post-type-ui',
+            'required'  => true, // this plugin is recommended
+        ],
+        [
+            'name'      => 'Gutenberg',
+            'slug'      => 'gutenberg',
+            'required'  => true, // this plugin is recommended
+        ],
+        [
+            'name'      => 'Regenerate Thumbnails',
+            'slug'      => 'regenerate-thumbnails',
+            'required'  => true, // this plugin is recommended
+        ],
+    ];
+    $config = [];
+
+    tgmpa( $plugins, $config );
+});
