@@ -1,71 +1,48 @@
 <style>
+  .slide {
+    position: relative;
+  }
 
-/*  .carousel-item {*/
-/*    position: relative;*/
-/*    display: none;*/
-/*    float: right;*/
-/*    width: 100%;*/
-/*    margin-left: -100%;*/
-/*    margin-right: 0;*/
-/*    backface-visibility: hidden;*/
-/*  }*/
-
-/*  .carousel-item-next:not(.carousel-item-left),*/
-/*  .active.carousel-item-right {*/
-/*    transform: translateX(-100%);*/
-/*  }*/
-
-/*  .carousel-item-prev:not(.carousel-item-right),*/
-/*  .active.carousel-item-left {*/
-/*    transform: translateX(100%);*/
-/*  }*/
-
-  /*.carousel-item{*/
-  /*  float: right;*/
-  /*  margin-left: 100%;*/
-  /*  margin-right: 0;*/
-  /*}*/
-.slide {
-  position: relative;
-}
-
-/* progress bar */
-.slider-progress {
-  width: 100%;
-  height: 10px;
-  background: rgba(255,255,255,0.5);
-  position: absolute;
-  top: 0;
-  border-radius: 0;
-}
-.slider-progress .progress {
-  width: 0%;
-  height: 10px;
-  background: #a3c4bc;
-  border-radius: 0;
-}
-.carousel-caption{
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  color: black;
-  margin-top: -80px;
-}
+  /* progress bar */
+  .slider-progress {
+    width: 100%;
+    height: 10px;
+    background: rgba(255,255,255,0.5);
+    position: absolute;
+    top: 0;
+    border-radius: 0;
+  }
+  .slider-progress .progress {
+    width: 0%;
+    height: 10px;
+    background: #a3c4bc;
+    border-radius: 0;
+  }
+  .carousel-caption{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    color: black;
+    margin-top: -80px;
+    direction: rtl;
+  }
   .carousel-caption .card{
     height: 160px;
     display: flex;
     flex-flow: column;
     justify-content: center;
   }
-.carousel-caption .card-body{
-  display: flex;
-  flex-flow: column;
-  align-content: center;
-  justify-content: center;
-}
+  .carousel-caption .card-body{
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    justify-content: center;
+  }
 
 </style>
+
+
 @if($featuredPosts && count($featuredPosts))
   <div class="slider mb-3">
     <div class="container">

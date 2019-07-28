@@ -4,11 +4,11 @@ namespace App\Widgets;
 use App\Providers\ThemeServiceProvider;
 use Illuminate\View\View;
 
-class QuoteOfTheDay extends \WP_Widget {
+class ReactionsWidget extends \WP_Widget {
 
     public function __construct() {
         // actual widget processes
-        parent::__construct( 'QouteOfTheDay', __('Quote Of The Day', 'sage'));
+        parent::__construct( 'ReactionsWidget', __('Reactions Widget', 'sage'));
     }
 
     /**
@@ -22,20 +22,29 @@ class QuoteOfTheDay extends \WP_Widget {
     public function widget( $args, $instance ) {
 
         $postArgs = [
-            'post_type' => 'quote',
+            'post_type' => 'reaction_posts',
             'orderby'   => 'rand',
-            'posts_per_page' => '1',
         ];
 
         $posts = get_posts($postArgs);
-        $post = $posts[0];
         $title = apply_filters( 'widget_title', $instance['title'] );
 
-        echo \Illuminate\Support\Facades\View::make('widgets.quote-of-the-day', [
-            'quote' => $post->post_content,
+        $reactionPosts = array_map(function($post) {
+            $selectedPostId = get_field('post', $post->ID);
+            return [
+                'reaction_title'    => $post->post_title,
+                'postImage'         => get_the_post_thumbnail_url($selectedPostId, 'post-image-square'),
+                'postUrl'           => get_the_permalink($selectedPostId),
+                'postTitle'         => get_the_title($selectedPostId),
+                'reaction'          => get_field('reaction'. $post->ID),
+            ];
+        } , $posts);
+
+
+        echo \Illuminate\Support\Facades\View::make('widgets.reaction-posts', [
+            'posts' => $reactionPosts,
             'title' => $title
         ]);
-        wp_reset_postdata();
 //        extract( $args );
 //        $title = apply_filters( 'widget_title', $instance['title'] );
 //

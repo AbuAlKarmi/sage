@@ -23,17 +23,6 @@
 
 <div class="card mb-3">
   <div class="card-body">
-    <h4 class="text-center card-title">{{__('Quote of the day', 'sage')}}</h4>
-    <h3 class="text-center text-primary font-weight-bold">
-      عش نيصا وقاتل كالبرغوث!
-    </h3>
-    <h6 class="text-secondary text-center">الشهيد باسل الأعرج</h6>
-    {!! do_shortcode("[Sassy_Social_Share]")  !!}
-  </div>
-</div>
-
-<div class="card mb-3">
-  <div class="card-body">
     @foreach($lastPopularPosts as $post)
       <h4 class="card-title">{{$post['title']}}</h4>
     @endforeach

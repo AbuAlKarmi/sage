@@ -11,7 +11,7 @@ namespace App;
 function get_field_partial($partial)
 {
     $partial = str_replace('.', '/', $partial);
-    return include(config('theme.dir')."/app/fields/{$partial}.php");
+    return include(get_theme_file_path()."/app/fields/{$partial}.php");
 }
 
 

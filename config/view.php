@@ -88,6 +88,7 @@ return [
         App\Composers\SinglePostNavigation::class,
         App\Composers\FileContent::class,
         App\Composers\Files::class,
+        App\Composers\CategoryColors::class,
     ],
 
     /*

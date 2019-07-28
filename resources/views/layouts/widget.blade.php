@@ -1,5 +1,4 @@
-<section class="widget card">
-
+<section class="widget card mb-3">
   <div class="card-body">
     <h5 class="card-title">
       @yield('title')
