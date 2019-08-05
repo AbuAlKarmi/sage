@@ -78,7 +78,7 @@ return [
     */
 
     'composers' => [
-        App\Composers\Alert::class,
+//        App\Composers\Alert::class,
         App\Composers\Title::class,
         App\Composers\FeaturedPosts::class,
         App\Composers\FeaturedHomePost::class,
