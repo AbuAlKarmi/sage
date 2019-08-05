@@ -114,21 +114,6 @@ add_action('widgets_init', function () {
     ] + $config);
 });
 
-
-/**
- * Initialize ACF Builder
- */
-add_action('init', function () {
-    collect(glob('./app/fields/*.php'))->map(function ($field) {
-        return require_once($field);
-    })->map(function ($field) {
-        if ($field instanceof FieldsBuilder) {
-            acf_add_local_field_group($field->build());
-        }
-    });
-});
-
-
 add_action('widgets_init', function () {
     register_widget('App\Widgets\QuoteOfTheDay');
     register_widget('App\Widgets\ReactionsWidget');
@@ -162,6 +147,11 @@ add_action( 'tgmpa_register', function(){
         [
             'name'      => 'Regenerate Thumbnails',
             'slug'      => 'regenerate-thumbnails',
+            'required'  => true, // this plugin is recommended
+        ],
+        [
+            'name'      => 'Subtitle',
+            'slug'      => 'wp-subtitle',
             'required'  => true, // this plugin is recommended
         ],
     ];
