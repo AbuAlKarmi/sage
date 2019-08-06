@@ -7,8 +7,9 @@
     @php(do_action('get_header'))
     @include('partials.header')
 
-    @include('partials.featured-posts', ['featuredPosts' => $featuredPosts])
-
+    <div class="container">
+      @include('partials.featured-posts', ['featuredPosts' => $featuredPosts])
+    </div>
     @include('partials.files', ['files' => $files])
 
     <div class="wrap container">
