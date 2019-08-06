@@ -36,3 +36,10 @@ add_filter('excerpt_more', function () {
 add_filter('get_search_form', function () {
     return view('forms.search');
 });
+
+add_filter( 'nav_menu_css_class', function($classes, $item){
+    if( 'category' == $item->object ){
+        $classes[] = 'category-' . $item->object_id;
+    }
+    return $classes;
+}, 10, 2 );

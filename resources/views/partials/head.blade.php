@@ -7,6 +7,9 @@
   <style>
     @foreach($categories as $category)
      .posts-loop .post-card:hover .category-link{!! $category['selector'] !!} { background-color: {{$category['color']}};}
+    .banner .nav > .menu-item{!! $category['selector'] !!} > a:hover, .current-menu-item .banner .nav > .menu-item{!! $category['selector'] !!} > a{
+      background-color: {{$category['color']}};
+    }
     @endforeach
   </style>
 </head>
