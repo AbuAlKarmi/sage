@@ -45,13 +45,14 @@
 
 @if($featuredPosts && count($featuredPosts))
   <div class="slider mb-3">
+    <div class="container">
       <div class="card mb-3">
         <div class="card-body">
           <div class="carousel" style="direction: ltr">
 
             @foreach( $featuredPosts as $post )
               <div class="slide">
-                <img class="d-block w-100" src="{{$post['image']}}" data-holder-rendered="true">
+                <img class="d-block w-100" alt="{{$post['title']}}" src="{{$post['image']}}" data-holder-rendered="true" />
                 <div class="carousel-caption d-md-block container">
                   <div class="row d-flex justify-content-center">
                     <div class="col-md-7">
@@ -76,6 +77,7 @@
             @endforeach
           </div>
       </div>
+    </div>
     </div>
   </div>
 @endif
