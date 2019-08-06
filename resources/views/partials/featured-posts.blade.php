@@ -45,7 +45,6 @@
 
 @if($featuredPosts && count($featuredPosts))
   <div class="slider mb-3">
-    <div class="container">
       <div class="card mb-3">
         <div class="card-body">
           <div class="carousel" style="direction: ltr">
@@ -78,6 +77,5 @@
           </div>
       </div>
     </div>
-</div>
   </div>
 @endif

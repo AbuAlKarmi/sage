@@ -6,8 +6,15 @@
 
   <style>
     @foreach($categories as $category)
-     .posts-loop .post-card:hover .category-link{!! $category['selector'] !!} { background-color: {{$category['color']}};}
-    .banner .nav > .menu-item{!! $category['selector'] !!} > a:hover, .current-menu-item .banner .nav > .menu-item{!! $category['selector'] !!} > a{
+    .posts-loop .post-card:hover .category-link{!! $category['selector'] !!} {
+      background-color: {{$category['color']}};
+    }
+    .banner .nav > .menu-item{!! $category['selector'] !!} > a:hover,
+    .current-menu-item{!! $category['selector'] !!} > a{
+      background-color: {{$category['color']}};
+      color: #FFF;
+    }
+    body{!! $category['selector'] !!} .slider > .card > .card-body{
       background-color: {{$category['color']}};
     }
     @endforeach
