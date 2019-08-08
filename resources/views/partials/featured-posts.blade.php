@@ -40,6 +40,11 @@
     justify-content: center;
   }
 
+  .slider > .card > .card-body{
+    max-height: 632px;
+    overflow: hidden;
+  }
+
 </style>
 
 
