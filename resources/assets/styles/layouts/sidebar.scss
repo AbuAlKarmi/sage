@@ -3,6 +3,30 @@
     //background-color: #FFF;
     //@extend .card;
     //@extend .p-2;
-    @extend .mb-3
+    @extend .mb-3;
+
+    &.reaction-post{
+      .body{
+        .post{
+          padding-top: 16px;
+          padding-bottom: 8px;
+          border-bottom: 1px solid transparentize(lighten($grey,30%),0.6);
+
+          &:last-child{
+            border-bottom-width: 0px;
+          }
+          .image{
+            position: relative;
+            .reaction-icon{
+              position: absolute;
+              bottom: 0px;
+              right: 0px;
+              z-index: 1;
+            }
+          }
+
+        }
+      }
+    }
   }
 }

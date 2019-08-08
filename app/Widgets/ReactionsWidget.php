@@ -36,7 +36,7 @@ class ReactionsWidget extends \WP_Widget {
                 'postImage'         => get_the_post_thumbnail_url($selectedPostId, 'post-image-square'),
                 'postUrl'           => get_the_permalink($selectedPostId),
                 'postTitle'         => get_the_title($selectedPostId),
-                'reaction'          => get_field('reaction'. $post->ID),
+                'reaction'          => get_field('reaction', $post->ID),
             ];
         } , $posts);
 

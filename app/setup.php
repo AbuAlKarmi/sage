@@ -169,6 +169,11 @@ add_action( 'tgmpa_register', function(){
             'slug'      => 'regenerate-thumbnails',
             'required'  => true, // this plugin is recommended
         ],
+        [
+            'name'      => 'Social Share',
+            'slug'      => 'sassy-social-share',
+            'required'  => true, // this plugin is recommended
+        ],
     ];
     $config = [];
 
