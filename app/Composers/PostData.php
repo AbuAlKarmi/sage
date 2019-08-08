@@ -29,13 +29,13 @@ class PostData extends Composer
     public function with($data, $view)
     {
         return [
-            'featuredImage' => $this->postFeaturedImage(),
+            'featuredImage' => $this->postFeaturedImage($view),
             'mainCategory'  => $this->postMainCategory(),
             'subCategories' => $this->postSubCategory(),
         ];
     }
 
-    public function postFeaturedImage()
+    public function postFeaturedImage($view)
     {
         /**
          * @todo

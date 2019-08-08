@@ -1,14 +1,15 @@
+<?php
+
+?>
 <article @php(post_class('card post-card mb-2 post-horizontal'))>
   <div class="card-body">
     <div class="row">
       <div class="col-md-4 col-sm-5">
-        @if( isset($featuredImage) && !empty($featuredImage) )
-          <div class="card-image mb-2">
-            <a href="{{ get_permalink() }}">
-              <img src="{{ $featuredImage }}" class="img-fluid" alt="{{strip_tags($title)}}">
-            </a>
-          </div>
-        @endif
+        <div class="card-image mb-2">
+          <a href="{{ get_permalink() }}">
+            <img src="{{ App\get_post_image(get_the_ID()) }}" class="img-fluid" alt="{{strip_tags($title)}}">
+          </a>
+        </div>
       </div>
       <div class="col-md-8  col-sm-7">
         @if(get_the_subtitle(get_the_ID(), '','', false))

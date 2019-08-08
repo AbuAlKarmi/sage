@@ -12,6 +12,7 @@ class Title extends Composer
      * @var array
      */
     protected static $views = [
+        'single',
         'partials.page-header',
         'partials.content',
         'partials.content-*',
