@@ -17,13 +17,13 @@
         {!! the_title() !!}
       </a>
     </h5>
-    @if( isset($featuredImage) && !empty($featuredImage) )
+
       <div class="card-image mb-2">
         <a href="{{get_permalink()}}">
-          <img src="{{ $featuredImage }}" alt="{{strip_tags($title)}}">
+          <img src="{{ App\get_post_image(get_the_ID()) }}" alt="{{strip_tags($title)}}">
         </a>
       </div>
-    @endif
+
       <a href="{{ get_permalink() }}" class="text-decoration-none">
         <p class="card-text">{!! App\the_excerpt_max_charlength(20) !!}</p>
       </a>
