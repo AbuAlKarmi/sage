@@ -8,3 +8,10 @@ body {
 .entry-content{
   line-height: 2.3rem;
 }
+
+
+@media (min-width: 1200px){
+  .container{
+    max-width: 1060px;
+  }
+}
