@@ -133,6 +133,7 @@ add_action('widgets_init', function () {
     register_widget('App\Widgets\QuoteOfTheDay');
     register_widget('App\Widgets\ReactionsWidget');
     register_widget('App\Widgets\CategoriesWidget');
+    register_widget('App\Widgets\Newsletter');
 });
 
 
