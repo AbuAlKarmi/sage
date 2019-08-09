@@ -37,7 +37,7 @@
     </div>
   </div>
 
-  {!! do_shortcode('[ajax_load_more id="6186540224" container_type="ul" css_classes=".posts-loop" post_type="post"]]') !!}
+  {!! do_shortcode('[ajax_load_more id="6186540224" container_type="ul" css_classes=".posts-loop" post_type="post"]') !!}
   <div class="text-center">
     {!! get_the_posts_navigation() !!}
   </div>

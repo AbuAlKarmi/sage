@@ -28,7 +28,7 @@
     direction: rtl;
   }
   .carousel-caption .card{
-    height: 160px;
+    height: 200px;
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -69,6 +69,7 @@
                           <a href="{{$post['url']}}">
                             <h4 class="card-subtitle text-secondary m-0 p-0">{{$post['subtitle']}}</h4>
                             <h3 class="card-title text-primary m-0 p-0">{{$post['title']}}</h3>
+                            <div>{{ $post['description']  }}</div>
                           </a>
                         </div>
                       </div>

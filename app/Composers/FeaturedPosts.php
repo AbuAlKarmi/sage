@@ -48,11 +48,16 @@ class FeaturedPosts extends Composer
         $featuredPostsLoop = get_posts($args);
 
         return array_map(function ($post) {
+            $postDescription = "";
+            if ( metadata_exists( 'post', $post->ID, '_yoast_wpseo_metadesc' ) ) {
+                $postDescription = get_post_meta($post->ID, '_yoast_wpseo_metadesc', true);
+            }
             return [
-                'title'     => get_the_title($post->ID),
-                'subtitle'  => get_the_subtitle($post->ID, "","", false),
-                'image'     => get_the_post_thumbnail_url($post->ID, 'post-image-slider'),
-                'url'       => get_the_permalink($post->ID),
+                'title'         => get_the_title($post->ID),
+                'subtitle'      => get_the_subtitle($post->ID, "","", false),
+                'image'         => get_the_post_thumbnail_url($post->ID, 'post-image-slider'),
+                'description'   => $postDescription,
+                'url'           => get_the_permalink($post->ID),
             ];
         }, $featuredPostsLoop);
     }
