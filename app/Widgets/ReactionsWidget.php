@@ -23,6 +23,7 @@ class ReactionsWidget extends \WP_Widget {
 
         $postArgs = [
             'post_type' => 'reaction_posts',
+            'posts_per_page'    => 3,
             'orderby'   => 'rand',
         ];
 
