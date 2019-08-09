@@ -38,12 +38,14 @@ class FeaturedPosts extends Composer
     public function featuredPosts($view)
     {
         $args = [
-            'post__in' => get_option('sticky_posts')
+            'post__in' => get_option('sticky_posts'),
         ];
 
         if( $view === 'category' ){
             $category = get_queried_object();
             $args['category'] = $category->term_id;
+            $args['orderby'] = 'random';
+            $args['posts_per_page'] = '1';
         }
         $featuredPostsLoop = get_posts($args);
 

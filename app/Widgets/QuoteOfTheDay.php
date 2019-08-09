@@ -33,7 +33,8 @@ class QuoteOfTheDay extends \WP_Widget {
 
         echo \Illuminate\Support\Facades\View::make('widgets.quote-of-the-day', [
             'quote' => $post->post_content,
-            'title' => $title
+            'title' => $title,
+            'post'  => get_field('post', $post->ID ),
         ]);
         wp_reset_postdata();
 //        extract( $args );
