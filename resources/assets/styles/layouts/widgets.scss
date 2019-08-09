@@ -30,3 +30,13 @@
     overflow-y: scroll;
   }
 }
+
+
+.card-body{
+  .card-title{
+    a{
+      color: $light-black;
+      text-decoration: none;
+    }
+  }
+}

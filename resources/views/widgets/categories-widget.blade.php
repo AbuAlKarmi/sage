@@ -7,7 +7,7 @@
       <ul>
         @foreach($categories as $category)
           <li class="list-item">
-            <a href="">
+            <a href="{{get_category_link($category->term_id)}}">
               {{$category->name}}
             </a>
           </li>
