@@ -75,4 +75,14 @@
     }
   }
 }
+
+.menu-main-menu-container{
+  > .nav{
+    > .menu-item{
+      > a{
+        color: $grey;
+      }
+    }
+  }
+}
 /*! purgecss end ignore */

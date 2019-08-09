@@ -1,4 +1,4 @@
-$POST_CARD_HEIGHT: 590px;
+$POST_CARD_HEIGHT: 615px;
 
 /**
  * Posts
@@ -14,8 +14,8 @@ $POST_CARD_HEIGHT: 590px;
     justify-content: center;
   }
   .author-image{
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
     background: theme-color('secondary');
     display: block;
     border-radius: 5px;
@@ -74,6 +74,13 @@ $POST_CARD_HEIGHT: 590px;
       height: 105px;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+
+    .card-title-wrapper{
+      min-height: 90px;
+      display: flex;
+      justify-content: center;
+      flex-flow: column;
     }
 
     .card-image{
@@ -175,4 +182,29 @@ $POST_CARD_HEIGHT: 590px;
     }
   }
 }
+
+.posts-loop{
+  .card-body{
+    p{
+      line-height: 2rem;
+    }
+  }
+}
+.btn-tag{
+  height: 24px;
+  padding-top: 3px;
+}
 /*! purgecss end ignore */
+
+
+.posts-loop{
+  .card{
+    .card-body {
+      .card-title{
+        a{
+          color: $light-black;
+        }
+      }
+    }
+  }
+}

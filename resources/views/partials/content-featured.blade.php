@@ -27,7 +27,7 @@
         </div>
       @endif
         <a href="{{ get_permalink() }}" class="text-decoration-none">
-          <p class="card-">{{ the_excerpt() }}</p>
+          <p class="card-">{!! App\the_post_paragraphs() !!}</p>
         </a>
         <div class="text-center">
           <a href="{{ get_permalink() }}" class="btn btn-outline-secondary btn-sm mb-3 pl-5 pr-5">

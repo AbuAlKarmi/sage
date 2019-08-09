@@ -25,7 +25,7 @@ class FeaturedHomePost extends Composer
      */
     public function with($data, $view)
     {
-        return ['featuredHomePost' => $this->featuredHomePost($view->getName()) ];
+        return ['featuredHomePosts' => $this->featuredHomePost($view->getName()) ];
     }
 
     /**
@@ -37,7 +37,10 @@ class FeaturedHomePost extends Composer
     public function featuredHomePost($view)
     {
         $args = [
-            'posts_per_page' => 1
+            'author_name'       => 'metras',
+            'orderby'           => 'date',
+            'order'             => 'DESC',
+            'posts_per_page'    => '1',
         ];
 
         return get_posts($args);

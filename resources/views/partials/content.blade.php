@@ -5,18 +5,20 @@
     </div>
   @endif
   <div class="card-body">
-    @if(get_the_subtitle(get_the_ID(), '','', false))
-      <h6 class="card-subtitle mb-2 text-center">
-        <a href="{{ get_permalink() }}" class="text-secondary text-decoration-none">
-          {{ the_subtitle() }}
+    <div class="card-title-wrapper">
+      @if(get_the_subtitle(get_the_ID(), '','', false))
+        <h6 class="card-subtitle mb-2 text-center">
+          <a href="{{ get_permalink() }}" class="text-secondary text-decoration-none">
+            {{ the_subtitle() }}
+          </a>
+        </h6>
+      @endif
+      <h5 class="card-title text-center text-textPrimary font-weight-bold">
+        <a href="{{ get_permalink() }}" class="text-decoration-none">
+          {!! the_title() !!}
         </a>
-      </h6>
-    @endif
-    <h5 class="card-title text-center text-textPrimary font-weight-bold">
-      <a href="{{ get_permalink() }}" class="text-decoration-none">
-        {!! the_title() !!}
-      </a>
-    </h5>
+      </h5>
+    </div>
 
       <div class="card-image mb-2">
         <a href="{{get_permalink()}}">

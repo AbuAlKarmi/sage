@@ -11,7 +11,7 @@
           {{ get_the_author() }}
         </a>
         @foreach( $subCategories as $category )
-          <a href="{{$category['url']}}" class="btn btn-dark btn-sm">
+          <a href="{{$category['url']}}" class="btn btn-dark btn-sm btn-tag">
             {{$category['title']}}
           </a>
         @endforeach

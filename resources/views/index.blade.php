@@ -12,13 +12,18 @@
   @endif
 
   @php( $featuredPostId = null )
-  @if( isset($featuredHomePost) )
-    <div class="posts-loop">
-      @php(setup_postdata( $featuredHomePost ))
-      @php( $featuredPostId = get_the_ID() )
-      @includeFirst(['partials.content-featured', 'partials.content'])
-      @php(wp_reset_postdata())
-    </div>
+  @if( isset($featuredHomePosts) && count($featuredHomePosts) )
+    @foreach($featuredHomePosts as $featuredPost)
+      <?php global $post ?>
+      <?php $post = $featuredPost ?>
+{{--      @php(dd($featuredPost))--}}
+      <div class="posts-loop">
+        @php(setup_postdata( $post ))
+        @php( $featuredPostId = get_the_ID() )
+        @includeFirst(['partials.content-featured', 'partials.content'])
+        @php(wp_reset_postdata())
+      </div>
+    @endforeach
   @endif
 
 
@@ -32,7 +37,7 @@
     </div>
   </div>
 
-{{--  {!! do_shortcode('[ajax_load_more id="9950436970" container_type="div" post_type="post"]') !!}--}}
+  {!! do_shortcode('[ajax_load_more id="6186540224" container_type="ul" css_classes=".posts-loop" post_type="post"]]') !!}
   <div class="text-center">
     {!! get_the_posts_navigation() !!}
   </div>
