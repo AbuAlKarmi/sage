@@ -9,7 +9,7 @@
       text-align: center;
       padding: 4px 0px;
       a{
-        padding: 4px 0px;
+        padding: 8px 0px;
         text-decoration: none;
         font-weight: lighter;
         font-size: 24px;
@@ -26,8 +26,33 @@
     }
   }
   .body{
-    max-height: 350px;
-    overflow-y: scroll;
+    position: relative;
+    .content{
+      padding-top: 40px;
+      padding-bottom: 40px;
+      max-height: 350px;
+      overflow-y: scroll;
+    }
+    &:before{
+      content: '""';
+      color: $white;
+      background: linear-gradient($white, rgba($white, 0));
+      height: 80px;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+    }
+    &:after{
+      content: '""';
+      color: $white;
+      background: linear-gradient(rgba($white, 0), $white);
+      height: 80px;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+    }
   }
 }
 

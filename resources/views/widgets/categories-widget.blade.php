@@ -4,15 +4,17 @@
       {{$title}}
     </h5>
     <div class="body">
-      <ul>
-        @foreach($categories as $category)
-          <li class="list-item">
-            <a href="{{get_category_link($category->term_id)}}">
-              {{$category->name}}
-            </a>
-          </li>
-        @endforeach
-      </ul>
+      <div class="content">
+        <ul>
+          @foreach($categories as $category)
+            <li class="list-item">
+              <a href="{{get_category_link($category->term_id)}}">
+                {{$category->name}}
+              </a>
+            </li>
+          @endforeach
+        </ul>
+      </div>
     </div>
   </div>
 </section>
