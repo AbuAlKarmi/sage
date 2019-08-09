@@ -208,3 +208,10 @@ $POST_CARD_HEIGHT: 615px;
     }
   }
 }
+
+.post-horizontal-meta{
+  .post-meta{
+    display: flex;
+    justify-content: space-between;
+  }
+}

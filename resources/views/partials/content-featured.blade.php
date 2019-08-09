@@ -34,7 +34,10 @@
             {{__('Read More', 'sage')}}
           </a>
         </div>
-      @include('partials/entry-meta', ['categories'=> $subCategories ])
+        <div class="post-horizontal-meta">
+          @include('partials/entry-meta', ['categories'=> $subCategories ])
+        </div>
+
     </div>
   </article>
 </div>
