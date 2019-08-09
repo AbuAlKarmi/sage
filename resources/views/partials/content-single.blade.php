@@ -26,7 +26,9 @@ $postFeaturedImage = get_the_post_thumbnail_url(get_the_ID(), 'full');
         @php(the_content())
       </div>
       <hr>
-      @include('partials/entry-meta')
+      <div class="post-horizontal-meta">
+        @include('partials/entry-meta')
+      </div>
     </div>
   </main>
 
