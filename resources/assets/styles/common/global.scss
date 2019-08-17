@@ -85,6 +85,7 @@ body {
   height: 40px;
   background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
   &:before{
     content: "" !important;
   }
@@ -97,6 +98,7 @@ body {
   height: 40px;
   background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
   &:before{
     content: "" !important;
   }
