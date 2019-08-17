@@ -50,7 +50,7 @@ add_action('after_setup_theme', function () {
     add_theme_support('soil-relative-urls');
 
     add_theme_support('infinite-scroll', [
-        'container' => 'posts-loop' ,
+        'container' => 'content' ,
     ]);
 
     /**
