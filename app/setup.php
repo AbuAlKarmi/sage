@@ -205,7 +205,9 @@ function infinite_scroll()
     echo '<div class="container-inner">';
 
     while (have_posts()) : the_post();
-        echo View::make('partials.content-' . get_post_type());
+        echo "<div class='col-md-6'>";
+            echo View::make('partials.content');
+        echo "</div>";
     endwhile;
 
     echo '</div>';
