@@ -46,6 +46,13 @@ body {
     li.heateorSssSharingRound{
       i{
         background-color: transparent !important;
+        margin: 0 8px;
+        &:first-child{
+          margin-right: 0px;
+        }
+        &:last-child{
+          margin-left: 0px;
+        }
       }
       &:hover{
         i{
