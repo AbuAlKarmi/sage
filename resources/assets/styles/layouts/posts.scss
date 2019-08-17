@@ -29,6 +29,9 @@ $POST_CARD_HEIGHT: 615px;
     color: theme-color('secondary');
     text-decoration: none;
   }
+  .share{
+    padding-top: 20px;
+  }
 }
 
 .posts-loop{
@@ -93,7 +96,7 @@ $POST_CARD_HEIGHT: 615px;
     .post-meta{
       position: absolute;
       width: 100%;
-      bottom: 30px;
+      bottom: 15px;
       left: 0px;
       right: 0px;
     }

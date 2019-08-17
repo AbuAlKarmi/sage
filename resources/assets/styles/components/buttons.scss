@@ -1,3 +1,8 @@
 /**
  * Buttons
  */
+@import "~bootstrap/scss/mixins";
+
+.btn-tag {
+  @include button-variant(#898989, #898989);
+}
