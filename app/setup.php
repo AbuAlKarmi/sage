@@ -50,7 +50,9 @@ add_action('after_setup_theme', function () {
     add_theme_support('soil-relative-urls');
 
     add_theme_support('infinite-scroll', [
-        'container' => 'content' ,
+        'container' => 'content',
+        'footer'    => false,
+        'render'    => __NAMESPACE__ . '\\infinite_scroll',
     ]);
 
     /**
@@ -196,8 +198,13 @@ add_action( 'tgmpa_register', function(){
     tgmpa( $plugins, $config );
 });
 
+function infinite_scroll()
+{
+    echo '<div class="container-inner">';
 
-//function metras_inifinite_scroll_render() {
-//    get_template_part( 'index.blade' );
-//}
+    while (have_posts()) : the_post();
+        echo \App\template('partials.content-' . get_post_type());
+    endwhile;
 
+    echo '</div>';
+}
