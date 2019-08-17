@@ -27,7 +27,7 @@
   @endif
 
 
-  <div class="posts-loop">
+  <div class="posts-loop" id="posts-loop">
     <div class="row">
       @while (have_posts()) @php(the_post())
           <div class="col-md-6">
@@ -37,7 +37,6 @@
     </div>
   </div>
 
-  {!! do_shortcode('[ajax_load_more id="6186540224" container_type="ul" css_classes=".posts-loop" post_type="post"]') !!}
   <div class="text-center">
     {!! get_the_posts_navigation() !!}
   </div>
