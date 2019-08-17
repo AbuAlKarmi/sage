@@ -164,24 +164,7 @@ $POST_CARD_HEIGHT: 615px;
 }
 
 /*! purgecss start ignore */
-.heateor_sss_sharing_container{
-  .heateor_sss_sharing_ul{
-    display: flex;
-    justify-content: center;
-    padding: 0px;
-    @extend .mt-3;
-    li.heateorSssSharingRound{
-      i{
-        background-color: $grey !important;
-      }
-      &:hover{
-        i{
-          background-color: darken($grey,20%) !important;
-        }
-      }
-    }
-  }
-}
+
 
 .posts-loop{
   .card-body{
