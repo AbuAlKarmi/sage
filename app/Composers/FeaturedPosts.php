@@ -60,7 +60,34 @@ class FeaturedPosts extends Composer
                 'image'         => get_the_post_thumbnail_url($post->ID, 'post-image-slider'),
                 'description'   => $postDescription,
                 'url'           => get_the_permalink($post->ID),
+                'category'      => $this->postMainCategory($post->ID),
             ];
         }, $featuredPostsLoop);
+    }
+
+
+    public function postMainCategory($postId)
+    {
+        $cats = get_the_category($postId); // category object
+
+        if( count($cats) === 0 ){
+            return [];
+        }
+
+        $catid = $cats[0]->term_id;
+
+        while($catid){
+            $cat = get_category($catid);
+            $catid = $cat->category_parent;
+            $catParent = $cat->cat_ID;
+        }
+        $top_cat_obj = get_category($catParent);
+
+        return [
+            'title' => $top_cat_obj->name,
+            'id'    => $top_cat_obj->term_id,
+            'slug'  => $top_cat_obj->slug,
+            'url'   => get_category_link( $top_cat_obj->term_id ),
+        ];
     }
 }

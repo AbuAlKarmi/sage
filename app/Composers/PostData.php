@@ -49,20 +49,6 @@ class PostData extends Composer
         }
     }
 
-    function get_top_category ($catid) {
-        $cat_parent_id=0;
-        while ($catid!=null & $catid!=0) {
-            $current_term = get_term($catid);
-            $catid = $current_term->parent;
-            if($catid!=null & $catid!=0){
-                $cat_parent_id = $catid;
-            }else{
-                $cat_parent_id = $current_term->term_id;
-            }
-        }
-        return $cat_parent_id;
-    }
-
     public function postMainCategory()
     {
         $cats = get_the_category(); // category object
