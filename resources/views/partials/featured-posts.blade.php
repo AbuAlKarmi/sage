@@ -71,7 +71,7 @@
                           <a href="{{$post['url']}}" class="text-decoration-none">
                             <h4 class="card-subtitle text-secondary m-0 p-0">{{$post['subtitle']}}</h4>
                             <h3 class="card-title text-primary m-0 p-0">{{$post['title']}}</h3>
-                            <div>{{ $post['description']  }}</div>
+                            <div class="text-muted">{{ $post['description']  }}</div>
                           </a>
                         </div>
                       </div>
