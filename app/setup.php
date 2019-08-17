@@ -202,7 +202,7 @@ add_action( 'tgmpa_register', function(){
 
 function infinite_scroll()
 {
-    echo '<div class="container-inner">';
+    echo '<div class="container-inner"><div class="row">';
 
     while (have_posts()) : the_post();
         echo "<div class='col-md-6'>";
@@ -210,5 +210,5 @@ function infinite_scroll()
         echo "</div>";
     endwhile;
 
-    echo '</div>';
+    echo '</div></div>';
 }
