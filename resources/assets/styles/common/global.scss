@@ -86,6 +86,10 @@ body {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  &:hover,
+  &:focus{
+    background-image: url("../images/slider/previous.png");
+  }
   &:before{
     content: "" !important;
   }
@@ -99,6 +103,10 @@ body {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  &:hover,
+  &:focus{
+    background-image: url("../images/slider/next.png");
+  }
   &:before{
     content: "" !important;
   }
