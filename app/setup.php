@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\View;
 use function Roots\asset;
 use function Roots\config;
 use function Roots\view;
@@ -201,11 +202,10 @@ add_action( 'tgmpa_register', function(){
 
 function infinite_scroll()
 {
-    dd('4000');
     echo '<div class="container-inner">';
 
     while (have_posts()) : the_post();
-        echo \App\template('partials.content-' . get_post_type());
+        echo View::make('partials.content-' . get_post_type());
     endwhile;
 
     echo '</div>';
