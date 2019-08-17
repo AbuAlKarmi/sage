@@ -49,6 +49,11 @@ add_action('after_setup_theme', function () {
     add_theme_support('soil-nice-search');
     add_theme_support('soil-relative-urls');
 
+    add_theme_support('infinite-scroll', [
+        'container' => 'content' ,
+        'footer' => 'page' ,
+    ]);
+
     /**
      * Enable plugins to manage the document title
      * @link https://developer.wordpress.org/reference/functions/add_theme_support/#title-tag
@@ -90,6 +95,16 @@ add_action('after_setup_theme', function () {
      */
     add_editor_style(asset('styles/app-rtl.css')->uri());
     add_theme_support( 'editor-styles' );
+
+//    add_action('init', function(){
+//        add_theme_support( 'infinite-scroll',
+//            [
+//                'container' => 'posts-loop',
+//                'render' => 'metras_inifinite_scroll_render',
+//                'footer' => 'wrapper',
+//            ]
+//        );
+//    });
 }, 20);
 
 /**
@@ -181,3 +196,9 @@ add_action( 'tgmpa_register', function(){
 
     tgmpa( $plugins, $config );
 });
+
+
+//function metras_inifinite_scroll_render() {
+//    get_template_part( 'index.blade' );
+//}
+
