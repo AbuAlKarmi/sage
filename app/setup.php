@@ -50,7 +50,8 @@ add_action('after_setup_theme', function () {
     add_theme_support('soil-relative-urls');
 
     add_theme_support('infinite-scroll', [
-        'container' => 'content',
+        'type'      => 'scroll',
+        'container' => 'posts-loop',
         'footer'    => false,
         'render'    => __NAMESPACE__ . '\\infinite_scroll',
     ]);
@@ -200,6 +201,7 @@ add_action( 'tgmpa_register', function(){
 
 function infinite_scroll()
 {
+    dd('4000');
     echo '<div class="container-inner">';
 
     while (have_posts()) : the_post();
