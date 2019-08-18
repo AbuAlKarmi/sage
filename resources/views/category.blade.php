@@ -15,7 +15,9 @@
   @endif
 
   @while(have_posts()) @php(the_post())
+    <div id="horizontal-posts-loop">
       @include('partials.content-horizontal')
+    </div>
   @endwhile
 
   {!! get_the_posts_navigation() !!}
