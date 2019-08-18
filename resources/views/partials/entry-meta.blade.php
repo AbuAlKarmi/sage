@@ -1,3 +1,4 @@
+<?php $authorPrefix = get_field('article_type', get_the_ID()); ?>
 <div class="byline post-meta author vcard">
   <?php $coAuthors = explode(',',coauthors_posts_links(',', ',', null, null, false)); ?>
   <div class="d-flex information-wrapper">
