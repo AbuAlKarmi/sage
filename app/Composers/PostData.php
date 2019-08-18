@@ -32,6 +32,7 @@ class PostData extends Composer
 //            'featuredImage' => $this->postFeaturedImage($view),
             'mainCategory'  => $this->postMainCategory(),
             'subCategories' => $this->postSubCategory(),
+            'authorPrefix'  => get_field('article_type', get_the_ID()),
         ];
     }
 
