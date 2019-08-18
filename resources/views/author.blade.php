@@ -19,9 +19,11 @@
   <h4 class="text-muted mb-2">{{ sprintf(__('All articles posted by %s', 'sage'), $author->display_name) }}</h4>
 
   <div class="posts">
+    <div id="horizontal-posts-loop">
       @while (have_posts()) @php(the_post())
         @includeFirst(['partials.content-horizontal', 'partials.content'])
       @endwhile
+    </div>
   </div>
 
   {!! get_the_posts_navigation() !!}

@@ -233,11 +233,9 @@ function vertical_infinite_scroll()
 }
 
 function horizontal_infinite_scroll(){
-    echo '<div class="container-inner"><div class="row">';
-
+    echo '<div class="container-inner">';
     while (have_posts()) : the_post();
         echo View::make('partials.content-horizontal');
     endwhile;
-
-    echo '</div></div>';
+    echo '</div>';
 }
