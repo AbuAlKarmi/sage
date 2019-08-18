@@ -5,7 +5,7 @@
   <div class="card-body">
     <div class="row">
       <div class="col-md-4 col-sm-5">
-        <div class="card-image mb-2">
+        <div class="card-image">
           <a href="{{ get_permalink() }}">
             <img src="{{ App\get_post_image(get_the_ID()) }}" class="img-fluid" alt="{{strip_tags($title)}}">
           </a>
@@ -25,7 +25,7 @@
           </a>
         </h5>
 
-        <p class="card-text">{!! App\the_excerpt_max_charlength(20) !!}</p>
+        <p class="card-text text-muted">{!! App\the_excerpt_max_charlength(20) !!}</p>
         @include('partials/entry-meta', ['categories'=> $subCategories ])
       </div>
     </div>
