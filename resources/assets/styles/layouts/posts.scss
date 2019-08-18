@@ -223,4 +223,10 @@ $POST_CARD_HEIGHT: 615px;
     color: lighten($grey, 30%);
   }
 }
+
+.post-vertical{
+  .post-meta{
+    padding: 0px 20px;
+  }
+}
 /*! purgecss end ignore */

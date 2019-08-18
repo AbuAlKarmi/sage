@@ -167,4 +167,10 @@ body {
   }
 }
 
+
+.author-name.has-link{
+  a{
+    color: theme-color('secondary');
+  }
+}
 /*! purgecss end ignore */
