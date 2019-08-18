@@ -27,7 +27,7 @@
   @endif
 
 
-  <div class="posts-loop" id="vertical-posts-loop">
+  <div class="posts-loop" id="posts-infinite-scroll">
     <div class="row">
       @while (have_posts()) @php(the_post())
           <div class="col-md-6">

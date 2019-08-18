@@ -52,16 +52,9 @@ add_action('after_setup_theme', function () {
 
     add_theme_support('infinite-scroll', [
         'type'      => 'scroll',
-        'container' => 'vertical-posts-loop',
+        'container' => 'posts-infinite-scroll',
         'footer'    => false,
-        'render'    => __NAMESPACE__ . '\\vertical_infinite_scroll',
-    ]);
-
-    add_theme_support('infinite-scroll', [
-        'type'      => 'scroll',
-        'container' => 'horizontal-posts-loop',
-        'footer'    => false,
-        'render'    => __NAMESPACE__ . '\\horizontal_infinite_scroll',
+        'render'    => __NAMESPACE__ . '\\infinite_scroll',
     ]);
 
     /**
@@ -207,8 +200,10 @@ add_action( 'tgmpa_register', function(){
     tgmpa( $plugins, $config );
 });
 
-function infinite_scroll($view = 'partials.content')
+function infinite_scroll($args)
 {
+
+    dd($args);
     echo '<div class="container-inner"><div class="row">';
 
     while (have_posts()) : the_post();
@@ -218,24 +213,4 @@ function infinite_scroll($view = 'partials.content')
     endwhile;
 
     echo '</div></div>';
-}
-function vertical_infinite_scroll()
-{
-    echo '<div class="container-inner"><div class="row">';
-
-    while (have_posts()) : the_post();
-        echo "<div class='col-md-6'>";
-        echo View::make('partials.content');
-        echo "</div>";
-    endwhile;
-
-    echo '</div></div>';
-}
-
-function horizontal_infinite_scroll(){
-    echo '<div class="container-inner">';
-    while (have_posts()) : the_post();
-        echo View::make('partials.content-horizontal');
-    endwhile;
-    echo '</div>';
 }
