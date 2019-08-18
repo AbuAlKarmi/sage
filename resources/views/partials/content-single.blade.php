@@ -29,6 +29,8 @@ $postFeaturedImage = get_the_post_thumbnail_url(get_the_ID(), 'full');
       <div class="post-horizontal-meta">
         @include('partials/entry-meta')
       </div>
+
+      {!! the_tags('<div class="entry-meta text-right tags-content">',' • ','</div>'); !!}
     </div>
   </main>
 

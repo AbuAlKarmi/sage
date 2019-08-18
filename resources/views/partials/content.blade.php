@@ -1,4 +1,4 @@
-<article @php(post_class('card post-card mb-2 '))>
+<article @php(post_class('card post-card mb-2 post-vertical'))>
   @if($mainCategory && count($mainCategory))
     <div class="category-link category-{{ $mainCategory['id'] }} category-{{ $mainCategory['slug'] }}">
       <a href="{{$mainCategory['url']}}">{{$mainCategory['title']}}</a>
@@ -30,5 +30,6 @@
         <p class="card-text">{!! App\the_excerpt_max_charlength(20) !!}</p>
       </a>
       @include('partials/entry-meta',['categories', $subCategories])
+    {!! the_tags('<div class="entry-meta text-right tags-content">',' • ','</div>'); !!}
   </div>
 </article>

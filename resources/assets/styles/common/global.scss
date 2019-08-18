@@ -5,8 +5,25 @@ body {
   //background: theme-color('bgPrimary');
 }
 
+
+.entry-content{
+
+}
+
+.post-card{
+  .card-text{
+    text-align: justify;
+  }
+}
 .entry-content{
   line-height: 2.3rem;
+  a{
+    color: theme-color('secondary');
+    &:hover,
+    &:focus{
+      color: darken(theme-color('secondary'), 5%);
+    }
+  }
 }
 
 

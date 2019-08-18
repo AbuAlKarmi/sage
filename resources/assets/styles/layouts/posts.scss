@@ -31,6 +31,9 @@ $POST_CARD_HEIGHT: 615px;
   }
   .share{
     padding-top: 20px;
+    .post-horizontal-meta &{
+      padding-top: 0px;
+    }
   }
 }
 
@@ -205,6 +208,19 @@ $POST_CARD_HEIGHT: 615px;
 .entry-content{
   .figure{
     max-width: 100%;
+  }
+}
+
+.tags-content{
+  color: lighten($grey, 30%);
+  .post-vertical &{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 0.75rem;
+  }
+  a{
+    color: lighten($grey, 30%);
   }
 }
 /*! purgecss end ignore */
