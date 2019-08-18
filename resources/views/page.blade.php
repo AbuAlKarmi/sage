@@ -2,9 +2,11 @@
 
 @section('content')
   <div class="card">
-  @while(have_posts()) @php(the_post())
-    @include('partials.page-header')
-    @includeFirst(['partials.content-page', 'partials.content'])
-  @endwhile
+    <div class="card-body">
+      @while(have_posts()) @php(the_post())
+        @include('partials.page-header')
+        @includeFirst(['partials.content-page', 'partials.content'])
+      @endwhile
+    </div>
   </div>
 @endsection
