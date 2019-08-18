@@ -54,7 +54,7 @@ add_action('after_setup_theme', function () {
         'type'      => 'scroll',
         'container' => 'posts-infinite-scroll',
         'footer'    => false,
-        'render'    => __NAMESPACE__ . '\\infinite_scroll',
+        'render'    => __NAMESPACE__ . '\\infiniteScroll',
     ]);
 
     /**
@@ -200,17 +200,30 @@ add_action( 'tgmpa_register', function(){
     tgmpa( $plugins, $config );
 });
 
-function infinite_scroll($args)
+function infiniteScroll()
 {
+    if( is_home() ){
+        verticalInfiniteScroll();
+    }else{
+        horizontalInfiniteScroll();
+    }
 
-    dd($args);
+}
+
+function verticalInfiniteScroll(){
     echo '<div class="container-inner"><div class="row">';
-
     while (have_posts()) : the_post();
         echo "<div class='col-md-6'>";
-            echo View::make($view);
+        echo View::make('partials.contetne');
         echo "</div>";
     endwhile;
-
     echo '</div></div>';
+}
+
+function horizontalInfiniteScroll(){
+    echo '<div class="container-inner">';
+    while (have_posts()) : the_post();
+        echo View::make('partials.contetne-horizontal');
+    endwhile;
+    echo '</div>';
 }
