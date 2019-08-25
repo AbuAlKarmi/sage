@@ -149,8 +149,10 @@ $POST_CARD_HEIGHT: 615px;
   position: relative;
   .file-preview{
     position: relative;
+    overflow: hidden;
     img{
       opacity: 0.7;
+      transition: all .3s linear;
     }
     .file-title{
       position: absolute;
@@ -165,6 +167,25 @@ $POST_CARD_HEIGHT: 615px;
       align-content: center;
       border: 1px solid $white;
       font-weight: bold;
+
+      transition: all .3s linear;
+      h3{
+        color: white;
+        text-align: center;
+        transition: all .3s linear;
+      }
+    }
+  }
+  &:hover{
+    img{
+      opacity: 0.5;
+      transform: scale(1.2);
+    }
+    .file-title{
+      border-color: theme-color('secondary');
+      h3{
+        color: theme-color('secondary') !important;
+      }
     }
   }
 }
