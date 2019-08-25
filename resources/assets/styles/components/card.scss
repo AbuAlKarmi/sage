@@ -1,4 +1,9 @@
 .card{
   border: none;
   border-radius: 0;
+
+  &.no-border,
+  &.post-card{
+
+  }
 }
