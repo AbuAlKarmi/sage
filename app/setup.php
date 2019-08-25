@@ -14,6 +14,8 @@ use StoutLogic\AcfBuilder\FieldsBuilder;
  */
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('metras/vendor', asset('scripts/customizer.js')->uri(), ['jquery'], null, true);
+//    wp_enqueue_script('metras/popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', ['jquery'], null, true);
+//    wp_enqueue_script('metras/bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', ['jquery'], null, true);
     wp_enqueue_script('metras/app', asset('scripts/app.js')->uri(), ['metras/vendor', 'jquery'], null, true);
     wp_enqueue_script('metras/slick-slider', asset('vendors/slick-carousel/slick/slick.min.js')->uri(), ['metras/vendor', 'jquery'], null, true);
     wp_enqueue_script('metras/sharect', asset('vendors/sharect/dist/sharect.min.js')->uri(), ['metras/vendor', 'jquery'], null, true);

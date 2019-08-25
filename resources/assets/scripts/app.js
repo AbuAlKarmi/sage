@@ -2,6 +2,8 @@
  * External Dependencies
  */
 import 'jquery';
+import Popper from 'popper.js';
+window.Popper = Popper;
 import 'bootstrap';
 import { router } from 'js-dom-router';
 
@@ -31,3 +33,4 @@ router
   .on('home', async (event) => (await home()).default(event))
   .on('single', single)
   .ready();
+
