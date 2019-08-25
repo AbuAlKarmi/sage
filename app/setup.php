@@ -53,7 +53,7 @@ add_action('after_setup_theme', function () {
     add_theme_support('infinite-scroll', [
         'type'      => 'scroll',
         'container' => 'posts-infinite-scroll',
-        'footer'    => false,
+        'footer'    => 'footer',
         'render'    => __NAMESPACE__ . '\\infiniteScroll',
     ]);
 
