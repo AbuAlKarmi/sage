@@ -1,4 +1,4 @@
-<footer class="footer" id="footer">
+<footer class="footer">
   <div class="container">
     @php(dynamic_sidebar('sidebar-footer'))
     {!! do_shortcode('[instagram-feed num=5 cols=5]') !!}
