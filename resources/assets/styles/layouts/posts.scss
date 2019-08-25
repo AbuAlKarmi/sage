@@ -250,4 +250,12 @@ $POST_CARD_HEIGHT: 615px;
     padding: 0px 20px;
   }
 }
+
+.entry-content{
+  span{
+    &.background-color{
+      padding: 5px 0px;
+    }
+  }
+}
 /*! purgecss end ignore */
