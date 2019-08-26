@@ -24,9 +24,11 @@ $postFeaturedImage = get_the_post_thumbnail_url(get_the_ID(), 'full');
 
       @if( $posts && count($posts) )
       @php( wp_reset_postdata() )
-        <hr>
-      <div class="posts-loop">
-        <div class="row">
+      @endif
+
+    </div>
+    <div class="posts-loop">
+      <div class="row">
         <?php global $post; ?>
         @foreach($posts as $post)
           @php(setup_postdata($post))
@@ -35,10 +37,7 @@ $postFeaturedImage = get_the_post_thumbnail_url(get_the_ID(), 'full');
           </div>
         @endforeach
         @php( wp_reset_postdata() )
-        </div>
       </div>
-      @endif
-
     </div>
   </main>
 
