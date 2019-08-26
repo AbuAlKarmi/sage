@@ -90,6 +90,7 @@ return [
         App\Composers\FileContent::class,
         App\Composers\Files::class,
         App\Composers\CategoryColors::class,
+        App\Composers\Dfater::class,
     ],
 
     /*

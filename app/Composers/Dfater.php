@@ -4,7 +4,7 @@ namespace App\Composers;
 
 use Roots\Acorn\View\Composer;
 
-class Files extends Composer
+class Dfater extends Composer
 {
     /**
      * List of views served by this composer.
@@ -12,7 +12,7 @@ class Files extends Composer
      * @var array
      */
     protected static $views = [
-        'index',
+        'dfater',
     ];
 
     /**
@@ -37,7 +37,6 @@ class Files extends Composer
     {
         $args = [
             'post_type'         => 'files',
-            'posts_per_page'    => 2,
         ];
         $files = get_posts($args);
 
