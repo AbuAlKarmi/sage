@@ -27,8 +27,8 @@ function the_excerpt_max_charlength($limit){
 }
 
 
-function get_post_image($postId){
-    $postImage = get_the_post_thumbnail_url( get_the_ID(), 'post-image-square' );
+function get_post_image($postId, $size = 'post-image-square'){
+    $postImage = get_the_post_thumbnail_url( get_the_ID(), $size );
     if( empty($postImage) ){
         return get_theme_file_uri('/resources/assets/images/default-image.jpg');
     }else{

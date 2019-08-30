@@ -1,0 +1,46 @@
+.fancy-posts-loop{
+  .section{
+    padding: 40px 0px;
+  }
+  .fancy-post-card{
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 300px;
+    border-radius: .2rem;
+    background-position: center;
+
+    &.first{
+      height: calc(600px + 1rem);
+    }
+
+    transition: all 0.3s linear;
+
+    &:hover{
+      .overflow{
+        height: 15rem;
+      }
+    ;
+    }
+
+    .overflow{
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      height: 20rem;
+      background: linear-gradient(rgba($white,0), rgba($black, 0.85));
+      border-radius: 0px 0px .2rem .2rem;
+    }
+
+    .fancy-post-card-title{
+      color: $white;
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+      text-shadow: 0px 1px 3px rgba($black, 0.8);
+    }
+  }
+}
+
