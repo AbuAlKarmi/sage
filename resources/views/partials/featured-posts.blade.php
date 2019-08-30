@@ -27,6 +27,9 @@
     margin-top: -80px;
     direction: rtl;
   }
+  .carousel{
+    max-height: 550px;
+  }
   .carousel-caption .card{
     height: 200px;
     display: flex;
