@@ -33,9 +33,3 @@ router
   .on('home', async (event) => (await home()).default(event))
   .on('single', single)
   .ready();
-
-
-
-fetch('http://metras.test/wp-json/wp/v2/posts?filter[cat]=34')
-  .then(resp => resp.json())
-  .then(resp => console.log(resp));
