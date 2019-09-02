@@ -207,8 +207,17 @@ add_action( 'tgmpa_register', function(){
 
 function infiniteScroll()
 {
+    global $pagenow;
+    print_r($pagenow);
+    dd($pagenow);
     if( is_home() ){
         verticalInfiniteScroll();
+    }else if(is_archive()){
+        if( true ){
+
+        }else{
+            horizontalInfiniteScroll();
+        }
     }else{
         horizontalInfiniteScroll();
     }
@@ -231,4 +240,8 @@ function horizontalInfiniteScroll(){
         echo View::make('partials.content-horizontal');
     endwhile;
     echo '</div>';
+}
+
+function fancyInfiniteScroll(){
+    echo View::make('partials.fancy-posts-list');
 }
