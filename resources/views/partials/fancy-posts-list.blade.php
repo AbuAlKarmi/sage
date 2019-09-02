@@ -1,34 +1,33 @@
 @php
-  $loopCounter = 0
+  $loopCounter = 0;
 @endphp
 @while(have_posts()) @php(the_post())
-@if($loopCounter < 5 )
-  @if($loopCounter == 0 )
-    <div class="row section">
-      <div class="col-md-4">
+  @if($loopCounter <= 5 )
+    @php($loopCounter++)
+    @if($loopCounter == 1 )
+      {!! '<div class="row section">' !!}
+      {!! '<div class="col-md-4">' !!}
         @include('partials.content-fancy', ['isFirst' => true])
-      </div>
-      @else
-        @if($loopCounter == 1)
-          <div class="col-md-8"><div class="row">
-              @endif
-              <div class="col-md-6">
-                @include('partials.content-fancy')
-              </div>
-              @if($loopCounter == 4)
-            </div></div>
-        @endif
+      {!! '</div>' !!}
+    @else
+      @if($loopCounter == 2)
+        {!! '<div class="col-md-8"><div class="row">' !!}
       @endif
-      @php($loopCounter++)
-      @else
-    </div><!-- End Row -->
-    @php($loopCounter = 0)
-    @endif
-    @endwhile
 
-    @if($loopCounter > 4 )
-    </div></div>
+      {!! '<div class="col-md-6">' !!}
+        @include('partials.content-fancy')
+      {!! '</div>' !!}
+      @if($loopCounter == 5)
+        {!! '</div></div></div>' !!}
+        @php($loopCounter= 0)
+      @endif
     @endif
-    @if($loopCounter != 0 )
-    </div></div><!-- End Row -->
   @endif
+@endwhile
+
+@if($loopCounter > 5 )
+{!! '</div></div>' !!}
+@endif
+@if($loopCounter != 0 )
+{!! '</div></div><!-- End Row -->' !!}
+@endif
