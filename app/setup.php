@@ -207,14 +207,12 @@ add_action( 'tgmpa_register', function(){
 
 function infiniteScroll()
 {
-    global $pagenow;
-    print_r($pagenow);
-    dd($pagenow);
+    $category = get_queried_object();
     if( is_home() ){
         verticalInfiniteScroll();
     }else if(is_archive()){
-        if( true ){
-
+        if( $category->term_id == 34 ){
+            fancyInfiniteScroll();
         }else{
             horizontalInfiniteScroll();
         }
