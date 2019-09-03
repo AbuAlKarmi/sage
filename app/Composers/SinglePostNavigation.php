@@ -24,7 +24,7 @@ class SinglePostNavigation extends Composer
      */
     public function with($data, $view)
     {
-        return ['nextPosts' => $this->nextPost(),'previousPosts' => $this->previousPost()];
+        return $this->getRandomPosts($data);;
     }
 
     /**
@@ -33,7 +33,7 @@ class SinglePostNavigation extends Composer
      * @param  \Illuminate\View\View $view
      * @return string
      */
-    public function nextPost()
+    public function nextPost($data)
     {
         $post = get_next_post(true);
         if( $post ){
@@ -41,7 +41,7 @@ class SinglePostNavigation extends Composer
         }
         return [];
     }
-    public function previousPost()
+    public function previousPost($data)
     {
         $post = get_previous_post(true);
         if( $post ){
@@ -50,11 +50,24 @@ class SinglePostNavigation extends Composer
         return [];
     }
 
+    function getRandomPosts($data){
+        if(isset($data['mainCategory']) && $data['mainCategory']['id']){
+            $args = [
+                'orderby' => 'rand',
+                'cat' => $data['mainCategory']['id'],
+                'post__not_in' => [get_the_ID()],
+                'posts_per_page' => 2
+            ];
+            return [ 'navigationPosts' => get_posts($args)];
+        }
+        return ['navigationPosts' => [ $this->nextPost($data), $this->previousPost($data)]];
+    }
+
     function postDetails( $post ){
         $args = array(
             'posts_per_page' => 1,
             'include' => $post->ID
         );
-        return [get_post($post->ID)];
+        return get_post($post->ID);
     }
 }

@@ -258,4 +258,12 @@ $POST_CARD_HEIGHT: 595px;
     }
   }
 }
+
+.single-post-navigation{
+  .card-body{
+    min-height: 255px;
+    align-items: center;
+    display: flex;
+  }
+}
 /*! purgecss end ignore */

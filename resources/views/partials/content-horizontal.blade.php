@@ -25,7 +25,9 @@
           </a>
         </h5>
 
-        <p class="card-text text-muted">{!! App\the_excerpt_max_charlength(20) !!}</p>
+        @if(!isset($showDescription) || isset($showDescription) && $showDescription)
+          <p class="card-text text-muted">{!! App\the_excerpt_max_charlength(20) !!}</p>
+        @endif
         @include('partials/entry-meta', ['categories'=> $subCategories ])
       </div>
     </div>
