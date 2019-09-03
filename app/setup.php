@@ -26,7 +26,7 @@ add_action('wp_enqueue_scripts', function () {
         wp_enqueue_script('comment-reply');
     }
 
-    wp_enqueue_style('metras/secondary-font', '//fonts.googleapis.com/css?family=Markazi+Text&display=swap', false, null);
+    wp_enqueue_style('metras/dubai-font', '//www.fontstatic.com/f=dubai', false, null);
 
     $styles = ['vendors/slick-carousel/slick/slick.css','vendors/slick-carousel/slick/slick-theme.css','styles/app-rtl.css'];
 
