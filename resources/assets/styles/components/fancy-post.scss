@@ -1,6 +1,10 @@
 .fancy-posts-loop{
   .section{
     padding: 40px 0px;
+    padding-top: calc(40px + 1rem);
+    &:nth-child(even){
+      background-color: rgba(#d9b9c8, 0.8);
+    }
   }
   .fancy-post-card{
     position: relative;

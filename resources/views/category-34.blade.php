@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.fancy')
 
 @section('content')
 
@@ -15,5 +15,7 @@
     @include('partials.fancy-posts-list')
   </div>
 
-  {!! get_the_posts_navigation() !!}
+  <div class="container">
+    {!! get_the_posts_navigation() !!}
+  </div>
 @endsection
