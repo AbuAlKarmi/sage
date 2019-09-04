@@ -267,3 +267,16 @@ $POST_CARD_HEIGHT: 595px;
   }
 }
 /*! purgecss end ignore */
+
+
+
+.post-vertical{
+  .information-wrapper{
+    transform: scale(0.85);
+  }
+  .post-meta{
+    .share{
+      padding-top: 8px;
+    }
+  }
+}
