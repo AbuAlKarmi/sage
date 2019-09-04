@@ -1,9 +1,29 @@
+.category-34{
+  background: $white;
+}
 .fancy-posts-loop{
   .section{
     padding: 40px 0px;
     padding-top: calc(40px + 1rem);
     &:nth-child(even){
-      background-color: rgba(#d9b9c8, 0.8);
+      //background-color: rgba(#d9b9c8,1);
+      padding-top: 140px;
+      padding-bottom: 140px;
+      background-image: url('../images/fancy-bg.png');
+      background-size: contain;
+      position: relative;
+      //&:before{
+      //  content: ",";
+      //  color: rgba(#000, 0);
+      //  display: block;
+      //  position: absolute;
+      //  height: 150px;
+      //  top: -150px;
+      //  left: 0px;
+      //  right: 0px;
+      //  background-image: url('../images/fancy-bg.png');
+      //  background-size: contain;
+      //}
     }
   }
   .fancy-post-card{
