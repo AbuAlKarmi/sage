@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Metras v2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-07-13 19:42+0300\n"
-"PO-Revision-Date: 2019-07-13 19:46+0300\n"
+"PO-Revision-Date: 2019-09-06 13:21+0300\n"
 "Last-Translator: \n"
 "Language-Team: Mohammad Karmi\n"
 "Language: ar\n"
@@ -46,7 +46,7 @@ msgstr "رئيسي"
 
 #: app/setup.php:111
 msgid "Footer"
-msgstr "تذييل الصفحة"
+msgstr "الفوتر"
 
 #: resources/views/index.blade.php:8 resources/views/category.blade.php:11
 #: resources/views/search.blade.php:8
@@ -55,7 +55,7 @@ msgstr "عذرا، لم يتم العثور على نتائج."
 
 #: resources/views/404.blade.php:8
 msgid "Sorry, but the page you were trying to view does not exist."
-msgstr "الصفحة التي تحاول الوصول لها غير موجودة!"
+msgstr "الصفحة التي تحاول الوصول لها غير موجودة."
 
 #: resources/views/forms/search.blade.php:9
 msgctxt "label"
@@ -64,11 +64,11 @@ msgstr "البحث عن:"
 
 #: resources/views/partials/comments.blade.php:17
 msgid "&larr; Older comments"
-msgstr ""
+msgstr "‫&rarr; التعليقات"
 
 #: resources/views/partials/comments.blade.php:23
 msgid "Newer comments &rarr;"
-msgstr ""
+msgstr "التعليقات  &rarr;"
 
 #: resources/views/partials/comments.blade.php:33
 msgid "Comments are closed."
@@ -98,3 +98,8 @@ msgstr "قراءة المزيد"
 #, python-format
 msgid "All articles posted by %s"
 msgstr "جميع المقالات المنشورة بواسطة %s"
+
+#: resources/views/forms/search.blade.php:19
+#, python-format
+msgid "Search..."
+msgstr "بحث…"

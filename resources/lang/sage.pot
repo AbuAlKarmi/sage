@@ -96,3 +96,9 @@ msgstr ""
 #, python-format
 msgid "All articles posted by %s"
 msgstr ""
+
+
+#: resources/views/forms/search.blade.php:19
+#, python-format
+msgid "Search..."
+msgstr ""

@@ -1,6 +1,6 @@
 <form role="search" method="get" class="search-form d-block" action="{{ esc_url(home_url('/')) }}">
   <div class="input-group">
-    <input type="search" class="search-field form-control" placeholder="{!! esc_attr_x('Search &hellip;', 'placeholder', 'sage') !!}" value="{{ get_search_query() }}" name="s" />
+    <input type="search" class="search-field form-control" placeholder="{{ __('Search...', 'sage') }}" value="{{ get_search_query() }}" name="s" />
     <div class="input-group-append">
       <button class="btn btn-outline-primary"  class="search-submit" type="submit">@include("icons::search")</button>
     </div>
