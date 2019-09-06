@@ -19,7 +19,9 @@ $postFeaturedImage = get_the_post_thumbnail_url(get_the_ID(), 'full');
       </header>
 
       @if( isset($postFeaturedImage) && !empty($postFeaturedImage) )
-        <img src="{{ $postFeaturedImage }}" class="card-img-top img-responsive mb-4" alt="{{$title}}">
+        <div class="mb-4">
+          <img src="{{ $postFeaturedImage }}" class="card-img-top img-responsive" alt="{{$title}}">
+        </div>
       @endif
 
       <div class="entry-content">
