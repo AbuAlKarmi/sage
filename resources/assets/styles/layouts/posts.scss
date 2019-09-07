@@ -76,7 +76,7 @@ $POST_CARD_HEIGHT: 595px;
     }
 
     .card-text{
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       height: 105px;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -115,7 +115,7 @@ $POST_CARD_HEIGHT: 595px;
 .post-horizontal,
 .single-post .post{
   .card-text{
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
   .post-meta{
     display: flex;
@@ -201,8 +201,7 @@ $POST_CARD_HEIGHT: 595px;
   }
 }
 .btn-tag{
-  height: 24px;
-  padding-top: 3px;
+  padding: 2px 8px;
 }
 
 
