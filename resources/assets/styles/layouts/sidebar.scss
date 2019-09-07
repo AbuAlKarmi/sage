@@ -1,9 +1,16 @@
 .sidebar{
+  position: sticky;
+  top: 0px;
+
   .widget{
     //background-color: #FFF;
     //@extend .card;
     //@extend .p-2;
     @extend .mb-3;
+
+    //&:last-child{
+    //
+    //}
 
     &.reaction-post{
       .body{

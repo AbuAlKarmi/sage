@@ -1,6 +1,3 @@
-<?php
-
-?>
 <article @php(post_class('card post-card mb-2 post-horizontal'))>
   <div class="card-body">
     <div class="row">
@@ -28,7 +25,11 @@
         @if(!isset($showDescription) || isset($showDescription) && $showDescription)
           <p class="card-text text-muted">{!! App\the_excerpt_max_charlength(20) !!}</p>
         @endif
-        @include('partials/entry-meta', ['categories'=> $subCategories ])
+
+        @if(!isset($displayPostMeta) || isset($displayPostMeta) && $displayPostMeta)
+          @include('partials/entry-meta', ['categories'=> $subCategories ])
+        @endif
+
       </div>
     </div>
   </div>

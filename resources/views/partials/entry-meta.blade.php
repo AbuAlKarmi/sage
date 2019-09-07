@@ -9,7 +9,7 @@
         </span>
       @else
         <a href="{{ get_author_posts_url(get_the_author_meta('ID')) }}" rel="author" class="author-image fn">
-          {!! get_avatar(get_the_author_meta('ID')) !!}
+          {!! get_avatar(get_the_author_meta('ID'), 55) !!}
         </a>
       @endif
     </div>

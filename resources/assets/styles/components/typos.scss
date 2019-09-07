@@ -1,10 +1,11 @@
+$secondaryTextColor: #555555;
 .card-body{
   .card-,
   .card-text,
   .entry-content,
   .text-muted{
     font-family: $font-secondary;
-    color: #535353 !important;
+    color: $secondaryTextColor !important;
 
     //h1,
     //h2,
@@ -19,6 +20,21 @@
 .card-body {
   .entry-content{
     font-size: 1.1rem;
+  }
+}
+
+.featured-home-post{
+  .card-body{
+    padding-top: 0.35rem;
+    .card-{
+      color: $secondaryTextColor;
+      line-height: 1.7rem;
+      > span {
+        display: inline-block;
+        margin-bottom: 0.5rem;
+
+      }
+    }
   }
 }
 

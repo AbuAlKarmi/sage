@@ -12,7 +12,6 @@ body {
 
 .post-card{
   .card-text{
-    text-align: justify;
   }
 }
 .entry-content{
@@ -152,15 +151,15 @@ body {
 #posts-infinite-scroll{
   .post-horizontal{
     .card-body{
-      max-height: 210px;
+      //max-height: 210px;
       overflow: hidden;
 
       .card-image{
-        max-height: 170px;
+        //max-height: 170px;
         overflow: hidden;
 
         img{
-          transform: translate(0, -15%);
+          //transform: translate(0, -15%);
         }
       }
     }

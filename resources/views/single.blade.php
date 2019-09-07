@@ -9,13 +9,13 @@
   @if( isset($navigationPosts) )
   <hr>
   <div class="single-post-navigation">
-    <div class="row">
+    <div class="row d-flex flex-row">
       <?php global $post ?>
       @foreach($navigationPosts as $post)
         @if( isset($post) )
-          <div class="col-md-6">
+          <div class="col-md-6 d-flex align-items-stretch">
             <?php setup_postdata($post) ?>
-            @include('partials.content-horizontal', ['showDescription' => true])
+            @include('partials.content-horizontal', ['showDescription' => true, 'displayPostMeta' => false])
             <?php wp_reset_postdata(); ?>
           </div>
         @endif

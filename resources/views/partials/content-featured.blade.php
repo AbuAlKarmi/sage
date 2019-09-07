@@ -26,17 +26,15 @@
           <img src="{{ $postFeaturedImage }}" alt="{{strip_tags($title)}}">
         </div>
       @endif
-        <a href="{{ get_permalink() }}" class="text-decoration-none">
-          <p class="card-">{!! App\the_post_paragraphs() !!}</p>
+      <div class="card-">{!! App\the_post_paragraphs() !!}</div>
+      <div class="text-center">
+        <a href="{{ get_permalink() }}" class="btn btn-outline-secondary btn-sm mb-3 pl-5 pr-5">
+          {{__('Read More', 'sage')}}
         </a>
-        <div class="text-center">
-          <a href="{{ get_permalink() }}" class="btn btn-outline-secondary btn-sm mb-3 pl-5 pr-5">
-            {{__('Read More', 'sage')}}
-          </a>
-        </div>
-        <div class="post-horizontal-meta">
-          @include('partials/entry-meta', ['categories'=> $subCategories ])
-        </div>
+      </div>
+      <div class="post-horizontal-meta">
+        @include('partials/entry-meta', ['categories'=> $subCategories ])
+      </div>
 
     </div>
   </article>
