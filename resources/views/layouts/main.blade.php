@@ -24,7 +24,9 @@
         @hasSection('sidebar')
         <div class="col-md-4">
             <aside class="sidebar">
-              @yield('sidebar')
+              <div class="sidebar-inner">
+                @yield('sidebar')
+              </div>
             </aside>
         </div>
         @endif

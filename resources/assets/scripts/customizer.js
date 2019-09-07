@@ -1,3 +1,4 @@
+import simpleStickySidebar from './sticky-sidebar';
 /**
  * This file allows you to add functionality to the Theme Customizer
  * live preview. jQuery is readily available.
@@ -18,6 +19,11 @@ jQuery(document).ready(function() {
   if(jQuery('.carousel').length ){
     initSlider(jQuery('.carousel'));
   }
+
+  simpleStickySidebar('.sidebar-inner', {
+    container: '.sidebar',
+    bottomSpace : 180,
+  });
 });
 
 

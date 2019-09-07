@@ -1,6 +1,10 @@
 .sidebar{
-  position: sticky;
-  top: 0px;
+  position: relative;
+  height: 100%;
+  .sidebar-inner {
+    width: 100%;
+    position: absolute;
+  }
 
   .widget{
     //background-color: #FFF;
