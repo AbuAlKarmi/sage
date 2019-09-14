@@ -9,7 +9,7 @@ $postFeaturedImage = get_the_post_thumbnail_url(get_the_ID(), 'full');
 
     <div class="card-body">
       <header>
-        <h5 class="text-muted text-center">{{the_date('F j, Y')}}</h5>
+        <h5 class="text-muted text-center">{{the_date('j F Y')}}</h5>
         @if(get_the_subtitle(get_the_ID(), '','', false))
           <h3 class="text-center text-secondary">{{ the_subtitle() }}</h3>
         @endif
