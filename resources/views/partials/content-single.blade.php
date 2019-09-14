@@ -21,7 +21,9 @@ $postFeaturedImage = get_the_post_thumbnail_url(get_the_ID(), 'full');
       @if( isset($postFeaturedImage) && !empty($postFeaturedImage) )
         <div class="mb-4">
           <img src="{{ $postFeaturedImage }}" class="card-img-top img-responsive" alt="{{$title}}">
+          <div class="text-muted"><small>{!! App\the_post_thumbnail_caption() !!}</small></div>
         </div>
+
       @endif
 
       <div class="entry-content">
