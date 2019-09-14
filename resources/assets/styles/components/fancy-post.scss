@@ -70,6 +70,37 @@ body.category-34{
   }
 }
 
+
+.daftar{
+  .overlay{
+    display:block;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    background: #cda979;
+    opacity: 0.6;
+  }
+
+  &:nth-child(2n+0) {
+    .overlay{
+      background: #a3c4bd;
+    }
+  }
+
+  &:nth-child(3n+0) {
+    .overlay{
+      background: #c7b199;
+    }
+  }
+  &:nth-child(4n+0) {
+    .overlay{
+      background: #b2cad4;
+    }
+  }
+}
+
 .card-file{
   padding: 1.4rem;
   .box-wrap{
@@ -98,6 +129,9 @@ body.category-34{
           left: 0;
           top: 0;
           display: table-cell;
+          position: relative;
+
+
 
 
           span{
@@ -109,7 +143,7 @@ body.category-34{
           }
 
           div{
-            opacity: 1;
+            //opacity: 1;
             -webkit-transition: opacity .5s ease-in-out .75s;
             transition: opacity .5s ease-in-out .75s;
           }
