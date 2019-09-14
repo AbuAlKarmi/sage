@@ -1,4 +1,4 @@
-import simpleStickySidebar from './sticky-sidebar';
+
 /**
  * This file allows you to add functionality to the Theme Customizer
  * live preview. jQuery is readily available.
@@ -20,10 +20,36 @@ jQuery(document).ready(function() {
     initSlider(jQuery('.carousel'));
   }
 
-  simpleStickySidebar('.sidebar-inner', {
-    container: '.sidebar',
-    bottomSpace : 180,
+  var toggleAffix = function(affixElement, scrollElement, wrapper) {
+    var height = affixElement.outerHeight(),
+      top = wrapper.offset().top;
+
+    if (scrollElement.scrollTop() >= top){
+      wrapper.height(height);
+      affixElement.addClass("affix");
+    }
+    else {
+      affixElement.removeClass("affix");
+      wrapper.height('auto');
+    }
+
+  };
+
+
+  $('#header-menu').each(function() {
+    var ele = $(this),
+      wrapper = $('<div></div>');
+
+    ele.before(wrapper);
+    $(window).on('scroll resize', function() {
+      toggleAffix(ele, $(this), wrapper);
+    });
+
+    // init
+    toggleAffix(ele, $(window), wrapper);
   });
+
+
 });
 
 
@@ -80,5 +106,8 @@ function initSlider($slider){
   $('.slick-next, .slick-prev').click(function() {
     startProgressbar();
   });
+
+
+
 
 }

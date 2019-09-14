@@ -174,4 +174,75 @@ body {
     color: theme-color('secondary');
   }
 }
+
+@keyframes loading-page {
+  0% {
+    transform: translateY(-20);
+  }
+  100% {
+    transform: translateY(20);
+  }
+}
+#pla_loader_custom{
+  background-size: 20%;
+  background-position: center;
+  animation: loading-page .3s infinite;
+}
+
+
+
+.affix {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  transition: all .3s linear;
+  background: $white;
+
+  .admin-bar &{
+    top: 32px;
+  }
+
+  .standard-menu{
+    display: none;
+  }
+
+  .affix-menu{
+    display: flex;
+  }
+}
+.affix-menu{
+  display: none;
+  align-items: center;
+  //.banner{
+  .logo{
+    padding: 0px !important;
+    .brand{
+      height: 65px !important;
+      width: 115px !important;
+    }
+  }
+  .social-links{
+    margin-top: 0px !important;
+    li{
+      margin: 1px !important;
+      svg{
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+  //}
+}
+
+/* fixed to top styles */
+#header-menu.affix {
+  transition: all .3s linear;
+  box-shadow: 0px 2px 5px rgba($grey, 0.4);
+}
+#header-menu.affix .nav-item>a,
+#header-menu.affix .navbar-brand {
+  color: #fff;
+}
 /*! purgecss end ignore */
