@@ -43,8 +43,9 @@ class FeaturedPosts extends Composer
 
         if( $view === 'category' ){
             $category = get_queried_object();
+            $args = [];
             $args['category'] = $category->term_id;
-            $args['orderby'] = 'random';
+            $args['order'] = 'DESC';
             $args['posts_per_page'] = '1';
         }
         $featuredPostsLoop = get_posts($args);

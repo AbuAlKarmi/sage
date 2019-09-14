@@ -12,4 +12,15 @@
     background-color: $white;
     padding-bottom: 15px;
   }
+
+  .menu-footer-menu-container{
+    .nav{
+      justify-content: center;
+      a {
+        font-size: 0.9rem;
+        padding: 0px .5rem;
+        color: $black;
+      }
+    }
+  }
 }

@@ -343,4 +343,17 @@ $POST_CARD_HEIGHT: 570px;
     }
   }
 }
+
+
+.archive.category{
+  &:not([class*='paged-']){
+    .posts-infinite-scroll{
+      .post-horizontal{
+        &:first-child{
+          display: none;
+        }
+      }
+    }
+  }
+}
 /*! purgecss end ignore */
