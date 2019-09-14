@@ -39,8 +39,11 @@ function initSlider($slider){
   $slick.slick({
     // rtl: true,
     arrows: true,
-    speed: 1500,
-    adaptiveHeight: false
+    // speed: 3000,
+    autoplaySpeed: 3000,
+    // adaptiveHeight: false,
+    fade: true,
+    cssEase: 'linear',
   });
 
   $bar = $('.slider-progress .progress');
