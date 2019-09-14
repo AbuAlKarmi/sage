@@ -3,7 +3,6 @@ export default () => {
     const sharect = new Sharect();
     sharect.config({
       twitterUsername: '@MetrasWebsite',
-      selectableElements: ['.background-color'],
     }).init();
   }
 
