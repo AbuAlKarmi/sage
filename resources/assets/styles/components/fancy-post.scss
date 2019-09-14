@@ -254,7 +254,15 @@ body.category-34{
 .box-effect.build .box-border-wrap .box-line[data-line="left"] {
   transition-delay: .6s;
 }
-
+.wp-block-embed{
+  &:not([class*='wp-block-embed-']){
+    .embedly-card{
+      .embedly-card-hug{
+        border: 1px solid rgba($grey, 0.3);
+      }
+    }
+  }
+}
 
 
 

@@ -49,8 +49,74 @@ jQuery(document).ready(function() {
     toggleAffix(ele, $(window), wrapper);
   });
 
+  // jQuery('iframe').each(function (index, element) {
+  //   console.log('llll');
+  //   jQuery('iframe').load( function() {
+  //     console.log('@@@', jQuery('iframe').contents().find("head"));
+  //     // .append($("<style type='text/css'>  .my-class{display:none;}  </style>"));
+  //   });
+  // })
 
 });
+
+setTimeout(() => {
+  $(".wp-block-embed:not([class*='wp-block-embed-']) iframe").each(function(){
+    function injectCSS(){
+      $iframe.contents().find('head').append(
+        $(`<style type='text/css'>
+            body{
+                direction: rtl;
+            }
+            .art-bd{
+                width: 40%;
+            }
+            .pair-bd{
+                display: flex;
+            }
+            .txt-bd .description{
+                display: none;
+            }
+            .txt-bd .action{
+                display: none;
+            }
+            .card .provider{
+              float: right;
+              letter-spacing: 0;
+              margin-right: 0px;
+            }
+            .brd{
+                display: none;
+            }
+            </style>`)
+      );
+    }
+
+    var $iframe = $(this);
+    $iframe.on('load', injectCSS);
+    injectCSS();
+  });
+}, 300);
+
+setTimeout(() => {
+  $('iframe.embedly-card').each(function(){
+    function injectCSS(){
+      $iframe.contents().find('head').append(
+        $(`<style type='text/css'>  
+            body{
+                direction: rtl;
+            }  
+            .brd{
+                display: none;
+            }
+            </style>`)
+      );
+    }
+
+    var $iframe = $(this);
+    $iframe.on('load', injectCSS);
+    injectCSS();
+  });
+}, 300);
 
 
 function initSlider($slider){
