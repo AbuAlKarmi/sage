@@ -1,7 +1,5 @@
 <?php
 
-use App\Composers\FeaturedPosts;
-
 return [
 
     /*
@@ -91,6 +89,7 @@ return [
         App\Composers\Files::class,
         App\Composers\CategoryColors::class,
         App\Composers\Dfater::class,
+        App\Composers\EntryMeta::class,
     ],
 
     /*

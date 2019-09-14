@@ -21,7 +21,7 @@
   <div class="posts">
     <div class="posts-infinite-scroll">
       @while (have_posts()) @php(the_post())
-        @includeFirst(['partials.content-horizontal', 'partials.content'])
+        @include('partials.content-horizontal')
       @endwhile
     </div>
   </div>

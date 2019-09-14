@@ -249,6 +249,14 @@ $POST_CARD_HEIGHT: 570px;
 .post-vertical{
   .post-meta{
     padding: 0px 20px;
+
+    .information-wrapper{
+      display: block !important;
+      > .d-inline-flex{
+        display: block !important;
+        text-align: center;
+      }
+    }
   }
 }
 

@@ -27,7 +27,7 @@
         @endif
 
         @if(!isset($displayPostMeta) || isset($displayPostMeta) && $displayPostMeta)
-          @include('partials/entry-meta', ['categories'=> $subCategories ])
+          @include('partials/entry-meta', ['categories'=> $subCategories])
         @endif
 
       </div>
