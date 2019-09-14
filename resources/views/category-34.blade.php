@@ -11,7 +11,7 @@
     {!! get_search_form(false) !!}
   @endif
 
-  <div id="posts-infinite-scroll" class="fancy-posts-loop">
+  <div class="fancy-posts-loop">
     @include('partials.fancy-posts-list')
   </div>
 

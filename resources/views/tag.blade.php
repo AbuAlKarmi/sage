@@ -14,7 +14,7 @@
     {!! get_search_form(false) !!}
   @endif
 
-  <div id="posts-infinite-scroll">
+  <div class="posts-infinite-scroll">
     @while(have_posts()) @php(the_post())
       @include('partials.content-horizontal')
     @endwhile
