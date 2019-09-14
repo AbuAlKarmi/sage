@@ -37,7 +37,6 @@ class CategoryColors extends Composer
     {
         $categories = get_categories( array(
             'orderby'       => 'name',
-            'parent'        => 0,
             'hide_empty'    => false,
         ) );
 

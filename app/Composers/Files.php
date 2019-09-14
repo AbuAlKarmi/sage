@@ -37,7 +37,7 @@ class Files extends Composer
     {
         $args = [
             'post_type'         => 'files',
-            'posts_per_page'    => 2,
+            'posts_per_page'    => 3,
         ];
         $files = get_posts($args);
 
