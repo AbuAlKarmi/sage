@@ -109,8 +109,8 @@ body {
 }
 
 .slick-next{
-  left: 0 !important;
-  background-image: url("../images/slider/previous.png");
+  left: 15px !important;
+  background-image: url("../images/slider/arrow-right.png");
   width: 40px;
   height: 40px;
   background-size: contain;
@@ -119,7 +119,8 @@ body {
   z-index: 2;
   &:hover,
   &:focus{
-    background-image: url("../images/slider/previous.png");
+    background-image: url("../images/slider/arrow-right-white.png");
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
   }
@@ -128,8 +129,8 @@ body {
   }
 }
 .slick-prev{
-  right: 0 !important;
-  background-image: url("../images/slider/next.png");
+  right: 15px !important;
+  background-image: url("../images/slider/arrow-left.png");
 
   width: 40px;
   height: 40px;
@@ -139,7 +140,8 @@ body {
   z-index: 2;
   &:hover,
   &:focus{
-    background-image: url("../images/slider/next.png");
+    background-image: url("../images/slider/arrow-left-white.png");
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
   }
