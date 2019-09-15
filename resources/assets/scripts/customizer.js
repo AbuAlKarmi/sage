@@ -133,7 +133,7 @@ function initSlider($slider){
     arrows: true,
     // speed: 3000,
     autoplaySpeed: 3000,
-    // adaptiveHeight: false,
+    adaptiveHeight: false,
     fade: true,
     cssEase: 'linear',
   });

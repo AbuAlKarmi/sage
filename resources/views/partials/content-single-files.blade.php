@@ -8,11 +8,6 @@ $postFeaturedImage = get_the_post_thumbnail_url(get_the_ID(), 'full');
   <main class="card p-4">
 
     <div class="card-body">
-      <header>
-        <h1 class="entry-title card-title text-center font-weight-bold">
-          {!! $title !!}
-        </h1>
-      </header>
 
       @if( isset($postFeaturedImage) && !empty($postFeaturedImage) )
         <img src="{{ $postFeaturedImage }}" class="card-img-top img-responsive mb-4" alt="{{$title}}">
