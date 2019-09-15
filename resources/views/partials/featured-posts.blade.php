@@ -60,7 +60,7 @@
 
       <div class="card mb-3">
         <div class="card-body">
-          <div class="carousel" style="direction: ltr">
+          <div class="carousel">
 
             @foreach( $featuredPosts as $post )
               <div class="slide">
