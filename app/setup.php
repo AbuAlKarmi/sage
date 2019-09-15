@@ -227,7 +227,7 @@ function verticalInfiniteScroll(){
     echo '<div class="container-inner"><div class="row">';
     while (have_posts()) : the_post();
         echo "<div class='col-md-6'>";
-        echo View::make('partials.content');
+        echo View::make('partials.content',['hideAuthorImage' => true ]);
         echo "</div>";
     endwhile;
     echo '</div></div>';
