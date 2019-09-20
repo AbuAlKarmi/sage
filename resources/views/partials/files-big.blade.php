@@ -7,17 +7,21 @@ if($files && count($files) > 3 ){
 }
 ?>
 
-@if( isset($files) && count($files) )
+@if( isset($files) && count($files) && isset($firstFile) )
   <div class="container">
     <div class="row">
+      @if(isset($firstFile))
       <div class="col-md-8 dfater big-preview">
         @include('partials.file-preview', ['file' => $firstFile])
       </div>
+      @endif
+      @if(isset($secondTwoFiles))
       <div class="col-md-4 daftar">
         @foreach($secondTwoFiles as $secondFile)
           @include('partials.file-preview', ['file' => $secondFile])
         @endforeach
       </div>
+      @endif
     </div>
   </div>
 @endif
