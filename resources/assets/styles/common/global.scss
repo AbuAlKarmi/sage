@@ -176,17 +176,24 @@ body {
 }
 
 @keyframes loading-page {
-  0% {
-    transform: translateY(-20);
-  }
-  100% {
-    transform: translateY(20);
-  }
+  //0% {
+    //transform: translateY(-20);
+  //}
+  to { transform: scale(1.4); }
+    //transform: translateY(20);
+  //}
 }
 #pla_loader_custom{
   background-size: 20%;
   background-position: center;
-  animation: loading-page .3s infinite;
+  animation: beat 1s infinite alternate;
+  transform-origin: center;
+}
+
+/* Heart beat animation */
+@keyframes beat{
+  from { transform: translateY(-20px) }
+  to { transform: translateY(20px) }
 }
 
 
