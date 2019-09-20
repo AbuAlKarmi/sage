@@ -29,6 +29,7 @@
   }
   .carousel{
     max-height: 550px;
+    overflow: hidden;
   }
   .carousel-caption .card{
     height: 150px;
@@ -59,7 +60,7 @@
   <div class="slider mb-3">
 
       <div class="card mb-3">
-        <div class="card-body">
+        <div class="card-body" style="direction: ltr;">
           <div class="carousel">
 
             @foreach( $featuredPosts as $post )

@@ -1,16 +1,21 @@
 <?php
-$postFeaturedImage = get_the_post_thumbnail_url(get_the_ID(), 'full');
+$postFeaturedImage = get_the_post_thumbnail_url(get_the_ID(), 'large');
+$innerImage = get_field( "inner_image" );
+
+if($innerImage && isset($innerImage['sizes']) && $innerImage['sizes']['large']){
+  $postFeaturedImage = $innerImage['sizes']['large'];
+}
 ?>
 
 <article @php(post_class())>
 
 
-  <main class="card p-4">
+  <main class="card">
 
     <div class="card-body">
 
       @if( isset($postFeaturedImage) && !empty($postFeaturedImage) )
-        <img src="{{ $postFeaturedImage }}" class="card-img-top img-responsive mb-4" alt="{{$title}}">
+        <img src="{{ $postFeaturedImage }}" class="img-fluid mb-0" alt="{{$title}}">
       @endif
 
       <div class="entry-content">
@@ -30,7 +35,7 @@ $postFeaturedImage = get_the_post_thumbnail_url(get_the_ID(), 'full');
       @foreach($posts as $post)
         @php(setup_postdata($post))
         <div class="col-md-4 border-1 border-primary border-solid">
-          @include('partials.content')
+          @include('partials.content',['hideAuthorImage' => true])
         </div>
       @endforeach
       @php( wp_reset_postdata() )
