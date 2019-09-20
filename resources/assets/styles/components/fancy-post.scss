@@ -8,34 +8,33 @@ body.category-34{
   .section{
     padding: 40px 0px;
     padding-top: calc(40px + 1rem);
-    &:nth-child(even){
-      //background-color: rgba(#d9b9c8,1);
+    &.section-big{
       padding-top: 140px;
       padding-bottom: 140px;
-      background-image: url('../images/fancy-bg.png');
-      background-size: contain;
       position: relative;
-      //&:before{
-      //  content: ",";
-      //  color: rgba(#000, 0);
-      //  display: block;
-      //  position: absolute;
-      //  height: 150px;
-      //  top: -150px;
-      //  left: 0px;
-      //  right: 0px;
-      //  background-image: url('../images/fancy-bg.png');
-      //  background-size: contain;
-      //}
+      margin-top: -130px;
+      margin-bottom: -130px;
+      .overlay{
+        background-image: url('../images/fancy-bg.png');
+        background-size: contain;
+        position: absolute;
+        z-index: -1;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+      }
     }
   }
   .fancy-post-card{
     position: relative;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 300px;
+    height: 450px;
     border-radius: .2rem;
     background-position: center;
+
+
 
     &.first{
       height: calc(600px + 1rem);
@@ -67,6 +66,15 @@ body.category-34{
       right: 16px;
       text-shadow: 0px 1px 3px rgba($black, 0.8);
     }
+  }
+}
+
+.section-big {
+  .fancy-post-card{
+    height: 300px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
   }
 }
 

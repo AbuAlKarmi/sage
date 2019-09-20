@@ -1,10 +1,14 @@
 .sidebar{
-  position: relative;
-  height: 100%;
-  .sidebar-inner {
-    width: 100%;
-    position: absolute;
+
+  &.initialized{
+    position: relative;
+    height: 100%;
+    .sidebar-inner {
+      width: 100%;
+      position: absolute;
+    }
   }
+
 
   .widget{
     //background-color: #FFF;

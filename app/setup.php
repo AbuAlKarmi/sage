@@ -162,6 +162,7 @@ add_action('widgets_init', function () {
 
 require_once get_theme_file_path(). '/app/Vendors/class-tgm-plugin-activation.php';
 require_once get_theme_file_path(). '/app/Vendors/aq_resizer.php';
+require_once get_theme_file_path(). '/app/Vendors/UserFields.php';
 
 add_action( 'tgmpa_register', function(){
     $plugins = [

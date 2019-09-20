@@ -1,22 +1,32 @@
 @extends('layouts.app')
 
 @section('content')
-
-  <div class="card mb-4">
+  <div class="card author-card">
     <div class="card-body">
-      <div class="row">
-        <div class="col-md-2">
-          {!! $author->image !!}
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body p-3">
+              <div class="card-image text-center">
+                <img src="{!! $author->image !!}" alt="{{$author->display_name}}" class="img-fluid" />
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div class="col-md-10">
-          <h4 class="card-title text-secondary">{{$author->display_name}}</h4>
-          <p class="card-text text-muted">{!! $author->bio !!}</p>
+        <div class="col-md-4">
+          <div class="details">
+            @if( $author->isMetrasStaff )
+              <label class="label label-info metras-team-label">فريق متراس</label>
+            @endif
+            <h4 class="card-title text-bold author-name-in-authors">{{$author->display_name}}</h4>
+            <p class="card-text text-muted">{!! $author->bio !!}</p>
+          </div>
+
         </div>
       </div>
     </div>
   </div>
-
-  <h4 class="text-muted mb-2">{{ sprintf(__('All articles posted by %s', 'sage'), $author->display_name) }}</h4>
 
   <div class="posts">
     <div class="posts-infinite-scroll">

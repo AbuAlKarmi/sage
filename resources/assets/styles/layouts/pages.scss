@@ -22,3 +22,32 @@
     }
   }
 }
+
+.author-card{
+  background: transparent;
+  border: 1px solid rgba($grey, 0.2);
+  padding: 20px 10px;
+  border-bottom: 30px solid #d1cac0;
+  .author-name-in-authors{
+    color: lighten($black, 10%)
+  }
+
+  .details{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .label{
+    &.metras-team-label{
+      padding: 4px 8px;
+      background-color: #9ec6be;
+      color: $white;
+      display: inline-block;
+      font-size: 0.95rem;
+      max-width: 100px;
+      text-align: center;
+    }
+  }
+}

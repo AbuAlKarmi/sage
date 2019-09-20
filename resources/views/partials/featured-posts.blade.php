@@ -53,6 +53,10 @@
     color: #282828;
   }
 
+  [dir='rtl'] .slick-slide{
+    float: left;
+  }
+
 </style>
 
 

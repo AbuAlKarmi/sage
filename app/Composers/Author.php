@@ -37,9 +37,11 @@ class Author extends Composer
     {
         $author = get_queried_object();
         return (object) [
-            'display_name'  => $author->display_name,
-            'bio'   => get_the_author_meta('description',$author->ID),
-            'image' => get_avatar($author->ID)
+            'display_name'      => $author->display_name,
+            'bio'               => get_the_author_meta('description', $author->ID),
+            'image'             => get_avatar_url($author->ID, 200),
+            'ID'                => $author->ID,
+            'isMetrasStaff'     => get_the_author_meta( 'metras_member', $author->ID ) == '1' ,
         ];
     }
 }
