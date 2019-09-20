@@ -236,6 +236,33 @@ body.category-34{
 }
 
 
+.dfater{
+  &.big-preview{
+    .card-file {
+      height: calc(100% - 1rem);
+      .box-wrap {
+        height: 100%;
+        .featured-boxes-overlay .featured-boxes-thumbnails .featured-boxes-wrap{
+          display: flex;
+          width: 100%;
+          height: 100%;
+          .overlay{
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            background: #cda979;
+            opacity: 0.6;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+
 .box-effect:hover .box-line[data-line="top"] {
   padding-left: 1px;
   width: 100% !important;

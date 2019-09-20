@@ -51,3 +51,19 @@
     }
   }
 }
+
+/*! purgecss start ignore */
+.metras-foot-notes{
+  .foot-note{
+    width: 300px;
+    font-size: 0.9rem;
+    color: $grey;
+    .number{
+      border-bottom: 1px solid #a3c4bd;
+    }
+    .content{
+
+    }
+  }
+}
+/*! purgecss end ignore */

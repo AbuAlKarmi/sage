@@ -6,6 +6,6 @@
 
 @section('content')
     <div class="dfater-list">
-      @include('partials.files', ['files' => $files])
+      @include('partials.files-big', ['files' => $files])
     </div>
 @endsection
