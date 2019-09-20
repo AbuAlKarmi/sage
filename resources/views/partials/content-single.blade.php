@@ -40,3 +40,11 @@ $postFeaturedImage = get_the_post_thumbnail_url(get_the_ID(), 'full');
 
 {{--  @php(comments_template('/partials/comments.blade.php'))--}}
 </article>
+
+
+<div class="tooltip_templates">
+  <span id="tooltip_content">
+      @include('icons::social.twitter', ['width' => '20', 'height' => '20px'])
+  </span>
+  <div id="sharable-text"></div>
+</div>

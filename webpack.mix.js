@@ -53,7 +53,8 @@ mix.js(src`scripts/app.js`, 'scripts')
 mix.copyDirectory(src`images`, publicPath`images`)
    .copyDirectory(src`fonts`, publicPath`fonts`)
    .copyDirectory('node_modules/slick-carousel',publicPath`vendors/slick-carousel`)
-   .copyDirectory('node_modules/sharect',publicPath`vendors/sharect`);
+   .copyDirectory('node_modules/sharect',publicPath`vendors/sharect`)
+   .copyDirectory('node_modules/tooltipster',publicPath`vendors/tooltipster`);
 
 // Autoload
 mix.autoload({

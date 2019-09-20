@@ -19,6 +19,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('metras/app', asset('scripts/app.js')->uri(), ['metras/vendor', 'jquery'], null, true);
     wp_enqueue_script('metras/slick-slider', asset('vendors/slick-carousel/slick/slick.min.js')->uri(), ['metras/vendor', 'jquery'], null, true);
     wp_enqueue_script('metras/sharect', asset('vendors/sharect/dist/sharect.min.js')->uri(), ['metras/vendor', 'jquery'], null, true);
+    wp_enqueue_script('metras/tooltipster', asset('vendors/tooltipster/dist/js/tooltipster.bundle.min.js')->uri(), ['metras/vendor', 'jquery'], null, true);
 
     wp_add_inline_script('metras/vendor', asset('scripts/manifest.js')->contents(), 'before');
 
@@ -28,7 +29,13 @@ add_action('wp_enqueue_scripts', function () {
 
     wp_enqueue_style('metras/dubai-font', '//www.fontstatic.com/f=dubai', false, null);
 
-    $styles = ['vendors/slick-carousel/slick/slick.css','vendors/slick-carousel/slick/slick-theme.css','styles/app-rtl.css'];
+    $styles = [
+        'vendors/tooltipster/dist/css/tooltipster.bundle.min.css',
+        'vendors/tooltipster/src/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-borderless.css',
+        'vendors/slick-carousel/slick/slick.css',
+        'vendors/slick-carousel/slick/slick-theme.css',
+        'styles/app-rtl.css'
+    ];
 
     foreach ($styles as $stylesheet) {
         if (asset($stylesheet)->exists()) {

@@ -263,7 +263,7 @@ $POST_CARD_HEIGHT: 570px;
 .entry-content{
   span{
     &.background-color{
-      padding: 5px 0px;
+      //padding: 5px 0px;
     }
   }
 }
@@ -354,6 +354,15 @@ $POST_CARD_HEIGHT: 570px;
         }
       }
     }
+  }
+}
+
+
+.entry-content{
+  span.background-color{
+    background-color: #1DA1F2 !important;
+    color: $white !important;
+    padding: 0px 3px;
   }
 }
 /*! purgecss end ignore */

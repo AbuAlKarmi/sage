@@ -66,4 +66,19 @@
     }
   }
 }
+
+.tooltip_templates{display: none;}
+.tooltipster-base{
+  z-index: 222;
+  //pointer-events: auto;
+}
+#tooltip_content svg{
+  cursor: pointer;
+  fill: $white;
+  position: relative;
+  z-index: 11;
+  &:hover{
+    transform: scale(1.15);
+  }
+}
 /*! purgecss end ignore */
