@@ -7,10 +7,12 @@
     @php(do_action('get_header'))
     @include('partials.header')
 
-    <div class="container">
-      @include('partials.featured-posts', ['featuredPosts' => $featuredPosts])
-    </div>
-    @include('partials.files', ['files' => $files])
+    @if(!app\isMobile())
+      <div class="container">
+        @include('partials.featured-posts', ['featuredPosts' => $featuredPosts])
+      </div>
+      @include('partials.files', ['files' => $files])
+    @endif
 
     <div class="wrap container">
       <div class="row">
@@ -21,14 +23,16 @@
             </main>
           </div>
         </div>
-        @hasSection('sidebar')
-        <div class="col-md-4">
-            <aside class="sidebar">
-              <div class="sidebar-inner">
-                @yield('sidebar')
-              </div>
-            </aside>
-        </div>
+        @if(!app\isMobile())
+          @hasSection('sidebar')
+          <div class="col-md-4">
+              <aside class="sidebar">
+                <div class="sidebar-inner">
+                  @yield('sidebar')
+                </div>
+              </aside>
+          </div>
+          @endif
         @endif
       </div>
     </div>

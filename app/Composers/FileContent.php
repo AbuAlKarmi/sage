@@ -35,14 +35,6 @@ class FileContent extends Composer
      */
     public function posts()
     {
-        $category = get_field('category', get_the_ID());
-
-        if( $category ){
-            $args = [
-                'category' => $category,
-            ];
-            return get_posts($args);
-        }
-        return [];
+        return get_field('articles', get_the_ID());
     }
 }

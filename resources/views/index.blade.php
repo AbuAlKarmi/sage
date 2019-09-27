@@ -2,7 +2,6 @@
 
 @section('content')
 {{--  @include('partials.page-header')--}}
-
   @if (! have_posts())
     @alert(['type' => 'warning'])
       {{ __('Sorry, no results were found.', 'sage') }}

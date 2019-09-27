@@ -2,6 +2,9 @@
 
 namespace App;
 
+use Jenssegers\Agent\Agent;
+
+
 /**
  * Simple function to pretty up our field partial includes.
  *
@@ -177,4 +180,9 @@ function bootstrap_pagination( \WP_Query $wp_query = null, $echo = true ) {
     }
 
     return null;
+}
+
+function isMobile() {
+    $agent = new Agent();
+    return $agent->isMobile();
 }
