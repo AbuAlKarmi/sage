@@ -21,6 +21,6 @@
   </div>
 
   <div class="container">
-    {!! get_the_posts_navigation() !!}
+    {!! App\bootstrap_pagination() !!}
   </div>
 @endsection

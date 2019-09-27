@@ -36,7 +36,7 @@
     </div>
   </div>
 
-  {!! get_the_posts_navigation() !!}
+  {!! App\bootstrap_pagination() !!}
 @endsection
 
 @section('sidebar')

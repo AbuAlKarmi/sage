@@ -188,12 +188,15 @@ body {
   background-position: center;
   animation: beat 1s infinite alternate;
   transform-origin: center;
+  top: -90px !important;
+  bottom: -90px !important;
+  height: auto !important;
 }
 
 /* Heart beat animation */
 @keyframes beat{
-  from { transform: translateY(-20px) }
-  to { transform: translateY(20px) }
+  from { background-position: 50% -10% }
+  to { background-position: 50% 10% }
 }
 
 
@@ -252,4 +255,14 @@ body {
 #header-menu.affix .navbar-brand {
   color: #fff;
 }
+
+
+a{
+  &:focus,
+  &:active {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
 /*! purgecss end ignore */
