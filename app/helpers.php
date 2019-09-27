@@ -164,7 +164,7 @@ function bootstrap_pagination( \WP_Query $wp_query = null, $echo = true ) {
     if ( is_array( $pages ) ) {
         //$paged = ( get_query_var( 'paged' ) == 0 ) ? 1 : get_query_var( 'paged' );
 
-        $pagination = '<div class="pagination justify-content-end pt-2"><ul class="pagination">';
+        $pagination = '<nav class="page navigation d-flex justify-content-end pt-2"><ul class="pagination">';
 
         foreach ($pages as $page) {
             $pagination .= '<li class="page-item' . (strpos($page, 'current') !== false ? ' active' : '') . '"> ' . str_replace('page-numbers', 'page-link', $page) . '</li>';

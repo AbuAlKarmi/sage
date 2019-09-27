@@ -265,4 +265,22 @@ a{
   }
 }
 
+
+//Pagination\
+.pagination{
+  .page-item{
+    .page-link{
+      border-radius: 0px;
+    }
+
+    &.active{
+      .page-link{
+        background-color: theme-color('secondary');
+        border-color: #dfe2e7;
+      }
+    }
+  }
+
+}
+
 /*! purgecss end ignore */
