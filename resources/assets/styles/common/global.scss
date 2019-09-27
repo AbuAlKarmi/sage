@@ -188,15 +188,15 @@ body {
   background-position: center;
   animation: beat 1s infinite alternate;
   transform-origin: center;
-  top: -90px !important;
-  bottom: -90px !important;
-  height: auto !important;
+  top: -40px !important;
+  bottom: -40px !important;
+  height: 100vh !important;
 }
 
 /* Heart beat animation */
 @keyframes beat{
-  from { background-position: 50% -10% }
-  to { background-position: 50% 10% }
+  from { background-position: 50% -10px }
+  to { background-position: 50% 10px }
 }
 
 
