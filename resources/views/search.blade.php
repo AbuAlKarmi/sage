@@ -4,11 +4,15 @@
   @include('partials.page-header')
 
   @if (! have_posts())
-    @alert(['type' => 'warning'])
-      {{ __('Sorry, no results were found.', 'sage') }}
-    @endalert
+    <div class="card">
+      <div class="card-body">
+        @alert(['type' => 'warning'])
+        {{ __('Sorry, no results were found.', 'sage') }}
+        @endalert
 
-    {!! get_search_form(false) !!}
+        {!! get_search_form(false) !!}
+      </div>
+    </div>
   @endif
 
   <div class="posts-infinite-scroll">

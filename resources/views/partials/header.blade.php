@@ -33,7 +33,7 @@
             </nav>
           </div>
           <div class="d-inline-flex">
-            @include('partials.social-links')
+            @include('partials.social-links', ['hasSearch' => true])
           </div>
         </div>
       </div>
