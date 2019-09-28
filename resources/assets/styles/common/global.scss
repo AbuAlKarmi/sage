@@ -189,10 +189,10 @@ body {
 }
 #pla_loader_custom{
   position: fixed;
-  background-size: 23%;
+  background-size: 20%;
   background-position: 50% 50%;
-  top: 0 !important;
-  bottom: 0 !important;
+  top: -20px !important;
+  bottom: -20px !important;
   height: auto;
   animation: beat 1s infinite alternate;
   transform-origin: center;
@@ -200,8 +200,8 @@ body {
 
 /* Heart beat animation */
 @keyframes beat{
-  from { padding-top: -10px }
-  to   { padding-top: 10px }
+  from { transform: translateY(-10px); }
+  to   { transform: translateY(10px); }
 }
 
 

@@ -4,10 +4,8 @@
 
 
 <div class="posts-loop">
-  <article @php(post_class('card post-card mb-2 featured-home-post'))>
-    <div class="category-link category-{{ $mainCategory['id'] }} category-{{ $mainCategory['slug'] }}">
-      <a href="{{$mainCategory['url']}}">{{$mainCategory['title']}}</a>
-    </div>
+  <article @php(post_class('card post-card pt-3 mb-2 featured-home-post'))>
+    <small class="d-block mb-2 text-small text-center post-publish-date">{{the_date('j F Y')}}</small>
     <div class="card-body">
       @if(get_the_subtitle(get_the_ID(), '','', false))
         <h6 class="card-subtitle mb-2 text-center">

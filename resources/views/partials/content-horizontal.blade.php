@@ -9,6 +9,7 @@
         </div>
       </div>
       <div class="col-md-8  col-sm-7">
+        <small class="d-block mb-2 text-small post-publish-date">{{the_date('j F Y')}}</small>
         @if(get_the_subtitle(get_the_ID(), '','', false))
           <h6 class="card-subtitle mb-2 text-secondary">
             <a href="{{ get_permalink() }}" class="text-secondary text-decoration-none">

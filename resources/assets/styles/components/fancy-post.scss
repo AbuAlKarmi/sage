@@ -1,3 +1,8 @@
+$firstColor: #d0b786;
+$secondColor: #a6c1bb;
+$thirdColor: #dfdcd2;
+$fourthColor: #c6d3d9;
+
 /*! purgecss start ignore */
 body.category-34{
   background: $white;
@@ -87,24 +92,24 @@ body.category-34{
     bottom: 0px;
     right: 0px;
     left: 0px;
-    background: #cda979;
+    background: $firstColor;
     opacity: 0.6;
   }
 
   &:nth-child(2n+0) {
     .overlay{
-      background: #a3c4bd;
+      background: $secondColor;
     }
   }
 
   &:nth-child(3n+0) {
     .overlay{
-      background: #c7b199;
+      background: $thirdColor;
     }
   }
   &:nth-child(4n+0) {
     .overlay{
-      background: #b2cad4;
+      background: $fourthColor;
     }
   }
 }
@@ -179,7 +184,7 @@ body.category-34{
           overflow: hidden;
           position: absolute;
           z-index: 3;
-          background-color: #c9a16e;
+          background-color: $black;
 
           &[data-line="top"]{
             height: 1px;
@@ -212,7 +217,7 @@ body.category-34{
           }
         }
         &:hover{
-          color: theme-color('secondary');
+          color: $black;
         }
       }
 
@@ -252,7 +257,7 @@ body.category-34{
             right: 0px;
             bottom: 0px;
             left: 0px;
-            background: #cda979;
+            background: $firstColor;
             opacity: 0.6;
           }
         }

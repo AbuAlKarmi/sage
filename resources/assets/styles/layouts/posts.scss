@@ -85,7 +85,7 @@ $POST_CARD_HEIGHT: 570px;
     }
 
     .card-title-wrapper{
-      min-height: 102px;
+      min-height: 120px;
       display: flex;
       justify-content: center;
       flex-flow: column;
@@ -280,7 +280,6 @@ $POST_CARD_HEIGHT: 570px;
 
 .post-vertical{
   .card-body{
-    padding-top: 0.35rem;
   }
   .information-wrapper{
     transform: scale(0.85);
@@ -314,7 +313,7 @@ $POST_CARD_HEIGHT: 570px;
 .search,
 .archive{
   &:not(.author){
-    #posts-infinite-scroll{
+    .posts-infinite-scroll{
       .post-card{
         .card-body{
           @media (min-width: 768px){

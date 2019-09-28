@@ -4,6 +4,8 @@
 
   &.no-border,
   &.post-card{
-
+    .post-publish-date{
+      color: lighten($grey, 30%) !important;
+    }
   }
 }

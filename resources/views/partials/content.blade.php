@@ -1,12 +1,10 @@
 <article @php(post_class('card post-card mb-2 post-vertical'))>
 
   <div class="card-body">
-    <div class="publish-date">
-      <div class="text-muted text-small text-center">{{the_date('j F Y')}}</>
-    </div>
     <div class="card-title-wrapper">
+      <small class="d-block mb-2 text-small text-center post-publish-date">{{the_date('j F Y')}}</small>
       @if(get_the_subtitle(get_the_ID(), '','', false))
-        <h6 class="card-subtitle mb-2 text-center">
+        <h6 class="card-subtitle text-center">
           <a href="{{ get_permalink() }}" class="text-secondary text-decoration-none">
             {{ the_subtitle() }}
           </a>

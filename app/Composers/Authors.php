@@ -25,7 +25,7 @@ class Authors extends Composer
      */
     public function with($data, $view)
     {
-        return ['authors' => $this->authors()];
+        return ['members' => $this->authors()];
     }
 
     /**
@@ -36,11 +36,39 @@ class Authors extends Composer
      */
     public function authors()
     {
-        $user_query = new WP_User_Query( [
-            'role__not_in' => 'Administrator'
-        ] );
+        $metras_authors = new WP_User_Query([
+            'role__not_in' => 'Administrator',
+            'orderby' => 'metras_member',
+            'order' => 'ASC',
+            'meta_query' => [
+                [
+                    'key'     => 'metras_member',
+                ],
+            ],
+        ]);
 
-        return $user_query->get_results();
+        $authors = new WP_User_Query([
+            'role__not_in' => 'Administrator',
+            'fields' => 'all',
+            'order' => 'ASC',
+            'meta_query' => [
+                'relation'  => 'OR',
+                [
+                    'key'       => 'metras_member',
+                    'compare'   => 'NOT EXISTS'
+                ],
+                [
+                    'key'       => 'metras_member',
+                    'value'     => ''
+                ],
+                [
+                    'key'       => 'metras_member',
+                    'value'     => '0'
+                ],
+            ],
+        ]);
+
+        return ['metras' => $metras_authors->get_results(), 'authors'  => $authors->get_results() ] ;
 
     }
 }
