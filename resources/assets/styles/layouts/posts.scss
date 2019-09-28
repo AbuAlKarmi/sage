@@ -127,6 +127,7 @@ $POST_CARD_HEIGHT: 570px;
     }
     .share{
       justify-content: flex-end;
+      flex-flow: column-reverse;
     }
   }
 }
