@@ -1,7 +1,11 @@
 .sidebar{
-  position: sticky;
-  top: 0px;
-  height: 100vh;
+
+  .home &{
+    position: sticky;
+    top: 0px;
+    height: 100vh;
+  }
+
 
   &.initialized{
     position: relative;

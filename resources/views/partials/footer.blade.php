@@ -2,8 +2,6 @@
   <div class="container">
     @php(dynamic_sidebar('sidebar-footer'))
     {!! do_shortcode('[instagram-feed num=5 cols=5]') !!}
-
-    <div style="background-color: red; height: 250px;"></div>
   </div>
   <div class="bottom-footer">
     <div class="container text-center">

@@ -43,6 +43,7 @@ class Authors extends Composer
             'meta_query' => [
                 [
                     'key'     => 'metras_member',
+                    'value' => '1',
                 ],
             ],
         ]);
@@ -52,18 +53,10 @@ class Authors extends Composer
             'fields' => 'all',
             'order' => 'ASC',
             'meta_query' => [
-                'relation'  => 'OR',
+                'relation'  => 'AND',
                 [
                     'key'       => 'metras_member',
                     'compare'   => 'NOT EXISTS'
-                ],
-                [
-                    'key'       => 'metras_member',
-                    'value'     => ''
-                ],
-                [
-                    'key'       => 'metras_member',
-                    'value'     => '0'
                 ],
             ],
         ]);
