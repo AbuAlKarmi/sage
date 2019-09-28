@@ -14,6 +14,18 @@ function extra_user_profile_fields( $user ) { ?>
             </td>
         </tr>
     </table>
+
+
+    <h3><?php _e("Full Description", "sage"); ?></h3>
+
+    <table class="form-table">
+        <tr>
+            <th><label for="full_description"><?php _e("Full Description"); ?></label></th>
+            <td>
+                <textarea name="full_description" id="full_description" cols="30" rows="10"><?php echo esc_attr( get_the_author_meta( 'full_description', $user->ID ) ); ?></textarea>
+            </td>
+        </tr>
+    </table>
 <?php }
 
 add_action( 'personal_options_update', 'save_extra_user_profile_fields' );
@@ -24,5 +36,6 @@ function save_extra_user_profile_fields( $user_id ) {
     if ( !current_user_can( 'edit_user', $user_id ) ) { return false; }
 
     update_user_meta( $user_id, 'metras_member', $_POST['metras_member'] );
+    update_user_meta( $user_id, 'full_description', $_POST['full_description'] );
 }
 ?>
