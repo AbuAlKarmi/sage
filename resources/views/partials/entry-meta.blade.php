@@ -19,7 +19,7 @@
       @endif
 
       <div class="d-inline-flex">
-        <div class="pl-2 justify-content-center">
+        <div class="pl-2 pr-2 pb-2 justify-content-center">
           <div class="author-name has-link d-block">
             @if( isset($authorPrefix) && !empty($authorPrefix) )
               {{$authorPrefix}}:
