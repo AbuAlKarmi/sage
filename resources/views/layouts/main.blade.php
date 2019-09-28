@@ -1,8 +1,9 @@
 <!doctype html>
 <html {!! get_language_attributes() !!}>
+{{--  <style>#pla_loader_custom{position:fixed;left:0;top:0;width:100%;height:100%;z-index:9999;background:url(http://35.246.238.69/wp-content/uploads/logo-m.png,) 50% 50% no-repeat #fff}</style>--}}
   @include('partials.head')
-
   <body @php(body_class())>
+{{--    <div id="pla_loader_custom" style=""></div>--}}
     @php(wp_body_open())
     @php(do_action('get_header'))
     @include('partials.header')
@@ -14,7 +15,7 @@
       @include('partials.files', ['files' => $files])
     @endif
 
-    <div class="wrap container">
+    <div class="wrap">
       <div class="row">
         <div class="@hasSection('sidebar') col-md-8 @else col-md-12 @endif">
           <div class="content">

@@ -1,10 +1,9 @@
 <article @php(post_class('card post-card mb-2 post-vertical'))>
-  @if($mainCategory && count($mainCategory))
-    <div class="category-link category-{{ $mainCategory['id'] }} category-{{ $mainCategory['slug'] }}">
-      <a href="{{$mainCategory['url']}}">{{$mainCategory['title']}}</a>
-    </div>
-  @endif
+
   <div class="card-body">
+    <div class="publish-date">
+      <div class="text-muted text-small text-center">{{the_date('j F Y')}}</>
+    </div>
     <div class="card-title-wrapper">
       @if(get_the_subtitle(get_the_ID(), '','', false))
         <h6 class="card-subtitle mb-2 text-center">

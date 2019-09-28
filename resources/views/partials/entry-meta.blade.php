@@ -26,11 +26,11 @@
             @endif
             {!! join($coAuthors, ', ') !!}
           </div>
-          @foreach( $subCategories as $category )
-            <a href="{{$category['url']}}" class="btn btn-dark btn-sm btn-tag">
-              {{$category['title']}}
-            </a>
-          @endforeach
+          @if($mainCategory && count($mainCategory) && strtolower($mainCategory['url']) != 'uncategorized' )
+            <div class="">
+              <a href="{{$mainCategory['url']}}" class="btn btn-dark btn-sm btn-tag">{{$mainCategory['title']}}</a>
+            </div>
+          @endif
         </div>
       </div>
     @endif
