@@ -1,20 +1,18 @@
-import simpleStickySidebar from "../sticky-sidebar";
-
+import StickyScroller from "sticky-scroller";
 
 /**
  * Home
  */
 export default () => {
-  //--
-  console.log(jQuery(document).height(), jQuery('.sidebar:first').height());
   jQuery(document).ready(function() {
-    if( jQuery(document).height() > jQuery('.sidebar:first').height() ) {
-      simpleStickySidebar('.sidebar-inner', {
-        container: '.sidebar',
-        bottomSpace: 180,
-      });
-
-      $('.sidebar-inner').addClass('initialized')
-    }
+    // if( jQuery(document).height() > jQuery('.sidebar:first').height() ) {
+    //   simpleStickySidebar('.sidebar-inner', {
+    //     container: '.sidebar',
+    //     bottomSpace: 180,
+    //   });
+    //
+    //   $('.sidebar-inner').addClass('initialized')
+    // }
+    const scroller = new StickyScroller("#sidebar");
   });
 };

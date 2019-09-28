@@ -25,11 +25,11 @@
         @if(!app\isMobile())
           @hasSection('sidebar')
           <div class="col-md-4">
-              <aside class="sidebar">
-                <div class="sidebar-inner">
-                  @yield('sidebar')
-                </div>
-              </aside>
+            <aside class="sidebar" id="sidebar">
+              <div class="sidebar-inner">
+                @yield('sidebar')
+              </div>
+            </aside>
           </div>
           @endif
         @endif
