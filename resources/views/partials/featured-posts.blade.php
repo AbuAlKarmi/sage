@@ -23,8 +23,9 @@
     top: 50%;
     left: 0;
     right: 0;
+    bottom: auto;
     color: black;
-    margin-top: -80px;
+    margin-top: -115px;
     direction: rtl;
   }
   .carousel{
