@@ -22,3 +22,13 @@
 </div>
 
 @php(dynamic_sidebar('sidebar-primary'))
+
+@if(is_home())
+  <div class="card mb-3">
+    <div class="card-body">
+      <div class="text-center">
+        {!! do_shortcode('[instagram-feed num=1 cols=1]') !!}
+      </div>
+    </div>
+  </div>
+@endif
