@@ -13,7 +13,7 @@ $postFeaturedImage = get_the_post_thumbnail_url(get_the_ID(), 'full');
         @if(get_the_subtitle(get_the_ID(), '','', false))
           <h3 class="text-center text-secondary">{{ the_subtitle() }}</h3>
         @endif
-        <h1 class="entry-title card-title text-center font-weight-bold">
+        <h1 class="entry-title card-title text-center font-weight-bold mb-4">
           {!! $title !!}
         </h1>
       </header>

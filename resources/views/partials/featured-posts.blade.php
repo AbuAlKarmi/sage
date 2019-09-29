@@ -75,7 +75,6 @@
                   <div class="row d-flex justify-content-center">
                     <div class="col-md-7">
                       <div class="card">
-
                         <div class="card-body text-center">
                           <a href="{{$post['url']}}" class="text-decoration-none">
                             @if($post['subtitle'])<h4 class="card-subtitle text-secondary mb-2 p-0">{{$post['subtitle']}}</h4>@endif
@@ -89,7 +88,7 @@
               </div>
             @endforeach
           </div>
+        </div>
       </div>
     </div>
-  </div>
 @endif

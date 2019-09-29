@@ -13,26 +13,28 @@
       @include('partials.files', ['files' => $files])
     @endif
 
-    <div class="wrap">
-      <div class="row">
-        <div class="@hasSection('sidebar') col-md-8 @else col-md-12 @endif">
-          <div class="content">
-            <main class="main">
-              @yield('content')
-            </main>
+    <div class="container">
+      <div class="wrap">
+        <div class="row">
+          <div class="@hasSection('sidebar') col-md-8 @else col-md-12 @endif">
+            <div class="content">
+              <main class="main">
+                @yield('content')
+              </main>
+            </div>
           </div>
-        </div>
-        @if(!app\isMobile())
-          @hasSection('sidebar')
-          <div class="col-md-4">
-            <aside class="sidebar" id="sidebar">
-              <div class="sidebar-inner">
-                @yield('sidebar')
-              </div>
-            </aside>
-          </div>
+          @if(!app\isMobile())
+            @hasSection('sidebar')
+            <div class="col-md-4">
+              <aside class="sidebar" id="sidebar">
+                <div class="sidebar-inner">
+                  @yield('sidebar')
+                </div>
+              </aside>
+            </div>
+            @endif
           @endif
-        @endif
+        </div>
       </div>
     </div>
 
