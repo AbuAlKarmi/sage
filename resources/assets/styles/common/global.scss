@@ -289,4 +289,21 @@ a{
 
 }
 
+
+.metras-authors{
+  border-bottom: 1px solid #a3c4bd;
+  margin-bottom: 20px;
+  position: relative;
+  .title{
+    position: absolute;
+    left: -84px;
+    padding: 6px 32px;
+    background-color: #a3c4bd;
+    color: $white;
+    transform: rotate(90deg);
+    top: 75px;
+    border-radius: 0px 0px 0px 10px;
+  }
+}
+
 /*! purgecss end ignore */

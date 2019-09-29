@@ -15,6 +15,9 @@
         @include('partials.content-page')
       </div>
       <div class="authors-list metras-authors">
+        <div class="title">
+          فريق متراس
+        </div>
         <div class="row">
           @foreach($members['metras'] as $author)
             <div class="col-md-3">
