@@ -2,6 +2,12 @@
   Template Name: Authors
 --}}
 
+
+<?php
+  $metrasTeam = array_chunk($members['metras'], 4);
+  $metrasAuthors = array_chunk($members['authors'], 4);
+?>
+
 @extends('layouts.app')
 
 @section('content')
@@ -14,26 +20,34 @@
       <div class="card-content">
         @include('partials.content-page')
       </div>
-      <div class="authors-list metras-authors">
-        <div class="title">
-          فريق متراس
-        </div>
-        <div class="row">
-          @foreach($members['metras'] as $author)
-            <div class="col-md-3">
-              @include('partials.author-card', ['author' => $author])
+      <div class="authors-list ">
+        @foreach( $metrasTeam as $row )
+          <div class="authors-row metras-authors">
+            <div class="title">
+              فريق متراس
             </div>
-          @endforeach
-        </div>
+            <div class="row">
+              @foreach($row as $author)
+                <div class="col-md-3">
+                  @include('partials.author-card', ['author' => $author])
+                </div>
+              @endforeach
+            </div>
+          </div>
+        @endforeach
       </div>
       <div class="authors-list">
-        <div class="row">
-          @foreach($members['authors'] as $author)
-            <div class="col-md-3">
-              @include('partials.author-card', ['author' => $author])
+        @foreach( $metrasAuthors as $row )
+          <div class="authors-row">
+            <div class="row">
+              @foreach($row as $author)
+                <div class="col-md-3">
+                  @include('partials.author-card', ['author' => $author])
+                </div>
+              @endforeach
             </div>
-          @endforeach
-        </div>
+          </div>
+        @endforeach
       </div>
     </div>
   </div>

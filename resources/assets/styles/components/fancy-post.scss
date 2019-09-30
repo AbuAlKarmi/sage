@@ -93,7 +93,7 @@ body.category-34{
     right: 0px;
     left: 0px;
     background: $firstColor;
-    opacity: 0.8;
+    opacity: 0;
     
     .page-template-dfater &{
       display: none;
@@ -309,4 +309,10 @@ body.category-34{
   }
 }
 
+.authors-list{
+  .authors-row{
+    border-bottom: 1px solid #a3c4bd;
+    margin-bottom: 20px;
+  }
+}
 /*! purgecss end ignore */
