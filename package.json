@@ -48,6 +48,8 @@
     "share-selected-text": "^1.1.4",
     "sharect": "^1.1.0",
     "slick-carousel": "^1.8.1",
+    "soundcloud": "^3.3.2",
+    "soundcloud-audio": "^1.4.0",
     "sticky-scroller": "^0.4.0",
     "tooltipster": "^4.2.7"
   }

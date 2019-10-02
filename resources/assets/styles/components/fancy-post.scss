@@ -3,6 +3,9 @@ $secondColor: #f5f0e4;
 $thirdColor: #b9d4ce;
 $fourthColor: #dfdcd2;
 
+
+$cardsOpacity: 0.75;
+
 /*! purgecss start ignore */
 body.category-34{
   background: $white;
@@ -93,7 +96,7 @@ body.category-34{
     right: 0px;
     left: 0px;
     background: $firstColor;
-    opacity: 0;
+    opacity: $cardsOpacity;
     
     .page-template-dfater &{
       display: none;

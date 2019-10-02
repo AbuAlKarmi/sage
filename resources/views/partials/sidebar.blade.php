@@ -12,6 +12,14 @@
   </div>
 </div>
 
+
+<div class="card mb-3">
+  <div class="card-body">
+    <div id="track" class="text-center text-muted">جاري التحميل ...</div>
+  </div>
+</div>
+
+
 <div class="card mb-3">
   <div class="card-body">
     <h4 class="text-center card-title">{{__('Follow us on', 'sage')}}</h4>
