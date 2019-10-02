@@ -15,9 +15,20 @@
 //   value.bind(to => $('.brand').text(to));
 // });\
 
+jQuery(document).on('click', '.brand', (e) => {
+  e.preventDefault();
+  jQuery('body').toggleClass('menu-open');
+});
+
+
 jQuery(document).ready(function() {
   if(jQuery('.carousel').length ){
     initSlider(jQuery('.carousel'));
+  }
+
+  if(jQuery('body').hasClass('isMobile')){
+    jQuery('#header-menu').append(jQuery('.affix-menu .nav-primary').clone());
+    jQuery('.affix-menu .nav-primary').remove();
   }
 
   var toggleAffix = function(affixElement, scrollElement, wrapper) {
@@ -117,6 +128,9 @@ setTimeout(() => {
     injectCSS();
   });
 }, 300);
+
+
+
 
 
 function initSlider($slider){

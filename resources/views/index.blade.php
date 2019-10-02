@@ -11,7 +11,7 @@
   @endif
 
   @php( $featuredPostId = null )
-  @if( isset($featuredHomePosts) && count($featuredHomePosts) )
+  @if( !app\isMobile() && isset($featuredHomePosts) && count($featuredHomePosts) )
     @foreach($featuredHomePosts as $featuredPost)
       <?php global $post ?>
       <?php $post = $featuredPost ?>

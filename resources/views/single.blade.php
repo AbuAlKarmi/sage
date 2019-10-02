@@ -16,7 +16,7 @@
               @if( isset($post) )
                 <div class="col-md-6 d-flex align-items-stretch">
                   <?php setup_postdata($post) ?>
-                  @include('partials.content-horizontal', ['showDescription' => true, 'displayPostMeta' => false])
+                  @include( App\cardPartial(), ['showDescription' => true, 'displayPostMeta' => false])
                   <?php wp_reset_postdata(); ?>
                 </div>
               @endif

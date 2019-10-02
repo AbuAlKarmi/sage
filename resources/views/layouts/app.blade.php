@@ -2,7 +2,7 @@
 <html {!! get_language_attributes() !!}>
   @include('partials.head')
 
-  <body @php(body_class())>
+  <body @php(body_class(App\isMobile() ? 'isMobile' : ''))>
     @php(wp_body_open())
     @php(do_action('get_header'))
     @include('partials.header')

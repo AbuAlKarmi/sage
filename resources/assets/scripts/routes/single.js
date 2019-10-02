@@ -57,22 +57,25 @@ function getOffset(elem) { // crossbrowser version
 
 document.addEventListener('DOMContentLoaded', (event) => {
 
-  setTimeout(() => {
-    const footNote = document.getElementsByClassName('modern-footnotes-footnote__note');
-    if( Array.from(footNote).length ){
-      jQuery('body').css({'position':'relative'}).append('<div id="foot-notes" class="metras-foot-notes"></div>');
-      Array.from(footNote).forEach(element => {
-        const footnote = {
-          number: element.getAttribute('data-mfn'),
-          text: element.textContent,
-        };
-        footnote['offset'] = jQuery(`[data-mfn="${footnote.number}"]`).offset();
-        const offsetLeft = Math.round(jQuery('article').offset().left - 315);
-        jQuery('#foot-notes')
-          .append(`<div class="foot-note" style="position: absolute; top: ${footnote.offset.top - 20}px; left: ${offsetLeft}px;"><div class="number">${footnote.number}</div><div class="content">${footnote.text}</div></div>`);
-      });
-    }
-  }, 2000);
+  if( !jQuery('body').hasClass('isMobile') ){
+    setTimeout(() => {
+      const footNote = document.getElementsByClassName('modern-footnotes-footnote__note');
+      if( Array.from(footNote).length ){
+        jQuery('body').css({'position':'relative'}).append('<div id="foot-notes" class="metras-foot-notes"></div>');
+        Array.from(footNote).forEach(element => {
+          const footnote = {
+            number: element.getAttribute('data-mfn'),
+            text: element.textContent,
+          };
+          footnote['offset'] = jQuery(`[data-mfn="${footnote.number}"]`).offset();
+          const offsetLeft = Math.round(jQuery('article').offset().left - 315);
+          jQuery('#foot-notes')
+            .append(`<div class="foot-note" style="position: absolute; top: ${footnote.offset.top - 20}px; left: ${offsetLeft}px;"><div class="number">${footnote.number}</div><div class="content">${footnote.text}</div></div>`);
+        });
+      }
+    }, 2000);
+  }
+
 
 });
 

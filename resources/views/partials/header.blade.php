@@ -10,17 +10,19 @@
     </div>
     <div id="header-menu">
       <div class="container">
-        <div class="standard-menu">
-          <div class="row justify-content-center">
-            <div class="col-md-10">
-              <nav class="nav-primary">
-                @if (has_nav_menu('primary_navigation'))
-                  {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']) !!}
-                @endif
-              </nav>
+        @if(!App\isMobile())
+          <div class="standard-menu">
+            <div class="row justify-content-center">
+              <div class="col-md-10">
+                <nav class="nav-primary">
+                  @if (has_nav_menu('primary_navigation'))
+                    {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']) !!}
+                  @endif
+                </nav>
+              </div>
             </div>
           </div>
-        </div>
+        @endif
         <div class="affix-menu navbar">
           <div class="logo d-inline-flex">
             <a class="brand" href="{{ home_url('/') }}">{{ get_bloginfo('name', 'display') }}</a>

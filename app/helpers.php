@@ -186,3 +186,7 @@ function isMobile() {
     $agent = new Agent();
     return $agent->isMobile();
 }
+
+function cardPartial() {
+    return isMobile() ? 'partials.content' : 'partials.content-horizontal';
+}

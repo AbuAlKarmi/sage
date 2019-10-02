@@ -19,7 +19,7 @@
 
       <div class="card-image mb-2">
         <a href="{{get_permalink()}}">
-          <img src="{{ App\get_post_image(get_the_ID()) }}" alt="{{strip_tags($title)}}">
+          <img src="{{ App\get_post_image(get_the_ID()) }}" class="img-fluid" alt="{{strip_tags($title)}}">
         </a>
       </div>
 

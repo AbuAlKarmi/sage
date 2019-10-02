@@ -2,7 +2,9 @@
 
 @section('content')
 
-  @include('partials.featured-posts', ['featuredPosts' => $featuredPosts])
+  @if(!App\isMobile())
+    @include('partials.featured-posts', ['featuredPosts' => $featuredPosts])
+  @endif
 
 {{--  @include('partials.page-header')--}}
 
@@ -16,7 +18,7 @@
 
   <div class="posts-infinite-scroll">
     @while(have_posts()) @php(the_post())
-      @include('partials.content-horizontal')
+      @include(App\cardPartial())
     @endwhile
   </div>
   {!! App\bootstrap_pagination() !!}

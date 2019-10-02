@@ -31,7 +31,7 @@
   <div class="posts">
     <div class="posts-infinite-scroll">
       @while (have_posts()) @php(the_post())
-        @include('partials.content-horizontal')
+        @include(App\cardPartial())
       @endwhile
     </div>
   </div>
