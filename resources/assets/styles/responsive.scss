@@ -82,13 +82,22 @@
     .nav-primary{
       display: none;
       position: fixed;
-      background-color: $white;
+      background-color: rgba($white,0.9);
       top: 0px;
       bottom: 0px;
-      left: 20%;
+      left: 0px;
       right: 0px;
       box-shadow: 0px 2px 5px rgba(125, 125, 125, 0.4);
       z-index: 100;
+
+      .close.menu-toggle{
+        font-size: 50px;
+        left: 40px;
+        position: relative;
+        display: block;
+        float: none;
+        margin-top: 15px;
+      }
       
       .menu-open &{
         display: block;

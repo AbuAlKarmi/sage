@@ -15,7 +15,7 @@
 //   value.bind(to => $('.brand').text(to));
 // });\
 
-jQuery(document).on('click', '.brand', (e) => {
+jQuery(document).on('click', '.menu-toggle', (e) => {
   e.preventDefault();
   jQuery('body').toggleClass('menu-open');
 });
