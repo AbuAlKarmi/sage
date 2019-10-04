@@ -318,4 +318,28 @@ body.category-34{
     margin-bottom: 20px;
   }
 }
+
+.fancy-layout{
+  .wrap{
+    margin-top: -48px;
+  }
+  .main{
+    background-image: url('../images/fancy/bg.png');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .fancy-page-header{
+    h2{
+      background-image: url('../images/fancy/logo.png');
+      background-position: center ;
+      background-repeat: no-repeat;
+      height: 220px;
+      background-size: contain;
+      color: transparent;
+      transform: translateY(30px);
+    }
+  }
+}
 /*! purgecss end ignore */
