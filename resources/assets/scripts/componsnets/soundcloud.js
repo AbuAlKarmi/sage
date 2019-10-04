@@ -6,34 +6,18 @@ const CLIENT_ID = 'qricfXheX8AlK1w6YtcZb5cB2glavjpJ';
 
 const player = new SoundCloudAudio(CLIENT_ID);
 
-
-// class SoundCloud {
-//   constructor(){
-//     this.soundcloud = SC.initialize({
-//       client_id: 'YOUR_CLIENT_ID',
-//       redirect_uri: 'https://example.com/callback'
-//     });
-//   }
-// }
 var $view = document.getElementById('track');
 
 var render = function(track) {
   // track info
-  var $info = document.createElement('h3');
-  $info.innerText =
-    'Playing: ' + track.user.username + ' - ' + track.title + ' - ';
+  var $info = document.createElement('h6');
+  $info.className = 'track-title';
+  $info.innerText = track.title;
+  var $loading = document.getElementById('soundcloude-loading');
 
   // track timings
   var $timer = document.createElement('span');
-  var renderTimer = function() {
-    $timer.innerText =
-      prettyTime(player.audio.currentTime) +
-      '/' +
-      prettyTime(player.duration);
-  };
-  // rerender timer on every second
-  player.on('timeupdate', renderTimer);
-  renderTimer();
+
   $info.appendChild($timer);
 
   // album cover
@@ -55,44 +39,46 @@ var render = function(track) {
   $button.innerText = 'PLAY';
   $button.addEventListener('click', toggleButton);
 
+
+  const playNext = () => {
+    currentTrack++;
+    alert(tracks[currentTrack].permalink_url);
+    playTrack(tracks[currentTrack].permalink_url);
+  };
+  var $nextButton = document.createElement('button');
+  $nextButton.style.display = 'block';
+  $nextButton.innerText = 'NEXT';
+  $nextButton.addEventListener('click', playNext);
+
+
   // clean view
-  $view.removeChild($view.firstChild);
+  $loading.remove();
 
   // append elements
   $view.appendChild($info);
   $view.appendChild($img);
   $view.appendChild($button);
+  $view.appendChild($nextButton);
 };
 
-var prettyTime = function(time) {
-  var hours = Math.floor(time / 3600);
-  var mins = '0' + Math.floor((time % 3600) / 60);
-  var secs = '0' + Math.floor(time % 60);
-
-  mins = mins.substr(mins.length - 2);
-  secs = secs.substr(secs.length - 2);
-  if (!isNaN(secs)) {
-    if (hours) {
-      return hours + ':' + mins + ':' + secs;
-    } else {
-      return mins + ':' + secs;
-    }
-  } else {
-    return '00:00';
-  }
-};
-
-const init = () => {
-  //
-  // scPlayer.play({
-  //   streamUrl: https://api.soundcloud.com/tracks/185533328/stream'
-  // });
-
+const playTrack = (trackUrl) => {
   player.resolve(
-    'https://soundcloud.com/metraswebsite/ooxtrj2aq55a',
+    trackUrl,
     render
   );
 };
 
+let tracks = [];
+let currentTrack = 0;
+
+const init = () => {
+  fetch(`https://api.soundcloud.com/resolve.json?url=${encodeURIComponent('https://soundcloud.com/metraswebsite/tracks')}&client_id=${CLIENT_ID}`)
+    .then(resp => resp.json())
+    .then(resp => {
+      tracks = resp;
+      currentTrack = 0;
+      playTrack(tracks[currentTrack].permalink_url);
+    });
+};
 
 init();

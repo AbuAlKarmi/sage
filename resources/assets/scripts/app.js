@@ -4,7 +4,7 @@
 import 'jquery';
 import 'bootstrap';
 import { router } from 'js-dom-router';
-import './componsnets/soundcloud'
+require('./componsnets/soundcloud');
 
 /**
  * DOM-based routing

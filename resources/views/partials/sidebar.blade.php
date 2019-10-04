@@ -14,8 +14,12 @@
 
 
 <div class="card mb-3">
-  <div class="card-body">
-    <div id="track" class="text-center text-muted">جاري التحميل ...</div>
+  <div class="card-body soundcloude-widget">
+    <div id="track">
+      <div id="soundcloude-loading" class="text-center text-muted">
+        جاري التحميل ...
+      </div>
+    </div>
   </div>
 </div>
 
