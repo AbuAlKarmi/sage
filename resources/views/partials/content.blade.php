@@ -5,7 +5,7 @@
     <div class="card-title-wrapper">
       @if(get_the_subtitle(get_the_ID(), '','', false))
         <h6 class="card-subtitle text-center">
-          <a href="{{ get_permalink() }}" class="text-secondary text-decoration-none">
+          <a href="{{ get_permalink() }}" class="text-secondary text-decoration-none" @if(\App\isMobile())rel="prefetch"@endif>
             {{ the_subtitle() }}
           </a>
         </h6>
@@ -18,12 +18,12 @@
     </div>
 
       <div class="card-image mb-2">
-        <a href="{{get_permalink()}}">
+        <a href="{{get_permalink()}}" @if(\App\isMobile())rel="prefetch"@endif>
           <img src="{{ App\get_post_image(get_the_ID()) }}" class="img-fluid" alt="{{strip_tags($title)}}">
         </a>
       </div>
 
-      <a href="{{ get_permalink() }}" class="text-decoration-none">
+      <a href="{{ get_permalink() }}" class="text-decoration-none" @if(\App\isMobile())rel="prefetch"@endif>
         <p class="card-text">{!! App\the_excerpt_max_charlength(20) !!}</p>
       </a>
       @include('partials/entry-meta',['categories', $subCategories])

@@ -12,9 +12,9 @@
         <div class="single-post-navigation">
           <div class="row d-flex flex-row">
             <?php global $post ?>
-            @foreach($navigationPosts as $post)
+            @foreach($navigationPosts as $key => $post)
               @if( isset($post) )
-                <div class="col-md-6 d-flex align-items-stretch">
+                <div class="col-md-6 d-flex align-items-stretch post-nav-{{$key+1}}">
                   <?php setup_postdata($post) ?>
                   @include( App\cardPartial(), ['showDescription' => true, 'displayPostMeta' => false])
                   <?php wp_reset_postdata(); ?>

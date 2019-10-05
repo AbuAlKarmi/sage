@@ -102,13 +102,16 @@ let tracks = [];
 let currentTrack = 0;
 
 const init = () => {
-  fetch(`https://api.soundcloud.com/resolve.json?url=${encodeURIComponent(CHANNEL_URL)}&client_id=${CLIENT_ID}`)
-    .then(resp => resp.json())
-    .then(resp => {
-      tracks = resp;
-      currentTrack = 0;
-      playTrack(tracks[currentTrack].permalink_url);
-    });
+  if($view.length){
+    fetch(`https://api.soundcloud.com/resolve.json?url=${encodeURIComponent(CHANNEL_URL)}&client_id=${CLIENT_ID}`)
+      .then(resp => resp.json())
+      .then(resp => {
+        tracks = resp;
+        currentTrack = 0;
+        playTrack(tracks[currentTrack].permalink_url);
+      });
+  }
+
 };
 
 $(document).ready(() => {

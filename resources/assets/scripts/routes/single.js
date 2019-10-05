@@ -1,3 +1,5 @@
+require('../hammer.min');
+
 export default () => {
   if (Sharect) {
     const sharect = new Sharect();
@@ -33,6 +35,25 @@ export default () => {
       window.open('http://twitter.com/share?url=' + url + '&text=' + encodeURIComponent(text), '', 'left=0,top=0,width=550,height=450,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
     });
   }
+
+
+
+  //Swip Event
+  var hammertime = new Hammer(jQuery('body')[0], {});
+  hammertime.on('swipeleft', function(ev) {
+    const nextLink = $('.single-post-navigation .post-nav-1');
+    if(nextLink.length){
+      window.location.href = nextLink.find('.card-image a').attr('href');
+    }
+  });
+
+  hammertime.on('swiperight', function(ev) {
+    const prevLink = $('.single-post-navigation .post-nav-2');
+    if(prevLink.length){
+      window.location.href = prevLink.find('.card-image a').attr('href');
+    }
+  });
+
 }
 
 
@@ -56,26 +77,33 @@ function getOffset(elem) { // crossbrowser version
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
-
-  if( !jQuery('body').hasClass('isMobile') ){
+  const $ = jQuery;
+  if( !$('body').hasClass('isMobile') ){
     setTimeout(() => {
-      const footNote = document.getElementsByClassName('modern-footnotes-footnote__note');
-      if( Array.from(footNote).length ){
-        jQuery('body').css({'position':'relative'}).append('<div id="foot-notes" class="metras-foot-notes"></div>');
-        Array.from(footNote).forEach(element => {
+      const footNote = $('.modern-footnotes-footnote__note');
+      if( footNote.length ){
+        $('body').css({'position':'relative'}).append('<div id="foot-notes" class="metras-foot-notes"></div>');
+        $(footNote).each((index, element) => {
+          console.log(index, element);
           const footnote = {
-            number: element.getAttribute('data-mfn'),
-            text: element.textContent,
+            number: $(element).data('mfn'),
+            text: $(element).text(),
           };
-          footnote['offset'] = jQuery(`[data-mfn="${footnote.number}"]`).offset();
-          const offsetLeft = Math.round(jQuery('article').offset().left - 315);
-          jQuery('#foot-notes')
-            .append(`<div class="foot-note" style="position: absolute; top: ${footnote.offset.top - 20}px; left: ${offsetLeft}px;"><div class="number">${footnote.number}</div><div class="content">${footnote.text}</div></div>`);
+          footnote['offset'] = $(`[data-mfn="${footnote.number}"]`).offset();
+          const offsetLeft = Math.round($('article').offset().left - 315);
+          $('#foot-notes').append(`<div class="foot-note" id="note-${footnote.number}" style="position: absolute; top: ${footnote.offset.top - 20}px; left: ${offsetLeft}px;"><div class="number">${footnote.number}</div><div class="content">${footnote.text}</div></div>`);
+
+
         });
       }
     }, 2000);
   }
-
-
 });
 
+// jQuery(document)
+//   .on('mouseenter','.modern-footnotes-footnote', () => {
+//     console.log('hover');
+//   })
+//   .on('mouseout', () => {
+//     console.log('hoverOut');
+//   });
