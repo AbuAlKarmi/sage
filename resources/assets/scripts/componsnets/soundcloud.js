@@ -1,64 +1,91 @@
-const SoundCloudAudio = require('soundcloud-audio');
 
+const SoundCloudAudio = require('soundcloud-audio');
+const $ = jQuery;
 const PROFILE_ID = '434541795';
 const CLIENT_ID = 'qricfXheX8AlK1w6YtcZb5cB2glavjpJ';
-
-
 const player = new SoundCloudAudio(CLIENT_ID);
+const CHANNEL_URL = 'https://soundcloud.com/metraswebsite/tracks';
+import * as ICONS from './icons';
 
-var $view = document.getElementById('track');
+var $view = $('#track');
+let play = false;
 
 var render = function(track) {
+
+  $view.empty();
+
   // track info
-  var $info = document.createElement('h6');
-  $info.className = 'track-title';
-  $info.innerText = track.title;
-  var $loading = document.getElementById('soundcloude-loading');
+  var $info = $(`<h6 class="track-title">${track.title}</h6>`);
+  var $infoWrapper = $(`<div class="info-wrapper"></div>`);
+  var $loading = $('soundcloude-loading');
 
   // track timings
-  var $timer = document.createElement('span');
-
-  $info.appendChild($timer);
+  // var $timer = document.createElement('span');
+  //
+  // $info.appendChild($timer);
 
   // album cover
-  var $img = document.createElement('img');
-  $img.src = track.artwork_url;
+  var $img = $(`<img src="${track.artwork_url}" />`);
+
 
   // play/pause button
-  var $button = document.createElement('button');
+  var $button = $(`<button class="play-btn">${ICONS.PLAY}</button>`);
   var toggleButton = function() {
     if (player.playing) {
-      $button.innerText = 'PLAY';
+      $button.html(ICONS.PLAY);
       player.pause();
     } else {
-      $button.innerText = 'PAUSE';
+      $button.html(ICONS.PAUSE);
       player.play();
     }
   };
-  $button.style.display = 'block';
-  $button.innerText = 'PLAY';
-  $button.addEventListener('click', toggleButton);
+
+  $button.on('click', toggleButton);
 
 
   const playNext = () => {
+    player.pause();
     currentTrack++;
-    alert(tracks[currentTrack].permalink_url);
+    if(currentTrack > tracks.length){
+      currentTrack = 0;
+    }
     playTrack(tracks[currentTrack].permalink_url);
   };
-  var $nextButton = document.createElement('button');
-  $nextButton.style.display = 'block';
-  $nextButton.innerText = 'NEXT';
-  $nextButton.addEventListener('click', playNext);
+
+
+  const playPrev = () => {
+    player.pause();
+    currentTrack--;
+    if(currentTrack < 0){
+      currentTrack = tracks.length;
+    }
+    playTrack(tracks[currentTrack].permalink_url);
+  };
+
+
+
+  const $nextButton = $(`<button class="next-btn">${ICONS.NEXT}</button>`);
+  $nextButton.on('click', playNext);
+
+  const $prevButton = $(`<button class="prev-btn">${ICONS.PREV}</button>`);
+  $prevButton.on('click', playPrev);
+
+  const $buttonsWrapper = $(`<div class="btns-wrapper"></div>`);
 
 
   // clean view
   $loading.remove();
 
   // append elements
-  $view.appendChild($info);
-  $view.appendChild($img);
-  $view.appendChild($button);
-  $view.appendChild($nextButton);
+
+
+  $buttonsWrapper.append($nextButton);
+  $buttonsWrapper.append($button);
+  $buttonsWrapper.append($prevButton);
+  $infoWrapper.append($info);
+  $infoWrapper.append($buttonsWrapper);
+  $view.append($img);
+  $view.append($infoWrapper);
 };
 
 const playTrack = (trackUrl) => {
@@ -66,13 +93,16 @@ const playTrack = (trackUrl) => {
     trackUrl,
     render
   );
+  if(player.playing){
+    player.play();
+  }
 };
 
 let tracks = [];
 let currentTrack = 0;
 
 const init = () => {
-  fetch(`https://api.soundcloud.com/resolve.json?url=${encodeURIComponent('https://soundcloud.com/metraswebsite/tracks')}&client_id=${CLIENT_ID}`)
+  fetch(`https://api.soundcloud.com/resolve.json?url=${encodeURIComponent(CHANNEL_URL)}&client_id=${CLIENT_ID}`)
     .then(resp => resp.json())
     .then(resp => {
       tracks = resp;
@@ -81,4 +111,7 @@ const init = () => {
     });
 };
 
-init();
+$(document).ready(() => {
+  init();
+});
+
