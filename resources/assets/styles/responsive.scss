@@ -1,3 +1,4 @@
+/*! purgecss start ignore */
 @media screen and (max-width: 767px){
   .posts-loop {
     .post-card{
@@ -117,5 +118,121 @@
       margin-top: -8px;
     }
   }
-}
 
+  .single-post{
+    .post {
+      .post-meta {
+        .share{
+          position: fixed;
+          bottom: 0px;
+          background: #FFF;
+          z-index: 1;
+          left: 0px;
+          right: 0px;
+          padding: 16px 32px;
+          box-shadow: -1px 0px 5px rgba($grey, 0.2);
+          .heateor_sss_sharing_container .heateor_sss_sharing_ul{
+            justify-content: space-between;
+          }
+        }
+      }
+    }
+  }
+
+  article{
+    main{
+      &.card{
+        &.p-4{
+          padding: 1.5rem 1rem !important;
+        }
+        .card-img-top{
+          border-radius: 0px;
+        }
+
+        header{
+          h3{
+            font-size: 1.5rem;
+          }
+          .entry-title{
+            &.card-title{
+              font-size: 2rem;
+            }
+          }
+        }
+
+        .post-image{
+          margin-left: -1rem;
+          margin-right: -1rem;
+        }
+
+        .entry-content{
+          img{
+            width: calc(100% + 2rem);
+            max-width: none;
+            margin-left: -1rem;
+            margin-right: -1rem;
+          }
+        }
+      }
+    }
+  }
+
+  body{
+
+    .panleft-icon,
+    .panright-icon{
+      position: fixed;
+      width: 120px;
+      height: 120px;
+      top: 50%;
+      margin-top: -50px;
+      background-color: rgba($black,0.8);
+      z-index: 11;
+      border-radius: 50%;
+      transition: all .25s ease-in;
+    }
+
+    .panleft-icon{
+      left: -50px;
+      padding-right: 14px;
+      text-align: right;
+      transform: translateX(-70px);
+
+      &:after{
+        content: "\2192";
+        color: #FFF;
+        font-size: 50px;
+        line-height: 130px;
+      }
+    }
+
+    .panright-icon{
+      right: -50px;
+      padding-left: 14px;
+      text-align: left;
+      transform: translateX(70px);
+
+      &:after{
+        content: "\2190";
+        color: #FFF;
+        font-size: 50px;
+        line-height: 130px;
+      }
+    }
+
+    &.panleft{
+      .panleft-icon{
+        transform: translateX(0px);
+      }
+    }
+
+    &.panright{
+      .panright-icon{
+        transform: translateX(0px);
+      }
+    }
+  }
+
+
+}
+/*! purgecss end ignore */

@@ -54,6 +54,16 @@ export default () => {
     }
   });
 
+  hammertime.on('panstart', (ev) => {
+    $('body').addClass(ev.additionalEvent);
+  });
+
+  hammertime.on('panend', (ev) => {
+    $('body')
+      .removeClass('panleft')
+      .removeClass('panright');
+  });
+
 }
 
 

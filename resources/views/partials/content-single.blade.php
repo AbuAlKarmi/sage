@@ -19,7 +19,7 @@ $postFeaturedImage = get_the_post_thumbnail_url(get_the_ID(), 'full');
       </header>
 
       @if( isset($postFeaturedImage) && !empty($postFeaturedImage) )
-        <div class="mb-4">
+        <div class="post-image mb-4">
           <img src="{{ $postFeaturedImage }}" class="card-img-top img-responsive" alt="{{$title}}">
           <div class="text-muted"><small>{!! App\the_post_thumbnail_caption() !!}</small></div>
         </div>
@@ -47,4 +47,12 @@ $postFeaturedImage = get_the_post_thumbnail_url(get_the_ID(), 'full');
       @include('icons::social.twitter', ['width' => '20', 'height' => '20px'])
   </span>
   <div id="sharable-text"></div>
+</div>
+
+
+<div class="panleft-icon">
+
+</div>
+<div class="panright-icon">
+
 </div>

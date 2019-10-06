@@ -4,8 +4,30 @@
     position: relative;
     text-align: center;
     min-height: 150px;
+    overflow: hidden;
     img{
       width: 100%;
+      filter: blur(3px);
+      -webkit-filter: blur(3px);
+    }
+    .soundcloude-icon{
+      display: block;
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      z-index: 1;
+      svg{
+        transition: all 0.2s linear;
+        width: 30px;
+        height: 20px;
+        fill: rgba($white, 0.8);
+      }
+
+      &:hover{
+        svg{
+          fill: $white;
+        }
+      }
     }
     .info-wrapper{
       position: absolute;
@@ -21,10 +43,15 @@
         padding: 1rem;
         font-size: 1.3rem;
         padding-top: 1.5rem;
+
+        min-height: 120px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
       }
 
       .btns-wrapper{
-        margin-top: -52.5px;
+        margin-top: -30px;
         position: absolute;
         top: 50%;
         left: 0px;
@@ -39,6 +66,10 @@
             height: 30px;
             fill: $white;
             //filter: drop-shadow( px 1px 4px rgba($black, 0.7) );
+
+            &#play{
+              transform: translateX(-5px);
+            }
           }
 
           &.play-btn{

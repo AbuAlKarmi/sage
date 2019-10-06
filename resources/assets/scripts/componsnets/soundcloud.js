@@ -79,6 +79,7 @@ var render = function(track) {
   // append elements
 
 
+  $view.append(`<a href="${track.permalink_url}" class="soundcloude-icon" target="_blank">${ICONS.SOUNDCLOUDE}</a>`);
   $buttonsWrapper.append($nextButton);
   $buttonsWrapper.append($button);
   $buttonsWrapper.append($prevButton);
