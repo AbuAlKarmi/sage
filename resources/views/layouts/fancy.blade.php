@@ -7,11 +7,13 @@
     @php(do_action('get_header'))
     @include('partials.header')
 
-    <div class="wrap">
-      <div class="content">
-        <main class="main">
-          @yield('content')
-        </main>
+    <div class="container">
+      <div class="wrap">
+        <div class="content">
+          <main class="main">
+            @yield('content')
+          </main>
+        </div>
       </div>
     </div>
 
