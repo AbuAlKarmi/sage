@@ -50,7 +50,7 @@ export default () => {
   hammertime.on('swiperight', function(ev) {
     const prevLink = $('.single-post-navigation .post-nav-2');
     if(prevLink.length){
-      window.location.href = prevLink.find('.card-image a').attr('href');
+      window.location.href = `${window.location.protocol}//${window.location.host}`;
     }
   });
 
