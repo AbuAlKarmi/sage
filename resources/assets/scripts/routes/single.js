@@ -36,9 +36,14 @@ export default () => {
     });
   }
 
-
-
   //Swip Event
+  if($('body').hasClass('isMobile')){
+    initHummertime();
+  }
+}
+
+
+const initHummertime = () => {
   var hammertime = new Hammer(jQuery('body')[0], {});
   hammertime.on('swipeleft', function(ev) {
     const nextLink = $('.single-post-navigation .post-nav-1');
@@ -63,8 +68,7 @@ export default () => {
       .removeClass('panleft')
       .removeClass('panright');
   });
-
-}
+};
 
 
 function getOffset(elem) { // crossbrowser version

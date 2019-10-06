@@ -47,7 +47,6 @@ mix.sass(src`styles/app.scss`, 'styles')
 // JavaScript
 mix.js(src`scripts/app.js`, 'scripts')
    .js(src`scripts/customizer.js`, 'scripts');
-   // .extract();
 
 // Assets
 mix.copyDirectory(src`images`, publicPath`images`)

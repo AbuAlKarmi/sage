@@ -235,6 +235,15 @@
     }
   }
 
-
+  #header-menu{
+    .newsletter{
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      background-color: transparent;
+      border-top: 1px solid rgba($grey,0.2);
+    }
+  }
 }
 /*! purgecss end ignore */
