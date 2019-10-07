@@ -189,16 +189,6 @@ add_action( 'tgmpa_register', function(){
             'required'  => true, // this plugin is recommended
         ],
         [
-            'name'      => 'Gutenberg',
-            'slug'      => 'gutenberg',
-            'required'  => true, // this plugin is recommended
-        ],
-        [
-            'name'      => 'Regenerate Thumbnails',
-            'slug'      => 'regenerate-thumbnails',
-            'required'  => true, // this plugin is recommended
-        ],
-        [
             'name'      => 'Regenerate Thumbnails',
             'slug'      => 'regenerate-thumbnails',
             'required'  => true, // this plugin is recommended
