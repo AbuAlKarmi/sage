@@ -245,5 +245,22 @@
       border-top: 1px solid rgba($grey,0.2);
     }
   }
+
+  .files-template-default{
+    .files{
+      &.type-files{
+        > .card{
+          .card-body{
+            padding: 0px;
+          }
+        }
+
+      }
+    }
+  }
+
+  .dfater.big-preview .card-file{
+    min-height: 265px;
+  }
 }
 /*! purgecss end ignore */
