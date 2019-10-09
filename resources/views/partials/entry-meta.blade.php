@@ -2,9 +2,9 @@
 <div class="byline post-meta author vcard">
   <?php $coAuthors = explode(',',coauthors_posts_links(',', ',', null, null, false)); ?>
   <div class="d-flex information-wrapper">
-    @if( !$hideAuthorInformation )
+    @if(!isset($hideAuthorInformation) || (isset($hideAuthorInformation) && !$hideAuthorInformation) )
 
-      @if( !$hideAuthorImage )
+      @if( !isset($hideAuthorImage) || (isset($hideAuthorImage) && !$hideAuthorImage) )
         <div class="d-inline-flex">
           @if(count($coAuthors) > 1)
             <span rel="author" class="author-image fn">

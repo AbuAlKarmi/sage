@@ -170,7 +170,7 @@ function bootstrap_pagination( \WP_Query $wp_query = null, $echo = true ) {
             $pagination .= '<li class="page-item' . (strpos($page, 'current') !== false ? ' active' : '') . '"> ' . str_replace('page-numbers', 'page-link', $page) . '</li>';
         }
 
-        $pagination .= '</ul></div>';
+        $pagination .= '</ul></nav>';
 
         if ( $echo ) {
             echo $pagination;

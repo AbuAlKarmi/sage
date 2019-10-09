@@ -37,6 +37,7 @@ class Dfater extends Composer
     {
         $args = [
             'post_type'         => 'files',
+            'posts_per_page'    =>  -1
         ];
         $files = get_posts($args);
 
