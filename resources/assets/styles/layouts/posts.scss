@@ -82,6 +82,7 @@ $POST_CARD_HEIGHT: 570px;
       height: 105px;
       overflow: hidden;
       text-overflow: ellipsis;
+      text-align: justify;
     }
 
     .card-title-wrapper{
@@ -132,13 +133,6 @@ $POST_CARD_HEIGHT: 570px;
   }
 }
 
-.entry-content{
-  > .heateorSssClear,
-  > .heateor_sss_sharing_container,
-  > .heateorSssClear{
-    display: none;
-  }
-}
 
 .single-post{
   main{
@@ -228,11 +222,6 @@ $POST_CARD_HEIGHT: 570px;
   }
 }
 
-.entry-content{
-  .figure{
-    max-width: 100%;
-  }
-}
 
 .tags-content{
   color: lighten($grey, 30%);
@@ -257,14 +246,6 @@ $POST_CARD_HEIGHT: 570px;
         display: block !important;
         text-align: center;
       }
-    }
-  }
-}
-
-.entry-content{
-  span{
-    &.background-color{
-      //padding: 5px 0px;
     }
   }
 }
@@ -358,11 +339,36 @@ $POST_CARD_HEIGHT: 570px;
 }
 
 
+
 .entry-content{
+
+}
+
+.entry-content{
+  > .heateorSssClear,
+  > .heateor_sss_sharing_container,
+  > .heateorSssClear{
+    display: none;
+  }
+
+
+  .figure{
+    max-width: 100%;
+  }
+
+  span{
+    &.background-color{
+      //padding: 5px 0px;
+    }
+  }
+
   span.background-color{
-    background-color: #1DA1F2 !important;
-    color: $white !important;
     padding: 0px 3px;
   }
+
+  p{
+    text-align: justify;
+  }
 }
+
 /*! purgecss end ignore */

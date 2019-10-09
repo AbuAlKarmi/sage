@@ -42,9 +42,9 @@
                 {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']) !!}
               @endif
 
-              @if(App\isMobile())
-                @include('widgets.newsletter')
-              @endif
+{{--              @if(App\isMobile())--}}
+{{--                @include('widgets.newsletter')--}}
+{{--              @endif--}}
             </nav>
           </div>
 
