@@ -77,7 +77,7 @@
                       <div class="card">
                         <div class="card-body text-center">
                           <a href="{{$post['url']}}" class="text-decoration-none">
-                            @if($post['subtitle'])<h4 class="card-subtitle text-secondary mb-2 p-0">{{$post['subtitle']}}</h4>@endif
+                            @if($post['subtitle'])<h4 class="card-subtitle text-secondary mb-2 p-0">{!! $post['subtitle'] !!}</h4>@endif
                             <h3 class="card-title slider-card-title m-0 p-0">{!! $post['title'] !!}</h3>
                           </a>
                         </div>

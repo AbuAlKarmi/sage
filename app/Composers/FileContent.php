@@ -35,6 +35,11 @@ class FileContent extends Composer
      */
     public function posts()
     {
-        return get_field('articles', get_the_ID());
+        $files = get_field('articles', get_the_ID());
+        usort($files, function($a, $b) {
+            return strtotime($a->post_date) - strtotime($b->post_date);
+        });
+
+        return array_reverse($files);
     }
 }

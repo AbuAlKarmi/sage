@@ -1,7 +1,7 @@
 <article @php(post_class('card post-card mb-2 post-vertical'))>
 
   <div class="card-body">
-    <small class="d-block mb-2 text-small text-center post-publish-date">{{the_date('j F Y')}}</small>
+    <small class="d-block mb-2 text-small text-center post-publish-date">{{get_the_date('j F Y')}}</small>
     <div class="card-title-wrapper">
       @if(get_the_subtitle(get_the_ID(), '','', false))
         <h6 class="card-subtitle text-center">
