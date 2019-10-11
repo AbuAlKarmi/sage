@@ -54,6 +54,7 @@
   @endwhile
 
 
+  @if(false)
   <div class="pagination-links d-flex justify-content-end">
     <?php
     ob_start();
@@ -92,5 +93,6 @@
       @endif
     <?php		echo ob_get_clean(); ?>
   </div>
+  @endif
 
 @endsection

@@ -61,7 +61,7 @@ class Authors extends Composer
      */
     public function authors()
     {
-        $users_per_page = 16;
+        $users_per_page = 9999;
         // grab the current page number and set to 1 if no page number is set
         $page = get_query_var('paged') ? (int) get_query_var('paged') : 1;
 
