@@ -79,7 +79,7 @@
       'type' => 'array',
       'prev_text'          => __('<span></span> السابق', 'sage'),
       'next_text'          => __('التالي <span></span>', 'sage'),
-      'before_page_number' => '<span class="screen-reader-text">' . $translated . ' </span>'
+      'before_page_number' => '<span class="screen-reader-text"></span>'
     ) );
     ?>
 

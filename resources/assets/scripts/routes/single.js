@@ -107,9 +107,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
           const $previousNote = $(`#note-${footnote.number - 1}`);
           let $noteOffset = footnote.offset.top - 20;
-          console.log( $previousNote.offset() );
           if( $previousNote.length && ($previousNote.offset().top + $previousNote.height()) >= $noteOffset){
-            $noteOffset = $previousNote.offset().top + $previousNote.height() - 30;
+            $noteOffset = $previousNote.offset().top + $previousNote.height();
           }
           $('#foot-notes').append(`<div class="foot-note" id="note-${footnote.number}" style="position: absolute; top: ${$noteOffset}px; left: ${offsetLeft}px;"><div class="number">${footnote.number}</div><div class="content">${footnote.text}</div></div>`);
         });
