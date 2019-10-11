@@ -27,6 +27,15 @@ body {
 }
 
 
+.wrap.container{
+  .content{
+    > .main{
+      min-height: calc(100vh - 460px);
+    }
+  }
+}
+
+
 @media (min-width: 1200px){
   .container{
     max-width: 1060px;
