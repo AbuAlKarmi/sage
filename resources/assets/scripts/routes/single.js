@@ -98,16 +98,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
       if( footNote.length ){
         $('body').css({'position':'relative'}).append('<div id="foot-notes" class="metras-foot-notes"></div>');
         $(footNote).each((index, element) => {
-          console.log(index, element);
           const footnote = {
             number: $(element).data('mfn'),
             text: $(element).text(),
           };
           footnote['offset'] = $(`[data-mfn="${footnote.number}"]`).offset();
           const offsetLeft = Math.round($('article').offset().left - 315);
-          $('#foot-notes').append(`<div class="foot-note" id="note-${footnote.number}" style="position: absolute; top: ${footnote.offset.top - 20}px; left: ${offsetLeft}px;"><div class="number">${footnote.number}</div><div class="content">${footnote.text}</div></div>`);
 
-
+          const $previousNote = $(`#note-${footnote.number - 1}`);
+          let $noteOffset = footnote.offset.top - 20;
+          console.log( $previousNote.offset() );
+          if( $previousNote.length && ($previousNote.offset().top + $previousNote.height()) >= $noteOffset){
+            $noteOffset = $previousNote.offset().top + $previousNote.height() - 30;
+          }
+          $('#foot-notes').append(`<div class="foot-note" id="note-${footnote.number}" style="position: absolute; top: ${$noteOffset}px; left: ${offsetLeft}px;"><div class="number">${footnote.number}</div><div class="content">${footnote.text}</div></div>`);
         });
       }
     }, 2000);
