@@ -1,9 +1,9 @@
 <footer class="footer" id="footer">
   <div class="container">
     @php(dynamic_sidebar('sidebar-footer'))
-    @if(!is_home())
+    <div class="@if(is_home()) d-none @endif">
       {!! do_shortcode('[instagram-feed num=5 cols=5]') !!}
-    @endif
+    </div>
   </div>
   <div class="bottom-footer">
     <div class="container text-center">
