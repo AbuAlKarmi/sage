@@ -59,11 +59,36 @@ const initHummertime = () => {
     }
   });
 
+
+  var interval = null;
+
+  function startStuff(func, time) {
+    interval = setInterval(func, time);
+  }
+
+  function stopStuff() {
+    clearInterval(interval);
+  }
+
   hammertime.on('panstart', (ev) => {
-    $('body').addClass(ev.additionalEvent);
+    stopStuff();
+    $('body').addClass('panleft');
+    startStuff(() => {
+      $('body')
+        .removeClass('panleft')
+        .removeClass('panright');
+    }, 500);
+  });
+
+  hammertime.on('panleft', (ev) => {
+    $('body').addClass('panleft');
+  });
+  hammertime.on('panright', (ev) => {
+    $('body').addClass('panright');
   });
 
   hammertime.on('panend', (ev) => {
+    console.log('panend');
     $('body')
       .removeClass('panleft')
       .removeClass('panright');

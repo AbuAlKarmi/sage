@@ -273,6 +273,47 @@
       padding-bottom: 70px;
     }
   }
+
+
+  .post-template-default {
+    .tags-content {
+      right: 1rem;
+      bottom: 2rem;
+    }
+  }
+
+
+  .banner .logo{
+    padding: 15px 0px !important;
+
+  }
+
+  .banner .logo .brand{
+    max-width: 140px;
+    height:80px;
+  }
+
+  .top-header{
+    float: none;
+    justify-content: flex-end;
+    text-align: right !important;
+  }
+
+  .top-header .text-right{
+    text-align: right !important;
+  }
+
+  .banner .main-toggle-button{
+    top: -10px;
+    margin-top: 0px;
+    left: 0px;
+    z-index: 1;
+  }
+
+  #menu-item-10687{
+    display: block;
+  }
+
 }
 
 /*! purgecss end ignore */
