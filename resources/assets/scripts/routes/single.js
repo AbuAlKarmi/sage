@@ -30,7 +30,10 @@ export default () => {
         }
       );
     jQuery('[data-toggle="tooltip"]').on('click', (element) => {
-      const url = window.location;
+      let url = jQuery('link[rel="shortlink"]:first').attr('href');
+      if( url === undefined ){
+        url = encodeURIComponent(jQuery('link[rel="canonical"]:first').attr('href'));
+      }
       const text = jQuery(element.target).text();
       window.open('http://twitter.com/share?url=' + url + '&text=' + encodeURIComponent(text), '', 'left=0,top=0,width=550,height=450,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
     });
