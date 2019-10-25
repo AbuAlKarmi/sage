@@ -68,6 +68,28 @@ jQuery(document).ready(function() {
   //   });
   // })
 
+  $( window ).scroll(function() {
+    const getScrollPosition = () => {
+      if (window.pageYOffset !== undefined) {
+        return [pageXOffset, pageYOffset];
+      } else {
+        let sx, sy, d = document,
+          r = d.documentElement,
+          b = d.body;
+        sx = r.scrollLeft || b.scrollLeft || 0;
+        sy = r.scrollTop || b.scrollTop || 0;
+        return [sx, sy];
+      }
+    };
+
+    const [x,y] = getScrollPosition();
+    if( y > 400 ){
+      $('#goTop').show();
+    }else{
+      $('#goTop').hide();
+    }
+  });
+
 });
 
 setTimeout(() => {
@@ -186,8 +208,5 @@ function initSlider($slider){
   $('.slick-next, .slick-prev').click(function() {
     startProgressbar();
   });
-
-
-
 
 }

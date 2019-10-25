@@ -25,4 +25,17 @@
     }
   }
 }
+
+.page-up{
+  position: fixed;
+  bottom: 20px;
+  left: 30px;
+
+  .single-post &{
+    bottom: 60px;
+  }
+  .btn{
+    //display: none;
+  }
+}
 /*! purgecss end ignore */

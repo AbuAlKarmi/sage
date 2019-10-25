@@ -1,4 +1,8 @@
 <footer class="footer" id="footer">
+
+  <div class="page-up">
+    <a id="goTop" href="#top" class="btn btn-primary btn-icon">&uarr;</a>
+  </div>
   <div class="container">
     @php(dynamic_sidebar('sidebar-footer'))
     <div class="@if(is_home()) d-none @endif">
