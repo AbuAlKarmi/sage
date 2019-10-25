@@ -23,6 +23,9 @@
     body{!! $category['selector'] !!} .slider > .card > .card-body{
       background-color: {{$category['color']}};
     }
+    .archive.category{!! $category['selector'] !!} .posts-infinite-scroll .post-vertical:first-child{
+      border-color: {{$category['color']}};
+    }
     @endforeach
   </style>
 </head>
