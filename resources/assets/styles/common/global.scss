@@ -149,6 +149,11 @@ html{
   }
 }
 
+.slick-slide{
+  display: flex;
+  justify-content: center;
+}
+
 .slick-next{
   left: 15px !important;
   right: auto !important;
@@ -367,6 +372,10 @@ a{
   animation: beat 1s infinite alternate;
   transform-origin: center;
   width: 180px !important;
+  > span{
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .page-id-9980 .main{
