@@ -204,11 +204,18 @@ add_action( 'tgmpa_register', function(){
     tgmpa( $plugins, $config );
 });
 
+
 function infiniteScroll()
 {
     $category = get_queried_object();
     if( is_home() ){
-        verticalInfiniteScroll();
+        mobileInfiniteScroll();
+//        if( isMobile() ){
+//            mobileInfiniteScroll();
+//        }else{
+//            verticalInfiniteScroll();
+//        }
+
     }else if(is_archive()){
         if( $category->term_id == 34 ){
             fancyInfiniteScroll();
@@ -241,4 +248,14 @@ function horizontalInfiniteScroll(){
 
 function fancyInfiniteScroll(){
     echo View::make('partials.fancy-posts-list');
+}
+
+function mobileInfiniteScroll(){
+    echo '<div class="container-inner"><div class="row">';
+    while (have_posts()) : the_post();
+        echo "<div class='col-md-6'>";
+        echo View::make('partials.content',['hideAuthorImage' => true ]);
+        echo "</div>";
+    endwhile;
+    echo '</div></div>';
 }
