@@ -111,6 +111,12 @@ add_action('after_setup_theme', function () {
     add_editor_style(asset('styles/app-rtl.css')->uri());
     add_theme_support( 'editor-styles' );
 
+    add_action('init',function(){
+        if( !session_id() )
+            session_start();
+    });
+
+
 //    add_action('init', function(){
 //        add_theme_support( 'infinite-scroll',
 //            [
@@ -209,12 +215,11 @@ function infiniteScroll()
 {
     $category = get_queried_object();
     if( is_home() ){
-        mobileInfiniteScroll();
-//        if( isMobile() ){
-//            mobileInfiniteScroll();
-//        }else{
-//            verticalInfiniteScroll();
-//        }
+        if( isMobile() ){
+            mobileInfiniteScroll();
+        }else{
+            verticalInfiniteScroll();
+        }
 
     }else if(is_archive()){
         if( $category->term_id == 34 ){
@@ -251,11 +256,5 @@ function fancyInfiniteScroll(){
 }
 
 function mobileInfiniteScroll(){
-    echo '<div class="container-inner"><div class="row">';
-    while (have_posts()) : the_post();
-        echo "<div class='col-md-6'>";
-        echo View::make('partials.content',['hideAuthorImage' => true ]);
-        echo "</div>";
-    endwhile;
-    echo '</div></div>';
+    echo View::make('partials.loops.mobile',['hideAuthorImage' => true ]);
 }

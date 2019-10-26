@@ -48,7 +48,7 @@ function the_post_paragraphs() {
     $paras = explode('<p>', $post_content);
     array_shift($paras);
 
-    return join("\n\r", ["<p>$paras[0]</p>","<p>$paras[1]</p>"]);
+    return join("\n\r", ["<p>$paras[0]</p>",isMobile() ? "" : "<p>$paras[1]</p>"]);
 }
 
 
