@@ -56,6 +56,8 @@
 
   [dir='rtl'] .slick-slide{
     float: left;
+    display: flex;
+    justify-content: center;
   }
 
 </style>
