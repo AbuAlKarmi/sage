@@ -373,8 +373,8 @@ a{
   transform-origin: center;
   width: 180px !important;
   > span{
-    display: flex;
-    justify-content: center;
+    display: flex !important;
+    justify-content: center !important;
   }
 }
 
