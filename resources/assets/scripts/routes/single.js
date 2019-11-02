@@ -160,7 +160,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 const toggleNoteVisability = (e, show = false) => {
-  console.log( e.fromElement.localName );
   const $element = ['p','a'].includes(e.fromElement.localName) ? $(e.target).closest('[data-mfn]') : $(e.target);
   const number = $element.data('mfn');
   if(number){
