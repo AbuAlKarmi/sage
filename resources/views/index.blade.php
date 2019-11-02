@@ -33,18 +33,6 @@
 
   <div class="posts-loop" id="posts-infinite-scroll">
     @if(app\isMobile())
-      @foreach($featuredHomePosts as $featuredPost)
-        <?php global $post ?>
-        <?php $post = $featuredPost ?>
-        {{--      @php(dd($featuredPost))--}}
-        <div class="posts-loop">
-          @php(setup_postdata( $post ))
-          @php( $featuredPostId = get_the_ID() )
-          @include('partials.content-featured')
-          @php(wp_reset_postdata())
-        </div>
-      @endforeach
-      @include('partials.mobile-file')
       @include('partials.loops.mobile')
     @else
       @include('partials.loops.standard')

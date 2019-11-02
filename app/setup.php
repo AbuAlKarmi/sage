@@ -116,16 +116,8 @@ add_action('after_setup_theme', function () {
             session_start();
     });
 
+    add_filter( 'run_wptexturize', '__return_false', 9999 );
 
-//    add_action('init', function(){
-//        add_theme_support( 'infinite-scroll',
-//            [
-//                'container' => 'posts-loop',
-//                'render' => 'metras_inifinite_scroll_render',
-//                'footer' => 'wrapper',
-//            ]
-//        );
-//    });
 }, 20);
 
 /**

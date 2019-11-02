@@ -368,15 +368,20 @@ a{
 }
 
 
-.lp-screen img{
-  animation: beat 1s infinite alternate;
-  transform-origin: center;
-  width: 180px !important;
+.lp-screen{
   > span{
     display: flex !important;
     justify-content: center !important;
+    img{
+      animation: beat 1s infinite alternate;
+      transform-origin: center;
+      width: 180px !important;
+      height: 200px !important;
+    }
+
   }
 }
+
 
 .page-id-9980 .main{
   display: flex;
