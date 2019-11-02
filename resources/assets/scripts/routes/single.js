@@ -141,9 +141,35 @@ document.addEventListener('DOMContentLoaded', (event) => {
           $('#foot-notes').append(`<div class="foot-note" id="note-${footnote.number}" style="position: absolute; top: ${$noteOffset}px; left: ${offsetLeft}px;"><div class="number">${footnote.number}</div><div class="content">${footnote.text}</div></div>`);
         });
       }
-    }, 2000);
+    }, 100);
+
+    $(document).on({
+      mouseenter(e){
+        if( e ){
+          toggleNoteVisability(e, true);
+        }
+
+      },
+      mouseleave(e){
+        if(e){
+          toggleNoteVisability(e, false);
+        }
+      }
+    }, `[data-mfn], [data-mfn] a`);
   }
 });
+
+const toggleNoteVisability = (e, show = false) => {
+  console.log( e.fromElement.localName );
+  const $element = ['p','a'].includes(e.fromElement.localName) ? $(e.target).closest('[data-mfn]') : $(e.target);
+  const number = $element.data('mfn');
+  if(number){
+    $(`#note-${number}`).css({
+      display: show ? 'block' : 'none',
+      top: $element.offset().top - 30,
+    });
+  }
+};
 
 // jQuery(document)
 //   .on('mouseenter','.modern-footnotes-footnote', () => {
