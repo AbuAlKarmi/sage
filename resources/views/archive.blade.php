@@ -12,7 +12,7 @@
 
   <div class="posts-infinite-scroll">
     @while(have_posts()) @php(the_post())
-      @include(App\cardPartial())
+      @include('partials.content-search')
     @endwhile
   </div>
   {!! App\bootstrap_pagination() !!}

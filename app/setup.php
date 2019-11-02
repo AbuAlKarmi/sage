@@ -118,6 +118,9 @@ add_action('after_setup_theme', function () {
 
     add_filter( 'run_wptexturize', '__return_false', 9999 );
 
+//    add_filter('the_excerpt', 'wps_highlight_results');
+//    add_filter('the_title', 'wps_highlight_results');
+
 }, 20);
 
 /**
@@ -250,3 +253,29 @@ function fancyInfiniteScroll(){
 function mobileInfiniteScroll(){
     echo View::make('partials.loops.mobile',['hideAuthorImage' => true ]);
 }
+
+
+
+function highlight_results($text){
+    if(is_search()){
+        $keys = implode('|', explode(' ', get_search_query()));
+        $text = preg_replace('/(' . $keys .')/iu', '<strong class="search-highlight">\0</strong>', $text);
+    }
+    return $text;
+}
+
+add_filter('the_content', function($text){ return highlight_results($text);});
+add_filter('the_excerpt', function($text){ return highlight_results($text);});
+add_filter('the_title', function($text){ return highlight_results($text);});
+add_filter('the_excerpt_max_charlength', function($text){ return highlight_results($text);});
+
+function highlight_results_css() {
+    ?>
+    <style>
+        .search-highlight { background-color:#a3c4bd; font-weight:700; color: #FFF; }
+    </style>
+    <?php
+}
+add_action('wp_head', function(){
+    highlight_results_css();
+});
