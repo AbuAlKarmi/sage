@@ -9,9 +9,12 @@ export default () => {
   }
 
 
-  const tweets = document.getElementsByClassName('background-color');
+  const tweets = [
+    ...Array.from(document.getElementsByClassName('background-color')),
+    ...Array.from(document.querySelectorAll( ".entry-content span:not(.background-color):not(.modern-footnotes-footnote__note)" ))
+  ];
   if (tweets.length) {
-    Array.from(tweets).forEach(tweet => {
+    tweets.forEach(tweet => {
       jQuery(tweet)
         .attr('data-tooltip-content', '#tooltip_content')
         .attr('data-toggle','tooltip');

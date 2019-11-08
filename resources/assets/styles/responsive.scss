@@ -333,6 +333,21 @@
   .page-up{
     display: block;
   }
+
+  .mobile-menu-widget{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    .form-group{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .mt-2{
+        margin: 0px !important;
+      }
+    }
+  }
 }
 
 /*! purgecss end ignore */
