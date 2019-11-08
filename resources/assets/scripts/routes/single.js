@@ -143,23 +143,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
       }
     }, 100);
 
-    $(document).on({
-      mouseenter(e){
-        if( e ){
-          toggleNoteVisability(e, true);
-        }
-
-      },
-      mouseleave(e){
-        if(e){
-          toggleNoteVisability(e, false);
-        }
-      }
-    }, `[data-mfn], [data-mfn] a`);
+    // $(document).on({
+    //   mouseenter(e){
+    //     if( e ){
+    //       toggleNoteVisability(e, true);
+    //     }
+    //
+    //   },
+    //   mouseleave(e){
+    //     if(e){
+    //       toggleNoteVisability(e, false);
+    //     }
+    //   }
+    // }, `[data-mfn], [data-mfn] a`);
   }
 });
 
 const toggleNoteVisability = (e, show = false) => {
+  console.log( e.fromElement.localName );
   const $element = ['p','a'].includes(e.fromElement.localName) ? $(e.target).closest('[data-mfn]') : $(e.target);
   const number = $element.data('mfn');
   if(number){
