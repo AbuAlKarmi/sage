@@ -92,6 +92,12 @@ jQuery(document).ready(function() {
 
 });
 
+
+$(document).on('click', '#goTop', (e) => {
+  e.preventDefault();
+  window.scrollTo(0, 0);
+});
+
 setTimeout(() => {
   $(".wp-block-embed:not([class*='wp-block-embed-']) iframe").each(function(){
     function injectCSS(){

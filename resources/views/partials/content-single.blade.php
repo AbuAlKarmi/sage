@@ -23,8 +23,11 @@ $postFeaturedImage = get_the_post_thumbnail_url(get_the_ID(), 'full');
           <img src="{{ $postFeaturedImage }}" class="card-img-top img-responsive" alt="{{$title}}">
           <div class="text-muted"><small>{!! App\the_post_thumbnail_caption() !!}</small></div>
         </div>
-
       @endif
+
+      <div class="post-horizontal-meta top-user-meta">
+        @include('partials/entry-meta')
+      </div>
 
       <div class="entry-content">
         @php(the_content())

@@ -190,3 +190,11 @@ function isMobile() {
 function cardPartial() {
     return isMobile() ? 'partials.content' : 'partials.content-horizontal';
 }
+
+function highlightIfSearch($text){
+    if(is_search()){
+        $keys = implode('|', explode(' ', get_search_query()));
+        $text = preg_replace('/(' . $keys .')/iu', '<strong class="search-highlight">\0</strong>', $text);
+    }
+    return $text;
+}

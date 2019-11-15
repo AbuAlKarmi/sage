@@ -260,19 +260,20 @@ function mobileInfiniteScroll(){
 }
 
 
+//
+//function highlight_results($text){
+//    if(is_search()){
+//        $keys = implode('|', explode(' ', get_search_query()));
+//        $text = preg_replace('/(' . $keys .')/iu', '<strong class="search-highlight">\0</strong>', $text);
+//    }
+//    return $text;
+//}
 
-function highlight_results($text){
-    if(is_search()){
-        $keys = implode('|', explode(' ', get_search_query()));
-        $text = preg_replace('/(' . $keys .')/iu', '<strong class="search-highlight">\0</strong>', $text);
-    }
-    return $text;
-}
-
-add_filter('the_content', function($text){ return highlight_results($text);});
-add_filter('the_excerpt', function($text){ return highlight_results($text);});
-add_filter('the_title', function($text){ return highlight_results($text);});
-add_filter('the_excerpt_max_charlength', function($text){ return highlight_results($text);});
+add_filter('the_content', function($text){ return highlightIfSearch($text);});
+add_filter('the_excerpt', function($text){ return highlightIfSearch($text);});
+add_filter('the_title', function($text){ return highlightIfSearch($text);});
+add_filter('the_excerpt_max_charlength', function($text){ return highlightIfSearch($text);});
+add_filter('the_subtitle', function($text){ return highlightIfSearch($text);});
 
 function highlight_results_css() {
     ?>

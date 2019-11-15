@@ -37,6 +37,7 @@
     display: flex;
     flex-flow: column;
     justify-content: center;
+    opacity: 0.85;
   }
   .carousel-caption .card-body{
     display: flex;

@@ -13,18 +13,18 @@
         @if(get_the_subtitle(get_the_ID(), '','', false))
           <h6 class="card-subtitle text-secondary">
             <a href="{{ get_permalink() }}" class="text-secondary text-decoration-none">
-              {{ the_subtitle() }}
+              {!! App\highlightIfSearch(the_subtitle('','',false)) !!}
             </a>
           </h6>
         @endif
         <h5 class="card-title text-textPrimary font-weight-bold">
           <a href="{{ get_permalink() }}">
-            {!! the_title() !!}
+            {!! App\highlightIfSearch(get_the_title()) !!}
           </a>
         </h5>
 
         @if(!isset($showDescription) || isset($showDescription) && $showDescription)
-          <p class="card-text text-muted">{!! App\the_excerpt_max_charlength(20) !!}</p>
+          <p class="card-text text-muted">{!! App\highlightIfSearch(App\the_excerpt_max_charlength(20)) !!}</p>
         @endif
 
         @if(!isset($displayPostMeta) || isset($displayPostMeta) && $displayPostMeta)

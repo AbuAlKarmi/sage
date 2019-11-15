@@ -44,13 +44,22 @@ export default () => {
 
   //Swip Event
   if($('body').hasClass('isMobile')){
-    initHummertime();
+    // initHummertime();
   }
 }
 
 
 const initHummertime = () => {
-  var hammertime = new Hammer(jQuery('body')[0], {});
+
+  delete Hammer.defaults.cssProps.userSelect;
+
+  var hammertime = new Hammer(jQuery('body')[0], {
+    behavior: {
+      userSelect: true,
+    },
+  });
+
+
   hammertime.on('swipeleft', function(ev) {
     const nextLink = $('.single-post-navigation .post-nav-1');
     if(nextLink.length){
