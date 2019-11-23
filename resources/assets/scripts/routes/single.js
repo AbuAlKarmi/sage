@@ -1,4 +1,5 @@
 require('../hammer.min');
+import Popper from 'popper.js';
 
 export default () => {
   if (Sharect) {
@@ -39,6 +40,29 @@ export default () => {
       }
       const text = jQuery(element.target).text();
       window.open('http://twitter.com/share?url=' + url + '&text=' + encodeURIComponent(text), '', 'left=0,top=0,width=550,height=450,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
+    });
+
+
+    const popper = document.querySelector('.my-popper');
+    let popperInstance = null;
+
+    jQuery('.post .entry-content a.ek-link').on({
+      mouseover(e) {
+        const link = jQuery(e.target).attr('href');
+        const $element = jQuery(e.target);
+        jQuery(popper).find('.content').html(`<embed width="700" height="300" src="${link}">`);
+        popperInstance = new Popper(e.target, popper, {});
+      },
+      mouseout(e) {
+        // console.log('Destroy');
+        // popperInstance.destroy();
+      },
+    });
+
+    $(document).on('click',(e) => {
+      if( popperInstance ){
+        popperInstance.destroy();
+      }
     });
   }
 

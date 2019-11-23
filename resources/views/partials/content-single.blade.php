@@ -59,3 +59,15 @@ $postFeaturedImage = get_the_post_thumbnail_url(get_the_ID(), 'full');
 <div class="panright-icon">
 
 </div>
+
+<div class="my-popper">
+  <div class="d-flex justify-content-start">
+    <button type="button" class="close" data-dismiss="popper" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="content">
+    <div class="text-center">جاري التحميل...</div>
+  </div>
+</div>
+
