@@ -46,23 +46,26 @@ export default () => {
     const popper = document.querySelector('.my-popper');
     let popperInstance = null;
 
-    jQuery('.post .entry-content a.ek-link').on({
-      mouseover(e) {
-        const link = jQuery(e.target).attr('href');
-        const $element = jQuery(e.target);
-        jQuery(popper).find('.content').html(`<embed width="700" height="300" src="${link}">`);
-        popperInstance = new Popper(e.target, popper, {});
-      },
-      mouseout(e) {
-        // console.log('Destroy');
-        // popperInstance.destroy();
-      },
-    });
-
-    $(document).on('click',(e) => {
+    const removePopperInstance = () => {
       if( popperInstance ){
         popperInstance.destroy();
       }
+    };
+
+    jQuery('.post .entry-content a.ek-link').on({
+      mouseover(e) {
+        const link = jQuery(e.target).attr('href');
+        jQuery(popper).find('.content').html(`<embed width="700" height="300" src="${link}">`);
+        popperInstance = new Popper(e.target, popper, {});
+      },
+    });
+
+    $(document).on('scroll', (e) => {
+      removePopperInstance();
+    });
+
+    $(document).on('click',(e) => {
+      removePopperInstance();
     });
   }
 
