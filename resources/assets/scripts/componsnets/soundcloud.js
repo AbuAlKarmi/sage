@@ -2,7 +2,7 @@
 const SoundCloudAudio = require('soundcloud-audio');
 const $ = jQuery;
 const PROFILE_ID = '434541795';
-const CLIENT_ID = 'Vu5tlmvC9eCLFZkxXG32N1yQMfDSAPAA';
+const CLIENT_ID = window.SOUNDCLOUD_CLIENT_ID || 'Vu5tlmvC9eCLFZkxXG32N1yQMfDSAPAA';
 const player = new SoundCloudAudio(CLIENT_ID);
 const CHANNEL_URL = 'https://soundcloud.com/metraswebsite/tracks';
 import * as ICONS from './icons';

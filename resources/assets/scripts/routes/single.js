@@ -42,39 +42,46 @@ export default () => {
       window.open('http://twitter.com/share?url=' + url + '&text=' + encodeURIComponent(text), '', 'left=0,top=0,width=550,height=450,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
     });
 
-
-    const popper = document.querySelector('.my-popper');
-    let popperInstance = null;
-
-    const removePopperInstance = () => {
-      if( popperInstance ){
-        popperInstance.destroy();
-      }
-    };
-
-    jQuery('.post .entry-content a.ek-link').on({
-      mouseover(e) {
-        const link = jQuery(e.target).attr('href');
-        jQuery(popper).find('.content').html(`<embed width="700" height="300" src="${link}">`);
-        popperInstance = new Popper(e.target, popper, {});
-      },
-    });
-
-    $(document).on('scroll', (e) => {
-      removePopperInstance();
-    });
-
-    $(document).on('click',(e) => {
-      removePopperInstance();
-    });
   }
 
   //Swip Event
   if($('body').hasClass('isMobile')){
     // initHummertime();
   }
+
+
+  if( Boolean(window.ALLOW_LINK_PREVIEW) ){
+    initLinkPreview();
+  }
 }
 
+
+const initLinkPreview = () => {
+  const popper = document.querySelector('.my-popper');
+  let popperInstance = null;
+
+  const removePopperInstance = () => {
+    if( popperInstance ){
+      popperInstance.destroy();
+    }
+  };
+
+  jQuery('.post .entry-content a.ek-link').on({
+    mouseover(e) {
+      const link = jQuery(e.target).attr('href');
+      jQuery(popper).find('.content').html(`<embed width="700" height="300" src="${link}">`);
+      popperInstance = new Popper(e.target, popper, {});
+    },
+  });
+
+  $(document).on('scroll', (e) => {
+    removePopperInstance();
+  });
+
+  $(document).on('click',(e) => {
+    removePopperInstance();
+  });
+};
 
 const initHummertime = () => {
 
