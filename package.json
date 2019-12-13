@@ -43,6 +43,7 @@
     "child_process": "^1.0.2",
     "jquery": "^3.4",
     "js-dom-router": "^1.0",
+    "lodash": "^4.17.15",
     "popper.js": "^1.15.0",
     "rtlcss": "^2.4.0",
     "share-selected-text": "^1.1.4",

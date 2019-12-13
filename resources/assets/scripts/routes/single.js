@@ -1,5 +1,6 @@
 require('../hammer.min');
 import Popper from 'popper.js';
+import uniq from 'lodash/uniq';
 
 export default () => {
   if (Sharect) {
@@ -9,11 +10,11 @@ export default () => {
     }).init();
   }
 
-
-  const tweets = [
+  const tweets = uniq([
     ...Array.from(document.getElementsByClassName('background-color')),
-    ...Array.from(document.querySelectorAll( ".entry-content span:not(.background-color):not(.modern-footnotes-footnote__note)" ))
-  ];
+    ...Array.from(document.querySelectorAll( `.entry-content span` )).filter(element => Array.from(element.style).includes('background-color')),
+  ]);
+
   if (tweets.length) {
     tweets.forEach(tweet => {
       jQuery(tweet)

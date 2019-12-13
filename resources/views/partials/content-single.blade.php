@@ -60,7 +60,7 @@ $postFeaturedImage = get_the_post_thumbnail_url(get_the_ID(), 'full');
 
 </div>
 
-<div class="my-popper">
+<div class="my-popper" style="display:none;">
   <div class="d-flex justify-content-start">
     <button type="button" class="close" data-dismiss="popper" aria-label="Close">
       <span aria-hidden="true">&times;</span>

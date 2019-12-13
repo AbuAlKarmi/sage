@@ -30,6 +30,6 @@
   </style>
   <script>
     window.SOUNDCLOUD_CLIENT_ID = 'Vu5tlmvC9eCLFZkxXG32N1yQMfDSAPAA';
-    window.ALLOW_LINK_PREVIEW = true;
+    window.ALLOW_LINK_PREVIEW = false;
   </script>
 </head>
