@@ -43,7 +43,7 @@ function get_post_image($postId, $size = 'post-image-square'){
 function the_post_paragraphs() {
     global $post, $posts;
     $post_content = $post->post_content;
-    $post_content = apply_filters('the_content', $post_content);
+    $post_content = apply_filters('the_content', preg_replace( '/style=(["\'])[^\1]*?\1/i', '', $post_content, -1 ));
     $post_content = str_replace('</p>', '', $post_content);
     $paras = explode('<p>', $post_content);
     array_shift($paras);
