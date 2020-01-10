@@ -29,7 +29,7 @@
     @endforeach
   </style>
   <script>
-    window.SOUNDCLOUD_CLIENT_ID = 'Vu5tlmvC9eCLFZkxXG32N1yQMfDSAPAA';
+    window.SOUNDCLOUD_CLIENT_ID = 'uzhloVwKlWX9bzQ5F1mrqQdjYxKEqDRM';
     window.ALLOW_LINK_PREVIEW = false;
   </script>
 </head>
