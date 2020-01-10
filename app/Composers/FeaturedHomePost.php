@@ -37,6 +37,16 @@ class FeaturedHomePost extends Composer
     public function featuredHomePost($view)
     {
         $args = [
+            'post_type'         => 'pinned_posts',
+            'posts_per_page'    => '1',
+        ];
+        $pinnedPosts = get_posts( $args );
+        if( $pinnedPosts && isset($pinnedPosts[0]) ){
+            $postId = $pinnedPosts[0]->ID; 
+            return [ get_post(get_field('post', $postId)) ];
+        }
+
+        $args = [
             'author_name'       => 'metras',
             'orderby'           => 'date',
             'order'             => 'DESC',

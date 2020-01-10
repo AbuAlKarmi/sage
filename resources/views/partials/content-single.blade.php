@@ -34,7 +34,7 @@ $postFeaturedImage = get_the_post_thumbnail_url(get_the_ID(), 'full');
       </div>
       <hr>
       <div class="post-horizontal-meta">
-        @include('partials/entry-meta')
+        @include('partials/entry-meta', [ 'hideAuthorInformation' => true ])
       </div>
 
       {!! the_tags('<div class="entry-meta text-right tags-content">',' • ','</div>'); !!}
