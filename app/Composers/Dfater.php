@@ -37,7 +37,20 @@ class Dfater extends Composer
     {
         $args = [
             'post_type'         => 'files',
-            'posts_per_page'    =>  -1
+            'posts_per_page'    =>  -1,
+            'order' => 'DESC',
+            'orderby' => 'meta_value_num',
+            'meta_query' => array(
+                'relation' => 'OR',
+                array(
+                    'key' => '_is_pinned', 
+                    'compare' => 'EXISTS'
+                ),
+                array(
+                    'key' => '_is_pinned',
+                    'compare' => 'NOT EXISTS'
+                )
+            ),     
         ];
         $files = get_posts($args);
 
