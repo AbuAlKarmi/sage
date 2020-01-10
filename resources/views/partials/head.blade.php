@@ -28,8 +28,13 @@
     }
     @endforeach
   </style>
+
+<?php 
+ $themeOptions = get_option('metras_settings_option');
+?>
+
   <script>
-    window.SOUNDCLOUD_CLIENT_ID = 'uzhloVwKlWX9bzQ5F1mrqQdjYxKEqDRM';
+    window.SOUNDCLOUD_CLIENT_ID = '<?php echo isset($themeOptions) && isset($themeOptions['soundcloud_client_id']) ? $themeOptions['soundcloud_client_id'] :  ''; ?>';
     window.ALLOW_LINK_PREVIEW = false;
   </script>
 </head>

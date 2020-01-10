@@ -16,6 +16,28 @@ add_action('customize_register', function (\WP_Customize_Manager $wp_customize) 
             bloginfo('name');
         }
     ]);
+
+    $wp_customize->add_section('metras_settings_scheme', array(
+        'title'    => __('Metras Config', 'sage'),
+        'description' => '',
+        'priority' => 120,
+    ));
+ 
+    //  =============================
+    //  = SOUNDCLOUD                =
+    //  =============================
+    $wp_customize->add_setting('metras_settings_option[soundcloud_client_id]', array(
+        'default'        => 'uzhloVwKlWX9bzQ5F1mrqQdjYxKEqDRM',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'option',
+    ));
+ 
+    $wp_customize->add_control('metras_soundcloud_client_id', array(
+        'label'      => __('SounudCloud client ID', 'sage'),
+        'section'    => 'metras_settings_scheme',
+        'settings'   => 'metras_settings_option[soundcloud_client_id]',
+    ));
+
 });
 
 /**
