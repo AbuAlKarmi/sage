@@ -39,7 +39,7 @@ class Dfater extends Composer
             'post_type'         => 'files',
             'posts_per_page'    =>  -1,
             'order' => 'DESC',
-            'orderby' => 'meta_value_num',
+            'orderby' => 'meta_value_num date',
             'meta_query' => array(
                 'relation' => 'OR',
                 array(
