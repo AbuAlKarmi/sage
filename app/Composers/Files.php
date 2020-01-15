@@ -37,7 +37,11 @@ class Files extends Composer
     {
         $args = [
             'post_type'         => 'files',
-            'posts_per_page'    => 3,
+            'posts_per_page'    =>  3,
+            'meta_key'          => '_sort',
+            'orderby'           => 'meta_value_num date',
+            'order'             => 'ASC',
+            'meta_type'         => 'NUMERIC'
         ];
         $files = get_posts($args);
 

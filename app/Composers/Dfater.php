@@ -35,31 +35,45 @@ class Dfater extends Composer
      */
     public function files()
     {
-        $args = [
+        $sortedFilesQuery = [
             'post_type'         => 'files',
             'posts_per_page'    =>  -1,
-            'order' => 'DESC',
+            'meta_key'  => '_sort',
             'orderby' => 'meta_value_num date',
-            'meta_query' => array(
-                'relation' => 'OR',
-                array(
-                    'key' => '_is_pinned', 
-                    'compare' => 'EXISTS'
-                ),
-                array(
-                    'key' => '_is_pinned',
-                    'compare' => 'NOT EXISTS'
-                )
-            ),     
+            'order' => 'ASC',
+            'meta_type' => 'NUMERIC'
         ];
-        $files = get_posts($args);
+
+
+        $unsortedFilesQuery = [
+            'post_type'         => 'files',
+            'posts_per_page'    =>  -1,
+            'meta_query'    => [
+                'relation'  => 'AND',
+                [
+                    'key'       => '_sort',
+                    'compare'   => 'NOT EXISTS',
+
+                ]
+            ],
+            'orderby'   => 'date',
+            'order' => 'DESC',
+        ];
+
+
+        $sortedFiles = get_posts($sortedFilesQuery);
+
+        $unsortedFiles = get_posts($unsortedFilesQuery);
+
+
 
         return array_map(function($file){
             return [
                 'title' => $file->post_title,
                 'image' => get_the_post_thumbnail_url($file->ID, 'post-image-square'),
                 'url'   => get_post_permalink($file->ID),
+                'sort'  => (get_field( '_sort', $file->ID))
             ];
-        }, $files);
+        }, array_merge($sortedFiles, $unsortedFiles));
     }
 }
