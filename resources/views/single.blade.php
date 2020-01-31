@@ -7,24 +7,34 @@
       @includeFirst(['partials.content-single-'.get_post_type(), 'partials.content-single'])
       @endwhile
 
-      @if( isset($navigationPosts) )
+      @if(app\isMobile())
         <hr>
-        <div class="single-post-navigation">
-          <div class="row d-flex flex-row">
-            <?php global $post ?>
-            @foreach($navigationPosts as $key => $post)
-              @if( isset($post) )
-                <div class="col-md-6 d-flex align-items-stretch post-nav-{{$key+1}}">
-                  <?php setup_postdata($post) ?>
-                  @include( App\cardPartial(), ['showDescription' => true, 'displayPostMeta' => false])
-                  <?php wp_reset_postdata(); ?>
-                </div>
-              @endif
-            @endforeach
-          </div>
+        <?php query_posts( 'post_type=post' ); ?>
+        <div class="posts-loop" id="posts-infinite-scroll">
+          @include('partials.loops.mobile')
         </div>
-        <hr>
+        <?php wp_reset_query(); ?>
+      @else
+        @if( isset($navigationPosts) )
+          <div class="pt-2"></div>
+          <hr>
+          <div class="single-post-navigation">
+            <div class="row d-flex flex-row">
+              <?php global $post ?>
+              @foreach($navigationPosts as $key => $post)
+                @if( isset($post) )
+                  <div class="col-md-6 d-flex align-items-stretch post-nav-{{$key+1}}">
+                    <?php setup_postdata($post) ?>
+                    @include( App\cardPartial(), ['showDescription' => true, 'displayPostMeta' => false])
+                    <?php wp_reset_postdata(); ?>
+                  </div>
+                @endif
+              @endforeach
+            </div>
+          </div>
+        @endif
       @endif
+
     </div>
   </div>
 @endsection
