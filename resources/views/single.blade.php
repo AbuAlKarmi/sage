@@ -4,12 +4,23 @@
   <div class="row justify-content-center">
     <div class="col-md-10">
       @while(have_posts()) @php(the_post())
-      @includeFirst(['partials.content-single-'.get_post_type(), 'partials.content-single'])
+        @includeFirst(['partials.content-single-'.get_post_type(), 'partials.content-single'])
+{{--      <style>--}}
+{{--        .posts-loop .post-{{the_ID()}}{--}}
+{{--          display: none;--}}
+{{--        }--}}
+{{--      </style>--}}
       @endwhile
+
 
       @if(app\isMobile())
         <hr>
-        <?php query_posts( 'post_type=post' ); ?>
+        <?php query_posts([
+            'post_type' => 'post',
+            'post__not_in' => [get_the_ID()],
+            'paged'  => get_query_var('paged',0),
+            'posts_per_page'  => 20,
+          ]); ?>
         <div class="posts-loop" id="posts-infinite-scroll">
           @include('partials.loops.mobile')
         </div>
