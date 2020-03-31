@@ -6,41 +6,40 @@
   //
 }
 
-
-.social-links{
-  > li{
-    a{
-      svg{
+.social-links {
+  > li {
+    a {
+      svg {
         fill: $grey;
         transition: all 0.3s linear;
       }
-      &:hover{
-        svg{
-          fill: theme-color('secondary');
+      &:hover {
+        svg {
+          fill: theme-color("secondary");
         }
       }
     }
   }
 }
 
-.author-card{
+.author-card {
   background: transparent;
   border: 1px solid rgba($grey, 0.2);
   padding: 20px 10px;
   border-bottom: 30px solid #d1cac0;
-  .author-name-in-authors{
-    color: lighten($black, 10%)
+  .author-name-in-authors {
+    color: lighten($black, 10%);
   }
 
-  .details{
+  .details {
     display: flex;
     flex-flow: column;
     justify-content: center;
     height: 100%;
   }
 
-  .label{
-    &.metras-team-label{
+  .label {
+    &.metras-team-label {
       padding: 4px 8px;
       background-color: #9ec6be;
       color: $white;
@@ -53,32 +52,77 @@
 }
 
 /*! purgecss start ignore */
-.metras-foot-notes{
-  .foot-note{
+.metras-foot-notes {
+  .foot-note {
     width: 300px;
     font-size: 0.9rem;
     color: $grey;
-    .number{
+    .number {
       border-bottom: 1px solid #a3c4bd;
     }
-    .content{
-
+    .content {
     }
   }
 }
 
-.tooltip_templates{display: none;}
-.tooltipster-base{
+.tooltip_templates {
+  display: none;
+}
+.tooltipster-base {
   z-index: 222;
   //pointer-events: auto;
 }
-#tooltip_content svg{
+#tooltip_content svg {
   cursor: pointer;
   fill: $white;
   position: relative;
   z-index: 11;
-  &:hover{
+  &:hover {
     transform: scale(1.15);
   }
+}
+
+.corona-page {
+  .title-wrapper {
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+  .corona-content {
+    margin-top: -140px;
+  }
+  .row {
+    margin-left: -16px;
+    margin-right: -16px;
+
+    .col-md-6 {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+}
+
+.corona-file {
+  a {
+    text-decoration: none;
+    &:hover {
+      .featured-boxes-overlay {
+        opacity: 0;
+      }
+    }
+  }
+  box-shadow: 0px 12px 14.88px 1.12px rgba(50, 50, 50, 0.08);
+  .featured-boxes-wrap {
+    height: 250px !important;
+  }
+  .featured-boxes-overlay {
+    transition: all 0.3s linear;
+  }
+  margin-bottom: 32px;
 }
 /*! purgecss end ignore */
