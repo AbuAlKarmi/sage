@@ -93,6 +93,12 @@
     align-items: center;
     color: white;
   }
+  .card-file {
+    height: 100%;
+    .box-wrap {
+      display: block;
+    }
+  }
   .corona-content {
     margin-top: -140px;
   }
@@ -123,6 +129,5 @@
   .featured-boxes-overlay {
     transition: all 0.3s linear;
   }
-  margin-bottom: 32px;
 }
 /*! purgecss end ignore */

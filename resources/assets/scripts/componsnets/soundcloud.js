@@ -3,6 +3,7 @@ const SoundCloudAudio = require('soundcloud-audio');
 const $ = jQuery;
 const PROFILE_ID = '434541795';
 const CLIENT_ID = window.SOUNDCLOUD_CLIENT_ID || 'Vu5tlmvC9eCLFZkxXG32N1yQMfDSAPAA';
+const RESOLVE_URL = window.SOUNDCLOUD_RESOLVE_URL || 'https://api-v2.soundcloud.com/resolve';
 const player = new SoundCloudAudio(CLIENT_ID);
 const CHANNEL_URL = 'https://soundcloud.com/metraswebsite/tracks';
 import * as ICONS from './icons';
@@ -10,7 +11,7 @@ import * as ICONS from './icons';
 var $view = $('#track');
 let play = false;
 
-var render = function(track) {
+var render = function (track) {
 
   $view.empty();
 
@@ -30,7 +31,7 @@ var render = function(track) {
 
   // play/pause button
   var $button = $(`<button class="play-btn">${ICONS.PLAY}</button>`);
-  var toggleButton = function() {
+  var toggleButton = function () {
     if (player.playing) {
       $button.html(ICONS.PLAY);
       player.pause();
@@ -46,7 +47,7 @@ var render = function(track) {
   const playNext = () => {
     player.pause();
     currentTrack++;
-    if(currentTrack > tracks.length){
+    if (currentTrack > tracks.length) {
       currentTrack = 0;
     }
     playTrack(tracks[currentTrack].permalink_url);
@@ -56,7 +57,7 @@ var render = function(track) {
   const playPrev = () => {
     player.pause();
     currentTrack--;
-    if(currentTrack < 0){
+    if (currentTrack < 0) {
       currentTrack = tracks.length;
     }
     playTrack(tracks[currentTrack].permalink_url);
@@ -94,7 +95,7 @@ const playTrack = (trackUrl) => {
     trackUrl,
     render
   );
-  if(player.playing){
+  if (player.playing) {
     player.play();
   }
 };
@@ -103,8 +104,8 @@ let tracks = [];
 let currentTrack = 0;
 
 const init = () => {
-  if($view.length){
-    fetch(`https://api.soundcloud.com/resolve.json?url=${encodeURIComponent(CHANNEL_URL)}&client_id=${CLIENT_ID}`)
+  if ($view.length) {
+    fetch(`${RESOLVE_URL}?url=${CHANNEL_URL}&client_id=${CLIENT_ID}`)
       .then(resp => resp.json())
       .then(resp => {
         tracks = resp;

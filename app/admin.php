@@ -22,7 +22,7 @@ add_action('customize_register', function (\WP_Customize_Manager $wp_customize) 
         'description' => '',
         'priority' => 120,
     ));
- 
+
     //  =============================
     //  = SOUNDCLOUD                =
     //  =============================
@@ -31,13 +31,23 @@ add_action('customize_register', function (\WP_Customize_Manager $wp_customize) 
         'capability'     => 'edit_theme_options',
         'type'           => 'option',
     ));
- 
+
     $wp_customize->add_control('metras_soundcloud_client_id', array(
         'label'      => __('SounudCloud client ID', 'sage'),
         'section'    => 'metras_settings_scheme',
         'settings'   => 'metras_settings_option[soundcloud_client_id]',
     ));
 
+    $wp_customize->add_setting('metras_settings_option[soundcloud_resolve_url]', array(
+        'default'        => 'https://api-v2.soundcloud.com/resolve',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'option',
+    ));
+    $wp_customize->add_control('metras_soundcloud_resolve_url', array(
+        'label'      => __('SounudCloud Resolve URL', 'sage'),
+        'section'    => 'metras_settings_scheme',
+        'settings'   => 'metras_settings_option[soundcloud_resolve_url]',
+    ));
 });
 
 /**

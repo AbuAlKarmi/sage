@@ -35,6 +35,7 @@
 
   <script>
     window.SOUNDCLOUD_CLIENT_ID = '<?php echo isset($themeOptions) && isset($themeOptions['soundcloud_client_id']) ? $themeOptions['soundcloud_client_id'] :  ''; ?>';
+    window.SOUNDCLOUD_RESOLVE_URL = '<?php echo isset($themeOptions) && isset($themeOptions['soundcloud_resolve_url']) ? $themeOptions['soundcloud_resolve_url'] :  ''; ?>';
     window.ALLOW_LINK_PREVIEW = false;
   </script>
 </head>

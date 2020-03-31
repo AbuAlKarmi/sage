@@ -21,7 +21,7 @@
         @if($files && count($files))
             <div class="row">
             @foreach($files as $file)
-              <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="col-md-6 col-sm-6 col-xs-12 mb-4">
                 @include('partials.corona-file', ['file' => $file])
               </div>
             @endforeach
