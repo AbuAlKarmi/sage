@@ -111,6 +111,28 @@
       padding-right: 16px;
     }
   }
+
+  @media screen and (max-width: 766px) {
+    .title-wrapper {
+      height: 230px;
+      > div:first-child {
+        max-width: 80%;
+      }
+    }
+
+    .corona-content {
+      margin-top: -40px;
+    }
+    .row {
+      margin-left: -8px;
+      margin-right: -8px;
+
+      .col-md-6 {
+        padding-left: -8px;
+        padding-right: -8px;
+      }
+    }
+  }
 }
 
 .corona-file-wrapper {
@@ -131,7 +153,62 @@
     }
     .featured-boxes-overlay {
       transition: all 0.3s linear;
+      opacity: 0;
     }
+  }
+}
+
+.logo {
+  position: relative;
+  .coronaIcon {
+    position: absolute;
+    top: 20px;
+    left: 60px;
+
+    a {
+      text-decoration: none;
+      display: block;
+      width: 100px;
+      height: 100px;
+      background: url("../images/normal.png");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: all 0.3s linear;
+
+      &:hover {
+        transform: scale(1.15);
+        opacity: 0.75;
+      }
+    }
+
+    @media screen and (max-width: 766px) {
+      top: 30px;
+      left: 0;
+      a {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
+}
+
+.affix-menu {
+  .coronaIcon {
+    padding-left: 25px;
+    left: auto;
+    right: -35px;
+    top: 20px;
+    a {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+article.tag-corona {
+  .card {
+    background-image: url("../images/corona-bg.png");
   }
 }
 

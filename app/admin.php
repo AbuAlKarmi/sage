@@ -48,6 +48,17 @@ add_action('customize_register', function (\WP_Customize_Manager $wp_customize) 
         'section'    => 'metras_settings_scheme',
         'settings'   => 'metras_settings_option[soundcloud_resolve_url]',
     ));
+
+    $wp_customize->add_setting('metras_settings_option[corona_link]', array(
+        'default'        => '',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'option',
+    ));
+    $wp_customize->add_control('metras_corona_link', array(
+        'label'      => __('Corona Page Link', 'sage'),
+        'section'    => 'metras_settings_scheme',
+    'settings'   => 'metras_settings_option[corona_link]',
+    ));
 });
 
 /**

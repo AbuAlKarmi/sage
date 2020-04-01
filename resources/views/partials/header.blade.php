@@ -1,3 +1,6 @@
+@php
+    $themeOptions = get_option('metras_settings_option');
+@endphp
 <header class="banner">
   <div class="top-header">
     <div class="container text-right">
@@ -10,6 +13,13 @@
     </button>
     <div class="logo">
       <a class="brand" href="{{ home_url('/') }}">{{ get_bloginfo('name', 'display') }}</a>
+    
+      @if(isset($themeOptions) && isset($themeOptions['corona_link']))
+        <div class="coronaIcon">
+          <a href="{{$themeOptions['corona_link']}}">&nbsp;</a>
+        </div>
+      @endif
+      
     </div>
     <div id="header-menu">
       <div class="container">
@@ -32,6 +42,11 @@
           </button>
           <div class="logo d-inline-flex">
             <a class="brand" href="{{ home_url('/') }}">{{ get_bloginfo('name', 'display') }}</a>
+            @if(isset($themeOptions) && isset($themeOptions['corona_link']))
+              <div class="coronaIcon">
+                <a href="{{$themeOptions['corona_link']}}">&nbsp;</a>
+              </div>
+            @endif
           </div>
           <div class="d-inline-flex">
             <nav class="nav-primary">
