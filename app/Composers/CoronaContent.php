@@ -37,6 +37,10 @@ class CoronaContent extends Composer
     {
         $files = get_field('articles', get_the_ID());
 
+        usort($files, function($a, $b) {
+            return strtotime($a->post_date) - strtotime($b->post_date);
+        });
+
         return array_map(function ($file) {
             return [
                 'title' => $file->post_title,
@@ -44,6 +48,6 @@ class CoronaContent extends Composer
                 'url'   => get_post_permalink($file->ID),
                 'date' => get_the_date('j F Y', $file->ID),
             ];
-        }, $files);
+        }, array_reverse($files));
     }
 }

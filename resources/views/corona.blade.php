@@ -14,14 +14,14 @@
       @else
         @include('partials.page-header')
       @endif
-      
+
     </div>
     <div class="corona-content">
       <div class="container">
         @if($files && count($files))
             <div class="row">
             @foreach($files as $file)
-            
+
               <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="corona-file-wrapper">
                 @include('partials.corona-file', ['file' => $file])

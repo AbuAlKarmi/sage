@@ -66,7 +66,6 @@ class Dfater extends Composer
         $unsortedFiles = get_posts($unsortedFilesQuery);
 
 
-
         return array_map(function($file){
             return [
                 'title' => $file->post_title,
