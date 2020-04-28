@@ -36,7 +36,15 @@
     @endif
   </div>
   <div class="share">
-    @php( $postUrl = get_the_permalink(get_the_ID()) )
-    {!!  do_shortcode("[Sassy_Social_Share url=\"$postUrl\"]")  !!}
+    <?php
+      $shareText = wp_strip_all_tags(get_the_title(), true);
+      $shareLink = wp_get_shortlink(get_the_ID());
+    ?>
+      @include('partials.social-media-share', [
+                  'shareText' => $shareText,
+                  'shareLink' => $shareLink
+                  ])
+{{--    @php( $postUrl = get_the_permalink(get_the_ID()) )--}}
+{{--    {!!  do_shortcode("[Sassy_Social_Share url=\"$postUrl\"]")  !!}--}}
   </div>
 </div>
