@@ -6,3 +6,4 @@
 export const ready = fn => document.readyState !== 'loading'
   ? window.setTimeout(fn, 0)
   : document.addEventListener('DOMContentLoaded', fn);
+
