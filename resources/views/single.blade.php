@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+<?php $execludedPosts = [get_the_ID()]?>
 @section('content')
   <div class="row justify-content-center">
     <div class="col-md-10">
@@ -11,7 +12,6 @@
 {{--        }--}}
 {{--      </style>--}}
       @endwhile
-      <?php wp_reset_postdata(); ?>
 
       @if( isset($navigationPosts) )
         <div class="pt-2"></div>
@@ -23,6 +23,7 @@
               @if( isset($post) )
                 <div class="col-md-6 d-flex align-items-stretch post-nav-{{$key+1}}">
                   <?php setup_postdata($post) ?>
+                  <?php $execludedPosts[] = get_the_ID() ?>
                   @include( App\cardPartial(), ['showDescription' => true, 'displayPostMeta' => false])
                   <?php wp_reset_postdata(); ?>
                 </div>
