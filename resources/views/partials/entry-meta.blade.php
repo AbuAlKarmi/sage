@@ -1,4 +1,8 @@
-<?php $authorPrefix = get_field('article_type', get_the_ID()); ?>
+<?php
+  $postTitle = get_the_title();
+  $postId = get_the_ID();
+  $authorPrefix = get_field('article_type', $postId);
+?>
 <div class="byline post-meta author vcard">
   <?php $coAuthors = explode(',',coauthors_posts_links(',', ',', null, null, false)); ?>
   <div class="d-flex information-wrapper">
@@ -37,13 +41,14 @@
   </div>
   <div class="share">
     <?php
-      $shareText = wp_strip_all_tags(get_the_title(), true);
-      $shareLink = wp_get_shortlink(get_the_ID());
+      $shareText = wp_strip_all_tags($postTitle, true);
+      $shareLink = wp_get_shortlink($postId);
     ?>
-      @include('partials.social-media-share', [
-                  'shareText' => $shareText,
-                  'shareLink' => $shareLink
-                  ])
+    @include('partials.social-media-share', [
+                'shareText' => $shareText,
+                'shareLink' => $shareLink,
+                'id'  => $postId
+                ])
 {{--    @php( $postUrl = get_the_permalink(get_the_ID()) )--}}
 {{--    {!!  do_shortcode("[Sassy_Social_Share url=\"$postUrl\"]")  !!}--}}
   </div>

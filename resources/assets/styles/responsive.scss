@@ -77,7 +77,7 @@
       text-align: center !important;
     }
   }
-  
+
 
   #header-menu{
     .nav-primary{
@@ -99,7 +99,7 @@
         float: none;
         margin-top: 15px;
       }
-      
+
       .menu-open &{
         display: block;
       }
@@ -120,19 +120,21 @@
   }
 
   .single-post{
-    .post {
-      .post-meta {
-        .share{
-          position: fixed;
-          bottom: 0px;
-          background: #FFF;
-          z-index: 1;
-          left: 0px;
-          right: 0px;
-          padding: 16px 32px;
-          box-shadow: -1px 0px 5px rgba($grey, 0.2);
-          .heateor_sss_sharing_container .heateor_sss_sharing_ul{
-            justify-content: space-between;
+    article.post {
+      main{
+        .post-meta {
+          .share{
+            position: fixed;
+            bottom: 0px;
+            background: #FFF;
+            z-index: 1;
+            left: 0px;
+            right: 0px;
+            padding: 16px 32px;
+            box-shadow: -1px 0px 5px rgba($grey, 0.2);
+            .heateor_sss_sharing_container .heateor_sss_sharing_ul{
+              justify-content: space-between;
+            }
           }
         }
       }
@@ -323,7 +325,7 @@
       }
     }
   }
-  
+
   .page-up{
     display: block;
   }

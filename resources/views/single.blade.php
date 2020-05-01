@@ -11,6 +11,7 @@
 {{--        }--}}
 {{--      </style>--}}
       @endwhile
+      <?php wp_reset_postdata(); ?>
 
       @if( isset($navigationPosts) )
         <div class="pt-2"></div>
